@@ -1,0 +1,31 @@
+\begin{center}
+\uppercase{ {{< var tcc.autor >}} }
+
+\vspace{6cm}
+
+\uppercase{ {{< var tcc.titulo >}} }
+
+{{< var tcc.subtitulo >}}
+
+\vspace{3cm}
+
+\hfill\begin{minipage}{0.5\textwidth}
+Pré-projeto de Trabalho de Conclusão de Curso (TCC) apresentado na Faculdade de Engenharia Mecânica (Femec) da Universidade Federal do Sul e Sudeste do Pará (Unifesspa) como requisito básico para a conclusão do Curso de Engenharia Mecânica.
+
+\vspace{1cm}
+
+Orientador (a): {{< var tcc.orientador >}}
+
+Coorientador (a): {{< var tcc.coorientador >}}
+
+\end{minipage}
+
+\vfill
+
+\uppercase{ {{< var tcc.cidade >}} }
+
+{{< var tcc.ano >}}
+
+\end{center}
+
+{{< pagebreak >}}

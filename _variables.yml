@@ -1,0 +1,28 @@
+tcc:
+  tipo: "Trabalho de Conclusão de Curso"
+  universidade: "Universidade Federal do Sul e Sudeste do Pará"
+  instituto: "Instituto de Geociências e Engenharias"
+  faculdade: "Faculdade de Engenharia Mecânica"
+  curso: "Engenharia Mecânica"
+  cidade: "Marabá"
+  ano: "2023"
+  autor: "Franco J S Silva"
+  titulo: "Template para TCC:"
+  subtitulo: "Uso do quarto.org"
+  palavras_chave_1: "palavra 1"
+  palavras_chave_2: "palavra 2"
+  palavras_chave_3: "palavra 3"
+  palavras_chave_4: "palavra 4"
+  palavras_chave_5: "palavra 5"
+  orientador: "São Jorge"
+  coorientador: "Santa Maria"
+  CDU: "C02:141:005.7"
+  defesa:
+    dia: "10"
+    mes: "junho"
+    membro_banca_1: "Sidarta Gautama"
+    membro_banca_2: "São Francisco de Assis"
+    membro_banca_3: "São Tomás de Aquino"
+
+
+

@@ -1,0 +1,12 @@
+
+\begin{center}
+ABSTRACT
+\end{center}
+
+The Organic Rankine Cycle is an energy generation process that uses an organic thermal fluid, such as methane, as a working medium. It is composed of a series of components that work together to convert the thermal energy of the fluid into mechanical energy, which is in turn converted into electrical energy through a generator.
+
+\vspace{1cm}
+
+\textbf{Palavras Chaves:} Organic Rankine Cycle, Methane, Energy Generation.
+
+{{< pagebreak >}}

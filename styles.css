@@ -1,0 +1,180 @@
+html, body{
+    margin: 0em 0em 0em -0.58em;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    background: rgb(217, 223, 169);
+    text-align: justify;
+    font-size: 12px;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    line-height: 1.5em;
+}
+
+main {
+    margin: 0em -2.58em 0em 0em;
+}
+
+
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 70%; */
+    border-radius: 6px;
+}
+
+div.figcell {
+    float: center;
+    text-align: center;
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
+table {
+    width: 90%;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    font-size: 16px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    color-scheme: light;
+    border-radius: .2rem;
+    border: 0.1em solid #808285;
+    box-shadow: 0 .2rem .5rem rgba(0,0,0,.05),0 0 .0625rem rgba(0,0,0,.1);
+    border-spacing: 0;
+    border-collapse: collapse;
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    overflow: auto;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+table.atv {
+    padding: 1em;
+    border: 0.1em solid #808285;
+    border-collapse: collapse;
+}
+
+th.bloco {
+    color: #4e4d4d;
+    font-weight: bold;
+    text-align: center;
+    padding: 1em;
+}
+
+td.nbasico {
+    color: #ED1C24;
+    text-align: left;
+    padding: 1em;
+    font-weight: bold;
+    margin: 0;
+}
+
+td.nprofissional {
+    color: #2E3092;
+    text-align: left;
+    padding: 1em;
+    font-weight: bold;
+}
+
+td.ncomplementar {
+    color: #009A17;
+    text-align: left;
+    padding: 1em;
+    font-weight: bold;
+}
+
+div.cabecalho {
+    text-align: center;
+
+}
+
+span.addFranco{
+    color: #D2691E;
+    background-color: #cdedf1;
+    /* margin:0px; */
+    /* float:left; */
+    /* position:relative; */
+    /* cursor:pointer; */
+}
+
+span.addFranco:hover span{
+    display:block;
+}
+
+.hover{
+    background: none repeat scroll 0 0 #F8F8F8;
+    border: 3px solid #DFDFDF;
+    color: #585858;
+    font-size: 9px;
+    height: 20px;
+    width: 8%;
+    letter-spacing: 1px;
+    line-height: 20px;
+    margin: auto;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    display:none;
+    padding:0 10px;
+}
+
+
+
+
+
+
+
+
+
+
+span.delFranco{
+    color: #D2691E;
+    text-decoration: line-through;
+}
+
+span.addClaudio{
+    color: #32CD32;
+    background-color: #FAFAD2;
+}
+
+span.addClaudio:hover span{
+    display:block;
+}
+
+span.delClaudio{
+    color: #32CD32;
+    text-decoration: line-through;
+}
+
+span.addBreno{
+    color: #2E3092;
+    background-color: #F5DEB3;
+}
+
+span.addBreno:hover span{
+    display:block;
+}
+
+span.delBreno{
+    color: #2E3092;
+    text-decoration: line-through;
+}
+
+span.addAtencao{
+    color: #ED1C24;
+    background-color: #FAFAD2;
+}
+
+span.addAtencao:hover span{
+    display:block;
+}
+
+.quebra_pagina {
+    page-break-after: always;
+}
+
+
+

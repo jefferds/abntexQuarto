@@ -1,0 +1,7 @@
+\vspace*{\fill}
+\begin{flushright}
+\textit{Penso, logo existo.\\
+René Descartes}
+\end{flushright}
+
+{{< pagebreak >}}

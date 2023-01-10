@@ -1,0 +1,49 @@
+project:
+  title: "abntexQuarto"
+
+jupyter: julia-1.8
+
+number-sections: true
+bibliography: abtexquarto.bib
+csl: abnt.csl
+
+link-citations: true
+
+fig-cap-location: top
+
+crossref:
+  lof-title: "LISTA DE FIGURAS"
+  lot-title: "LISTA DE TABELAS"
+  lol-title: "LISTA DE CÓDIGOS"
+  fig-title: "Figura"
+  tbl-title: Tabela
+  lst-title: Código
+  fig-prefix: Fig.
+  tbl-prefix: Tab.
+  lst-prefix: Cód.
+
+format:
+
+  html:
+    css: styles.css
+    page-layout: full
+
+  pdf:
+    include-in-header: preamble.tex
+    documentclass: abntex2
+    classoption: 
+      - 12pt
+      - oneside
+      - a4paper
+      - english
+      - brazil
+    geometry:
+      - top=30mm
+      - left=30mm
+      - right=20mm
+      - bottom=20mm
+    colorlinks: true
+
+    code-block-bg: true
+    code-block-border-left: true
+    highlight-style: github

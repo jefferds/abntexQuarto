@@ -1,0 +1,26 @@
+\begin{center}
+\uppercase{ {{< var tcc.universidade >}} }
+
+\uppercase{ {{< var tcc.instituto >}} }
+
+\uppercase{ {{< var tcc.faculdade >}} }
+
+\vfill
+
+\uppercase{ {{< var tcc.autor >}} }
+
+\vfill
+
+\uppercase{ {{< var tcc.titulo >}} }
+
+{{< var tcc.subtitulo >}}
+
+\vfill
+
+\uppercase{ {{< var tcc.cidade >}} }
+
+{{< var tcc.ano >}}
+
+\end{center}
+
+{{< pagebreak >}}

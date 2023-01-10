@@ -1,0 +1,3 @@
+\chapter{LOREM IPSUM DOLOR SIT AMET}
+
+Na engenharia térmica , o Ciclo Rankine Orgânico ( ORC ) é um tipo de ciclo termodinâmico . É uma variação do ciclo de Rankine, assim chamado devido ao uso de um fluido orgânico de alta massa molecular cuja temperatura de vaporização é menor que a da água . O fluido permite a recuperação de calor de fontes de baixa temperatura, como combustão de biomassa, calor residual industrial , calor geotérmico , lagoas solares etc. O calor de baixa temperatura é convertido em trabalho útil , que pode ser convertido em eletricidade @grote2009springer.

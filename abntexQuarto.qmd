@@ -1,0 +1,15 @@
+
+\ABNTEXchapterfont\normalsize
+
+<!-- PRETEXTUAIS -->
+{{< include pretextuais/pretextuais.qmd >}}
+
+<!-- TEXTUAIS -->
+
+<!-- Introdução -->
+{{< include textuais/cap1_introducao.qmd >}}
+
+<!-- Outro texto -->
+{{< include textuais/cap2_outro.qmd >}}
+
+\chapter{REFERÊNCIAS}

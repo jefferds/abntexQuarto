@@ -1,0 +1,71 @@
+\chapter{INTRODUÇÃO}
+
+O Quarto permite tecer o conteúdo e o código executável em um documento final. Para saber mais sobre o quarto ver <https://quarto.org>.
+
+# Uso de figuras
+
+Um exemplo de figura é a @fig-peixe abaixo.
+
+::: {#fig-peixe layout-ncol=1}
+
+![](figuras/images.jpg){width=300}
+
+Fonte: Google imagens
+
+Exemplo de figura: um peixe.
+
+:::
+
+## Tabelas
+
+Tabelas são usadas para mostrar dados tabulares. Um exemplo de tabela é a @tbl-1 abaixo.
+
+| Nome | Idade | Sexo |
+|------|-------|------|
+| João | 20    | M    |
+| Maria | 25   | F    |
+
+: Exemplo de tabela: dados de pessoas {#tbl-1}
+
+## Equações
+
+Black-Scholes (@eq-black-scholes) é um modelo matemático que busca explicar o comportamento dos derivativos financeiros, mais comumente opções:
+
+$$
+\frac{\partial \mathrm C}{ \partial \mathrm t } + \frac{1}{2}\sigma^{2} \mathrm S^{2}
+\frac{\partial^{2} \mathrm C}{\partial \mathrm C^2}
+  + \mathrm r \mathrm S \frac{\partial \mathrm C}{\partial \mathrm S}\ =
+  \mathrm r \mathrm C 
+$$ {#eq-black-scholes}
+
+## Código em Julia
+
+A seguir um código em Julia:
+
+<!-- Aqui precisei fazer uma gabiarra pois não consegui fazer o código ser executado no quarto.org corretamento. A solução foi usar o `eval: true` e `echo: false` para que o código não fosse exibido no documento final e usar o vspace para corrigir o espaçamento. -->
+
+```{julia}
+#| eval: true
+#| echo: false
+println("")
+```
+
+\vspace{-1.5cm}
+
+```{#lst-1 .julia lst-cap="Customers Query"}
+x = 1 + 1
+```
+
+Este foi um exemplos do suporte a figuras, tabelas, equações e código em Julia. Para mais informações sobre o suporte a figuras, tabelas, equações e código (@lst-1) em Julia, consulte <https://quarto.org>.
+
+```{#lst-2 .julia lst-cap="Exemplo de código em Julia"}
+x = 1 + 1
+```
+
+Este foi um exemplos do suporte a figuras, tabelas, equações e código em Julia (@lst-2).
+
+## Citando referências
+
+A seguir um exemplo de citação de referências:
+
+A citação de referências é feita como segue: @grote2009springer
