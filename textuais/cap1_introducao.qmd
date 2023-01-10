@@ -42,15 +42,9 @@ $$ {#eq-black-scholes}
 
 A seguir um código em Julia:
 
-<!-- Aqui precisei fazer uma gabiarra pois não consegui fazer o código ser executado no quarto.org corretamento. A solução foi usar o `eval: true` e `echo: false` para que o código não fosse exibido no documento final e usar o vspace para corrigir o espaçamento. -->
+<!-- Aqui precisei fazer uma gabiarra pois não consegui fazer o código ser executado no quarto.org corretamento. Usei o \vspace{0cm} nesse tempo funcionou. -->
 
-```{julia}
-#| eval: true
-#| echo: false
-println("")
-```
-
-\vspace{-1.5cm}
+\vspace{0cm}
 
 ```{#lst-1 .julia lst-cap="Customers Query"}
 x = 1 + 1
