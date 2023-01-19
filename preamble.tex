@@ -61,6 +61,23 @@
 		bookmarksdepth=4
 }
 
+% Comandos de uso do orientador para sugestão de alterações:
+\usepackage{xcolor}
+\usepackage{cancel}
+
+\colorlet{oliveGreen}{blue!20!black!50!green}
+
+\usepackage{soul}
+\usepackage{soulutf8}
+\setstcolor{red}
+
+\newcommand{\cito}[1]{\textsuperscript{\cite{#1}}} % numeração da citação sobreescrita
+\newcommand{\PROFESSOR}[1]{\textcolor{red}{\MakeUppercase{#1}}} % Acrescenta um nota pelo professor
+\newcommand{\PROFESSORDEL}[1]{\textcolor{red}{\st{#1}}} % removido pelo professor
+\newcommand{\PROFESSORADD}[1]{\textcolor{oliveGreen}{#1}} % adicionado pelo professor
+\newcommand{\PROFESSORREP}[2]{\PROFESSORDEL{#1}\PROFESSORADD{#2}} % substituir
+
+
 \renewcommand{\printtoctitle}[1]{\ABNTEXchapterfontsize\centering SUMÁRIO}
 
 \AtBeginDocument{\captionsetup{labelfont=bf}}
