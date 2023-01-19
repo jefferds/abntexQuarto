@@ -20,11 +20,11 @@ crossref:
   lot-title: "LISTA DE TABELAS"
   lol-title: "LISTA DE CÓDIGOS"
   fig-title: "Figura"
-  tbl-title: Tabela
-  lst-title: Código
-  fig-prefix: Fig.
-  tbl-prefix: Tab.
-  lst-prefix: Cód.
+  tbl-title: "Tabela"
+  lst-title: "Código"
+  fig-prefix: "Fig."
+  tbl-prefix: "Tab."
+  lst-prefix: "Cód."
 
 format:
 
