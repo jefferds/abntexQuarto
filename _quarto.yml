@@ -1,11 +1,7 @@
 project:
   title: "abntexQuarto"
-  execute-dir: project
 
 jupyter: julia-1.8
-
-execute:
-  freeze: auto
 
 number-sections: true
 bibliography: abtexquarto.bib

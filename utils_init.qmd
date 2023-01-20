@@ -1,0 +1,16 @@
+```{julia}
+#| echo: false
+
+cd(raw"./")
+# println(pwd())
+
+allfiles = [(joinpath.(folder,files) for (folder,dir,files) in walkdir(raw"./"))...;]
+
+for a in allfiles
+    if occursin(r"desktop.ini", a)
+        # println("Remove $a")
+        rm(a);
+    end
+
+end;
+```
