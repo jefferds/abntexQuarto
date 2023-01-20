@@ -8,6 +8,8 @@ Para utilização é necessário a instalação do sistema Quarto no site oficia
 
 Após a instalação do sistema, é necessário a instalação do Miktex (<https://miktex.org/download>) e do abntex2 (<https://www.abntex.net.br/>) para a geração do PDF.
 
+O arquivo principal do projeto a ser renderizado (render PDF) é o `abntexQuarto.qmd`.
+
 #### Linguagem de programação
 
 Para a parte da programação e scripts utilizo a linguagem de programação Julia (<https://julialang.org/>).
