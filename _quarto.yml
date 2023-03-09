@@ -44,6 +44,8 @@ format:
       - bottom=20mm
     colorlinks: true
 
+    mathfont: "Latin Modern Math"
+
     code-block-bg: true
     code-block-border-left: true
     highlight-style: github
