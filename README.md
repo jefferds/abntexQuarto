@@ -13,3 +13,9 @@ O arquivo principal do projeto a ser renderizado (render PDF) é o `abntexQuarto
 #### Linguagem de programação
 
 Para a parte da programação e scripts utilizo a linguagem de programação Julia (<https://julialang.org/>).
+
+
+#### Observações
+
+1. Por alguma razão o sistema Quarto algumas vezes não consegue sincronizar arquivos em pastas como as do Google Drive. Manter seu projeto em uma pasta local (ex: C:\Users\SeuUsuario\Documents\) pode ajudar a evitar problemas de sincronização.
+2. Algumas vezes o problema sincronização do Quarto pode ser resolvido deletando os arquivos temporários gerados pelo latex e a apagando a pasta `.quarto` (faça backup do seus arquivos antes de usar delete!).
