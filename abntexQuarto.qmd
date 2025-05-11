@@ -1,13 +1,10 @@
-
 <!-- CONFIGURAÇÕES -->
 
-<!-- Executa script julia de inicialização -->
-<!-- {{< include utils_init.qmd >}} -->
-
+\setlength{\parindent}{0mm}
 \ABNTEXchapterfont\normalsize
 
 <!-- PRETEXTUAIS -->
-{{< include pretextuais/pretextuais.qmd >}}
+{{< include pretextuais.qmd >}}
 
 <!-- TEXTUAIS -->
 
@@ -29,4 +26,4 @@
 <!-- Trabalhos futuros -->
 {{< include textuais/cap6_trabalhos_futuros.qmd >}}
 
-\chapter{REFERÊNCIAS}
+\chapter*{REFERÊNCIAS}

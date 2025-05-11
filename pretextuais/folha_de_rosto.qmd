@@ -10,7 +10,7 @@
 \vspace{3cm}
 
 \hfill\begin{minipage}{0.5\textwidth}
-Pré-projeto de Trabalho de Conclusão de Curso (TCC) apresentado na Faculdade de Engenharia Mecânica (Femec) da Universidade Federal do Sul e Sudeste do Pará (Unifesspa) como requisito básico para a conclusão do Curso de Engenharia Mecânica.
+{{< var tcc.tipo >}} apresentado na {{< var tcc.instituto >}} do {{< var tcc.universidade >}} como requisito básico para a conclusão do Curso de {{< var tcc.curso >}}.
 
 \vspace{1cm}
 

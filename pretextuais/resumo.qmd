@@ -1,12 +1,17 @@
 
 \begin{center}
-RESUMO
+Resumo
 \end{center}
 
-O Ciclo Rankine Orgânico é um processo de geração de energia que utiliza um fluido térmico orgânico, como o metano, como meio de trabalho. Ele é composto por uma série de componentes que trabalham em conjunto para converter a energia térmica do fluido em energia mecânica, que é, por sua vez, convertida em energia elétrica por meio de um gerador.
+{{< var tcc.resumo >}}
 
 \vspace{1cm}
 
-\textbf{Palavras Chaves:} Ciclo Rankine Orgânico, Metano, Geração de Energia.
+\textbf{Palavras Chaves: }
+{{< var tcc.palavra_chave_1 >}}.
+{{< var tcc.palavra_chave_2 >}}.
+{{< var tcc.palavra_chave_3 >}}.
+{{< var tcc.palavra_chave_4 >}}.
+{{< var tcc.palavra_chave_5 >}}.
 
 {{< pagebreak >}}
