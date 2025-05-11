@@ -2,17 +2,17 @@ tcc:
   titulo: "Template para TCC:"
   subtitulo: "Uso do quarto.org"
 
-  autor: "Franco Jefferds dos Santos Silva"
-  sobrenome: "Silva"
-  prenome: "Franco Jefferds dos Santos"
-  email: "jefferds@gmail.com"
+  autor: "Nome Pessoa"
+  sobrenome: "Pessoa"
+  prenome: "Nome"
+  email: "nome.pessoa@ceu.com"
 
-  tipo: "Dissertação de Mestrado"
+  tipo: "Dissertação de Mestrado" # ou "Tese de Doutorado" ou "Trabalho de Conclusão de Curso" ou "Trabalho de Graduação"
   universidade: "Instituto Tecnológico de Aeronáutica"
   instituto: "Divisão de Ciências Fundamentais"
   departamento: ""
-  faculdade: "Programa de Pós-Graduação em Propriedade Intelectual e Transferência de Tecnologia para Inovação"
-  curso: "Mestrado Profissional em Propriedade Intelectual e Transferência de Tecnologia para Inovação - PROFNIT"
+  faculdade: "Programa de Pós-Graduação XYZ" # ou Faculdade, ou Escola, ou Centro...
+  curso: "Mestrado Profissional UVW"
   area: "Engenharias III"
   ano: "2025"
 

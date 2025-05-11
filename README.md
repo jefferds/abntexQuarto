@@ -10,10 +10,11 @@ Após a instalação do sistema, é necessário a instalação do Miktex (<https
 
 O arquivo principal do projeto a ser renderizado (render PDF) é o `abntexQuarto.qmd`.
 
+Para alterar dados como nome do autor, título, data e outras informações, basta editar o arquivo `_variables.yml`.
+
 #### Linguagem de programação
 
 Para a parte da programação e scripts utilizo a linguagem de programação Julia (<https://julialang.org/>).
-
 
 #### Observações
 
