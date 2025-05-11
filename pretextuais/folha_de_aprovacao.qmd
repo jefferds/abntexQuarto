@@ -1,37 +1,42 @@
-\begin{folhadeaprovacao}
+\begin{center}
 
-  \begin{center}
-    \uppercase{ {{< var tcc.autor >}} }
+\uppercase{ {{< var tcc.autor >}} }
 
-    \vspace*{\fill}\vspace*{\fill}
-    \begin{center}
-      \uppercase{ {{< var tcc.titulo >}} }
-      {{< var tcc.subtitulo >}}
-    \end{center}
-    \vspace*{\fill}
-    
-    \hspace{.45\textwidth}
-    \begin{minipage}{.5\textwidth}
-        {{< var tcc.tipo >}} apresentado na {{< var tcc.faculdade >}} da {{< var tcc.universidade >}} como requisito básico para a conclusão do {{< var tcc.curso >}}.
-    \end{minipage}%
-    \vspace*{\fill}
-   \end{center}
-        
-   Trabalho aprovado. {{< var tcc.cidade >}}, {{< var tcc.defesa.dia >}} de {{< var tcc.defesa.mes >}} de {{< var tcc.ano >}}:
+\vfill
 
-   \assinatura{\textbf{ {{< var tcc.orientador >}} } \\ Orientador} 
-   \assinatura{\textbf{ {{< var tcc.defesa.membro_banca_1 >}} } \\ Convidado 1}
-   \assinatura{\textbf{ {{< var tcc.defesa.membro_banca_2 >}} } \\ Convidado 2}
-   %\assinatura{\textbf{ {{< var tcc.defesa.membro_banca_3 >}} } \\ Convidado 3}
-      
-   \begin{center}
-    \vspace*{0.5cm}
-    {\large\imprimirlocal}
-    \par
-    {\large\imprimirdata}
-    \vspace*{1cm}
-  \end{center}
-  
-\end{folhadeaprovacao}
+\begin{center}
+  \uppercase{ {{< var tcc.titulo >}} }
+  {{< var tcc.subtitulo >}}
+\end{center}
+
+\end{center}
+
+\vfill
+
+Composição de Banca Examinadora:
+
+\begin{center}
+
+% Tabela sem linhas visíveis
+\begin{tabular}{>{\raggedright\arraybackslash}p{6cm} >{\raggedright\arraybackslash}p{4cm} >{\raggedright\arraybackslash}p{3cm} >{\raggedright\arraybackslash}p{1cm} >{\raggedright\arraybackslash}p{3cm}}
+ {{< var tcc.banca_presidente >}}    & Presidente     & - & {{< var tcc.instituicao_presidente >}} \\
+ {{< var tcc.banca_orientador >}}    & Orientador     & - & {{< var tcc.instituicao_orientador >}} \\
+ {{< var tcc.banca_coorientador >}}  & Coorientador   & - & {{< var tcc.instituicao_coorientador >}} \\
+ {{< var tcc.banca_interno >}}       & Membro Interno & - & {{< var tcc.instituicao_interno >}} \\
+ {{< var tcc.banca_externo_1 >}}     & Membro Externo & - & {{< var tcc.instituicao_externo_1 >}} \\
+ {{< var tcc.banca_externo_2 >}}     & Membro Externo & - & {{< var tcc.instituicao_externo_2 >}} \\
+\end{tabular}
+
+\end{center}
+
+\begin{center}
+
+\vspace*{2.5cm}
+
+{\large {{< var tcc.cidade >}}}
+\par
+{\large {{< var tcc.ano >}}}
+
+\end{center}
 
 {{< pagebreak >}}

@@ -858,6 +858,8 @@
 }
 % ---
 
+
+
 % ---
 % Lista de simbolos
 \newenvironment{simbolos}{%

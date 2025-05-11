@@ -1,4 +1,4 @@
-\chapter{INTRODUÇÃO}
+\chapter{Introdução}
 
 O Quarto permite tecer o conteúdo e o código executável em um documento final. Para saber mais sobre o quarto ver <https://quarto.org>.
 

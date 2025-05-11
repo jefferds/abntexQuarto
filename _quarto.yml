@@ -1,20 +1,17 @@
 project:
   title: "abntexQuarto"
 
-jupyter: julia-1.8
-
 number-sections: true
-bibliography: abtexquarto.bib
-csl: abnt.csl
+bibliography: "references.bib"
 
 link-citations: true
 
 fig-cap-location: top
 
 crossref:
-  lof-title: "LISTA DE FIGURAS"
-  lot-title: "LISTA DE TABELAS"
-  lol-title: "LISTA DE CÓDIGOS"
+  lof-title: "Lista de Figuras"
+  lot-title: "Lista de Tabelas"
+  lol-title: "Lista de Códigos"
   fig-title: "Figura"
   tbl-title: "Tabela"
   lst-title: "Código"
@@ -23,14 +20,9 @@ crossref:
   lst-prefix: "Cód."
 
 format:
-
-  html:
-    css: styles.css
-    page-layout: full
-
   pdf:
-    include-in-header: preamble.tex
-    documentclass: abntex2
+    include-in-header: "./src/preamble.tex"
+    documentclass: "abntex2"
     classoption: 
       - 12pt
       - oneside
@@ -43,9 +35,10 @@ format:
       - right=20mm
       - bottom=20mm
     colorlinks: true
-
-    mathfont: "Latin Modern Math"
-
     code-block-bg: true
     code-block-border-left: true
     highlight-style: github
+    keep-tex: false
+
+# html:
+  #   page-layout: full
