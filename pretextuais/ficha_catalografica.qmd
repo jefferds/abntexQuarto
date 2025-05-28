@@ -26,7 +26,7 @@
 
 \vspace{5mm}
 
-\hspace{0.5cm} Orientador: Prof. Dr. {{< var tcc.orientador >}}.
+\hspace{0.5cm} Advisor: Prof. Dr. {{< var tcc.orientador >}}.
 
 \hspace{0.5cm}
     1. {{< var tcc.palavra_chave_1 >}}.
