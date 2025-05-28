@@ -5,6 +5,13 @@
 
 \uppercase{ {{< var tcc.faculdade >}} }
 
+\begin{figure}[H]
+\centering
+
+\includegraphics[width=0.5\textwidth]{figuras/ITA_logo.png}
+
+\end{figure}
+
 \vfill
 
 \uppercase{ {{< var tcc.autor >}} }
