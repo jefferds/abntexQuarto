@@ -1,2 +1,8 @@
 /.quarto/
 /abntexQuarto.code-workspace
+/abntexQuarto.pdf
+/abntexQuarto.aux
+/abntexQuarto.log
+/abntexQuarto.idx
+/abntexQuarto.tex
+/.DS_Store

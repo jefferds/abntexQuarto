@@ -1,23 +1,23 @@
 tcc:
-  titulo: "Template para TCC:"
-  subtitulo: "Uso do quarto.org"
+  titulo: "Methodology for Developing a First-Principle Digital Twin with AI Integration for Gas Turbines"
+  subtitulo: "Final Paper"
 
-  autor: "Franco Jefferds dos Santos Silva"
-  sobrenome: "Silva"
-  prenome: "Franco Jefferds dos Santos"
-  email: "jefferds@gmail.com"
+  autor: "Brian Clark Zanfelice"
+  sobrenome: "Zanfelic"
+  prenome: "Brian Clark"
+  email: "brian.zanfelic@ga.ita.br"
 
-  tipo: "Dissertação de Mestrado"
+  tipo: "Final Paper"
+  curso: "Mechanical Aeronautics Engineering"
   universidade: "Instituto Tecnológico de Aeronáutica"
   instituto: "Divisão de Ciências Fundamentais"
   departamento: ""
-  faculdade: "Programa de Pós-Graduação em Propriedade Intelectual e Transferência de Tecnologia para Inovação"
-  curso: "Mestrado Profissional em Propriedade Intelectual e Transferência de Tecnologia para Inovação - PROFNIT"
+  faculdade: "Instituto Tecnológico de Aeronáutica"
   area: "Engenharias III"
   ano: "2025"
 
   cidade: "São José dos Campos"
-  cep: "12228-901"
+  cep: "12228-460"
   uf: "SP"
 
   palavra_chave_1: "palavra 1"
@@ -32,14 +32,14 @@ tcc:
   palavra_chave_4_ingles: "keyword 4"
   palavra_chave_5_ingles: "keyword 5"
 
-  orientador: "São Jorge"
-  coorientador: "Santa Maria"
-  CDU: "C02:141:005.7"
+  orientador: "Prof\\. Dr\\. Franco Jefferds dos Santos Silva"
+  coorientador: "Prof\\. Dr\\. Cleverson Bringhenti"
+  CDU: "621.438"
   dia_defesa: "11"
-  mes_defesa: "maio"
-  banca_presidente: "Prof\\. Dr\\. Sidarta Gautama"
-  banca_orientador: "Prof\\. Dr\\. São Jorge"
-  banca_coorientador: "Profa\\. Dra. Santa Maria"
+  mes_defesa: "junho"
+  banca_presidente: "Prof\\. Dr\\. "
+  banca_orientador: "Prof\\. Dr\\. Franco Jefferds dos Santos Silva"
+  banca_coorientador: "Profa\\. Dra. Cleverson Bringhenti"
   banca_interno: "Prof\\. Dr\\. São Francisco de Assis"
   banca_externo_1: "Prof\\. Dr\\. São Tomás de Aquino"
   banca_externo_2: "Dr\\. Shirdi Sai Baba"
@@ -52,10 +52,22 @@ tcc:
 
   dedicatoria: "Este trabalho é dedicado às crianças adultas que, quando pequenas, sonharam em se tornar cientistas."
 
-  texto_epigrafe: "\"Penso, logo existo.\""
-  autor_epigrafe: "René Descartes"
+  texto_epigrafe: '\"No que diz respeito ao empenho, ao compromisso, ao esforço, à dedicação, não existe meio-termo. Ou você faz uma coisa bem-feita ou não faz.\"'
+  autor_epigrafe: "AYRTON SENNA"
 
-  resumo: "[O resumo é escrito em um único parágrafo contendo visão rápida e clara do conteúdo e conclusões do trabalho, constituindo-se em uma sequência de frases concisas e objetivas, não ultrapassando 500 palavras.] Exemplo: O Ciclo Rankine Orgânico é um processo de geração de energia que utiliza um fluido térmico orgânico, como o metano, como meio de trabalho. Ele é composto por uma série de componentes que trabalham em conjunto para converter a energia térmica do fluido em energia mecânica, que é, por sua vez, convertida em energia elétrica por meio de um gerador."
+  resumo: "[O resumo é escrito em um único parágrafo contendo visão rápida e clara \
+  do conteúdo e conclusões do trabalho, constituindo-se em uma sequência de frases concisas e \
+  objetivas, não ultrapassando 500 palavras.] Exemplo: O Ciclo Rankine Orgânico é um processo \
+  de geração de energia que utiliza um fluido térmico orgânico, como o metano, como meio de \
+  trabalho. Ele é composto por uma série de componentes que trabalham em conjunto para converter a \
+  energia térmica do fluido em energia mecânica, que é, por sua vez, convertida em energia elétrica \
+  por meio de um gerador."
 
-  abstract: "[The abstract is written in a single paragraph containing a quick and clear overview of the work's content and conclusions, consisting of a sequence of concise and objective sentences, not exceeding 500 words.] Example: The Organic Rankine Cycle is an energy generation process that uses an organic thermal fluid, such as methane, as the working medium. It is composed of a series of components that work together to convert the fluid's thermal energy into mechanical energy, which is, in turn, converted into electrical energy by means of a generator."
+  abstract: "[The abstract is written in a single paragraph containing a \
+  quick and clear overview of the work's content and conclusions, consisting of a \
+  sequence of concise and objective sentences, not exceeding 500 words.] Example: \
+  The Organic Rankine Cycle is an energy generation process that uses an organic thermal \
+  fluid, such as methane, as the working medium. It is composed of a series of components \
+  that work together to convert the fluid's thermal energy into mechanical energy, \
+  which is, in turn, converted into electrical energy by means of a generator."
 
