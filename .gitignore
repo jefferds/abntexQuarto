@@ -1,6 +1,5 @@
 /.quarto/
 /abntexQuarto.code-workspace
-/abntexQuarto.pdf
 /abntexQuarto.aux
 /abntexQuarto.log
 /abntexQuarto.idx
@@ -10,4 +9,7 @@
 /abntexQuarto.pdf
 =======
 *.pdf
->>>>>>> f72cfb2 (ignore pdf)
+*.lop
+*.tex
+*.aux
+*.idx
