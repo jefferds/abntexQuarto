@@ -6,4 +6,8 @@
 /abntexQuarto.idx
 /abntexQuarto.tex
 /.DS_Store
+<<<<<<< HEAD
 /abntexQuarto.pdf
+=======
+*.pdf
+>>>>>>> f72cfb2 (ignore pdf)
