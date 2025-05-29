@@ -1,7 +1,6 @@
 
-**Dados Internacionais de Catalogação-na-Publicação (CIP)**  
-
-**Divisão de Informação e Documentação**
+**Cataloging-in Publication Data**  
+**Documentation and Information Division**
 
 \vspace{-3mm}
 
@@ -22,22 +21,21 @@
 
 \vspace{5mm}
 
-\hspace{0.5cm} {{< var tcc.tipo >}} - Curso de {{< var tcc.curso >}}, Área de {{< var tcc.area >}} - {{< var tcc.universidade >}}, {{< var tcc.ano >}}.
+\hspace{0.5cm} {{< var tcc.tipo >}}  (Undergraduation study) - Course of {{< var tcc.curso >}} - {{< var tcc.universidade >}}, {{< var tcc.ano >}}.
 
 \vspace{5mm}
 
 \hspace{0.5cm} Advisor: Prof. Dr. {{< var tcc.orientador >}}.
 
 \hspace{0.5cm}
-    1. {{< var tcc.palavra_chave_1 >}}.
-    2. {{< var tcc.palavra_chave_2 >}}.
-    3. {{< var tcc.palavra_chave_3 >}}.
-    4. {{< var tcc.palavra_chave_4 >}}.
-    5. {{< var tcc.palavra_chave_4 >}}.
+    1. {{< var tcc.palavra_chave_1_ingles >}}.
+    2. {{< var tcc.palavra_chave_2_ingles >}}.
+    3. {{< var tcc.palavra_chave_3_ingles >}}.
+    4. {{< var tcc.palavra_chave_4_ingles >}}.
+    5. {{< var tcc.palavra_chave_5_ingles >}}.
     I. {{< var tcc.orientador >}}.
     II. {{< var tcc.universidade >}}.
-    III. {{< var tcc.faculdade >}}.
-    IV. {{< var tcc.titulo >}}\\ 			
+    III. {{< var tcc.titulo >}}\\ 			
 
 \hspace{9.75cm} CDU {{< var tcc.CDU >}}\\
 
@@ -52,19 +50,19 @@
 
 \vfill
 
-**REFERÊNCIA BIBLIOGRÁFICA**
+**BIBLIOGRAPHIC REFERENCE**
 
-\uppercase{ {{< var tcc.sobrenome >}}}, {{< var tcc.prenome >}}. {{< var tcc.titulo >}}. {{< var tcc.ano >}}. \pageref{LastPage} f. {{< var tcc.tipo >}} - Curso de {{< var tcc.curso >}}, Área de {{< var tcc.area >}} - {{< var tcc.universidade >}}, {{< var tcc.cidade >}}, {{< var tcc.ano >}}.
+\uppercase{ {{< var tcc.sobrenome >}}}, {{< var tcc.prenome >}}. {{< var tcc.titulo >}}. {{< var tcc.ano >}}. \pageref{LastPage}f. {{< var tcc.tipo >}} (Undergraduation study) - Course of {{< var tcc.curso >}} - {{< var tcc.universidade >}}, {{< var tcc.cidade >}}, {{< var tcc.ano >}}.
 
 \vfill
 
-**CESSÃO DE DIREITOS**
+**CESSION OF RIGHTS**
 
-**NOME DO AUTOR:** {{< var tcc.autor >}}  
-**TÍTULO DO TRABALHO:** {{< var tcc.titulo >}}  
-**TIPO DO TRABALHO/ANO:** {{< var tcc.tipo >}} / {{< var tcc.ano >}}.
+**AUTHOR’S NAME:** {{< var tcc.autor >}}  
+**PUBLICATION TITLE:** {{< var tcc.titulo >}}  
+**PUBLICATION KIND/YEAR:** {{< var tcc.tipo >}} (Undergraduation study) / {{< var tcc.ano >}}.
 
-É concedida ao{à} {{< var tcc.universidade >}} a permissão para reproduzir cópias desta {{< var tcc.tipo >}} para emprestar ou vender cópias, exclusivamente para fins acadêmicos e científicos. O autor reserva os demais direitos de publicação, e nenhuma parte desta dissertação ou tese poderá ser reproduzida sem sua autorização.
+It is granted to {{< var tcc.universidade >}} permission to reproduce copies of this \lowercase{ {{< var tcc.tipo >}} } to borrow or sell copies, exclusively for academic and scientific purposes. The author reserves all other publication rights, and no part of this dissertation or thesis may be reproduced without their permission.
 
 \vspace{1cm}
 
@@ -72,8 +70,8 @@
 
 {{< var tcc.autor >}}
 
-Endereço Eletrônico: {{< var tcc.email >}}
+Email: {{< var tcc.email >}}
 
-{{< var tcc.cidade >}}-{{< var tcc.uf >}}
+{{< var tcc.cidade >}} - {{< var tcc.uf >}}
 
 {{< pagebreak >}}
