@@ -4,22 +4,22 @@
 {{< include pretextuais/capa.qmd >}}
 
 <!-- folha de rosto -->
-{{< include pretextuais/folha_de_rosto.qmd >}}
+<!-- {{< include pretextuais/folha_de_rosto.qmd >}} -->
 
 <!-- ficha catalografica -->
-{{< include pretextuais/ficha_catalografica.qmd >}}
+<!-- {{< include pretextuais/ficha_catalografica.qmd >}} -->
 
 <!-- folha de aprovação -->
-{{< include pretextuais/folha_de_aprovacao.qmd >}}
+<!-- {{< include pretextuais/folha_de_aprovacao.qmd >}} -->
 
 <!-- dedicatoria -->
-{{< include pretextuais/dedicatoria.qmd >}}
+<!-- {{< include pretextuais/dedicatoria.qmd >}} -->
 
 <!-- epigrafe -->
 {{< include pretextuais/epigrafe.qmd >}}
 
 <!-- agradecimentos -->
-{{< include pretextuais/agradecimentos.qmd >}}
+<!-- {{< include pretextuais/agradecimentos.qmd >}} -->
 
 <!-- resumo -->
 {{< include pretextuais/resumo.qmd >}}
