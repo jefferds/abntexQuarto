@@ -19,11 +19,11 @@ tcc:
   uf: "SP"
 
 
-  palavra_chave_1_ingles: "Digital Twin"
-  palavra_chave_2_ingles: "Gas Turbine"
-  palavra_chave_3_ingles: "AI"
-  palavra_chave_4_ingles: "Machine Learning"
-  palavra_chave_5_ingles: "Physics Informed Neural Networks"
+  palavra_chave_1_ingles: "Gas Turbine"
+  palavra_chave_2_ingles: "Digital Twin"
+  palavra_chave_3_ingles: "Artificial Intelligence"
+  palavra_chave_4_ingles: "Physics-Informed Machine Learning"
+  palavra_chave_5_ingles: "First-Principle Modeling"
 
   orientador: "Prof\\. Dr\\. Franco Jefferds dos Santos Silva"
   coorientador: "Prof\\. Dr\\. Cleverson Bringhenti"
