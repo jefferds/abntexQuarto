@@ -5,7 +5,7 @@ tcc:
   autor: "Nome Pessoa"
   sobrenome: "Pessoa"
   prenome: "Nome"
-  email: "nome.pessoa@ceu.com"
+  email: "nome.pessoa@nomes.com"
 
   tipo: "Dissertação de Mestrado" # ou "Tese de Doutorado" ou "Trabalho de Conclusão de Curso" ou "Trabalho de Graduação"
   universidade: "Instituto Tecnológico de Aeronáutica"
