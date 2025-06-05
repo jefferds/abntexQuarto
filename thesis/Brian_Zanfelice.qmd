@@ -30,4 +30,5 @@
 <!-- Trabalhos futuros -->
 <!-- {{< include textuais/cap6_trabalhos_futuros.qmd >}} -->
 
-\chapter*{\Large{\textbf{\uppercase{ Bibliography }}}}
+\chapter*{ \Large{\textbf{\uppercase{ Bibliography }}}}
+
