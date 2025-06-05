@@ -9,15 +9,16 @@
 <!-- TEXTUAIS -->
 \mainmatter
 
-\mainmatter
-
 <!-- Introdução -->
+=======
+<!-- Introduction -->
+
 {{< include textuais/cap1_introducao.qmd >}}
 
-<!-- Referencial teórico -->
+<!-- Literature Review -->
 {{< include textuais/cap2_referencial_teorico.qmd >}}
 
-<!-- Metodologia -->
+<!-- Materials and Methods -->
 {{< include textuais/cap3_metodologia.qmd >}}
 
 <!-- Resultados e discussões -->
