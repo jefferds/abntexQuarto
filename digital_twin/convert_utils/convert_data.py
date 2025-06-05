@@ -2,35 +2,43 @@ import pandas as pd
 
 
 def load_sensor_data_to_dataframe(file_path):
-    try:
-        df = pd.read_csv(file_path, sep="\t", skiprows=2)
+    """
+    Loads sensor data from a .txt file into a pandas DataFrame.
 
-        df.columns = df.columns.str.strip()
+    Args:
+        file_path (str): The path to the .txt file.
 
-        if "Fuel Flow  (L/hr)" in df.columns:
-            df.rename(columns={"Fuel Flow  (L/hr)": "Fuel Flow (L/hr)"}, inplace=True)
+    Returns:
+        pandas.DataFrame: A DataFrame containing the data from the file,
+                          or None if an error occurs.
+    """
+    df = pd.read_csv(file_path, sep="\t", skiprows=2)
+    df.columns = df.columns.str.strip()
 
-        return df
-    except FileNotFoundError:
-        print(f"Error: The file '{file_path}' was not found.")
-        return None
-    except pd.errors.EmptyDataError:
-        print(
-            f"Error: The file '{file_path}' is empty or contains no data after skipping rows."
-        )
-        return None
-    except Exception as e:
-        print(f"An unexpected error occurred: {e}")
-        return None
+    if "Fuel Flow  (L/hr)" in df.columns:
+        df.rename(columns={"Fuel Flow  (L/hr)": "Fuel Flow (L/hr)"}, inplace=True)
+
+    if "Fuel Flow  (L/hr)" in df.columns:
+        df.rename(columns={"Fuel Flow  (L/hr)": "Fuel Flow (L/hr)"}, inplace=True)
+
+    return df
 
 
-try:
+def load_sensor_data_to_parquet(file_path):
+    """
+    Loads sensor data from a .txt file into a pandas DataFrame and saves it as a .parquet file.
 
-    real_file_df = load_sensor_data_to_dataframe("data.txt")
-    if real_file_df is not None:
-        print("\nDataFrame loaded successfully from 'data.txt'!")
-        print(real_file_df.head())
-    else:
-        print("\nFailed to load DataFrame from 'data.txt'.")
-except IOError:
-    print("Could not write to 'data.txt' for the real file example.")
+    Args:
+        file_path (str): The path to the .txt file.
+        output_path (str): The path to the output .parquet file.
+    """
+    df = load_sensor_data_to_dataframe(file_path)
+
+    output_path = file_path.replace(".txt", ".parquet")
+
+    df.to_parquet(output_path)
+
+
+if __name__ == "__main__":
+    file_path = "../../digital_twin/minilab_data/feb_2025_1/Aq_50000.txt"
+    load_sensor_data_to_parquet(file_path)
