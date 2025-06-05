@@ -1,5 +1,5 @@
 project:
-  title: "abntexQuarto"
+  title: "Brian_TG_Thesis"
 
 number-sections: true
 bibliography: "references.bib"
@@ -10,15 +10,15 @@ link-citations: true
 fig-cap-location: top
 
 crossref:
-  lof-title: "Lista de Figuras"
-  lot-title: "Lista de Tabelas"
-  lol-title: "Lista de Códigos"
-  fig-title: "Figura"
-  tbl-title: "Tabela"
-  lst-title: "Código"
+  lof-title: "List of Figures"
+  lot-title: "List of Tables"
+  lol-title: "List of Code"
+  fig-title: "Figure"
+  tbl-title: "Table"
+  lst-title: "Code"
   fig-prefix: "Fig."
   tbl-prefix: "Tab."
-  lst-prefix: "Cód."
+  lst-prefix: "Code"
 
 format:
   pdf:

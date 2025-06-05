@@ -1,12 +1,12 @@
 \chapter{Literature Review}
 
-\PROFESSOR{Theoretical presentation, based on bibliographic references, on the theme of the work.}
 
-# Theme
+# Gas Turbines
 
-# Subtheme
 
-## Important concepts
+# Physics-Informed Neural Networks
 
-## Etc
+
+# Digital Twins
+
 
