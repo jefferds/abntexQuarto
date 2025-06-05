@@ -1,35 +1,35 @@
-\chapter{Introdução}
+\chapter{Introduction}
 
-O Quarto permite tecer o conteúdo e o código executável em um documento final. Para saber mais sobre o quarto ver <https://quarto.org>.
+Quarto allows you to weave content and executable code into a final document. To learn more about Quarto see <https://quarto.org>.
 
-# Uso de figuras
+# Using figures
 
-Um exemplo de figura é a @fig-peixe abaixo.
+An example of a figure is @fig-peixe below.
 
 ::: {#fig-peixe layout-ncol=1}
 
 ![](figuras/images.jpg){width=300}
 
-Fonte: Google imagens
+Source: Google images
 
-Exemplo de figura: um peixe.
+Example of a figure: a fish.
 
 :::
 
-## Tabelas
+## Tables
 
-Tabelas são usadas para mostrar dados tabulares. Um exemplo de tabela é a @tbl-1 abaixo.
+Tables are used to display tabular data. An example of a table is @tbl-1 below.
 
-| Nome | Idade | Sexo |
-|------|-------|------|
-| João | 20    | M    |
-| Maria | 25   | F    |
+| Name  | Age | Gender |
+|-------|-----|--------|
+| John  | 20  | M      |
+| Mary  | 25  | F      |
 
-: Exemplo de tabela: dados de pessoas {#tbl-1}
+: Example of a table: people data {#tbl-1}
 
-## Equações
+## Equations
 
-Black-Scholes (@eq-black-scholes) é um modelo matemático que busca explicar o comportamento dos derivativos financeiros, mais comumente opções:
+Black-Scholes (@eq-black-scholes) is a mathematical model that seeks to explain the behavior of financial derivatives, most commonly options:
 
 $$
 \frac{\partial \mathrm C}{ \partial \mathrm t } + \frac{1}{2}\sigma^{2} \mathrm S^{2}
@@ -38,11 +38,11 @@ $$
   \mathrm r \mathrm C 
 $$ {#eq-black-scholes}
 
-## Código em Julia
+## Code in Julia
 
-A seguir um código em Julia:
+Below is some code in Julia:
 
-<!-- Aqui precisei fazer uma gabiarra pois não consegui fazer o código ser executado no quarto.org corretamento. Usei o \vspace{0cm} nesse tempo funcionou. -->
+<!-- Here I had to do a workaround because I couldn't get the code to run correctly in quarto.org. I used \vspace{0cm} and it worked at the time. -->
 
 \vspace{0cm}
 
@@ -50,9 +50,9 @@ A seguir um código em Julia:
 x = 1 + 1
 ```
 
-Este foi um exemplos do suporte a figuras, tabelas, equações e código em Julia. Para mais informações sobre o suporte a figuras, tabelas, equações e código (@lst-1) em Julia, consulte <https://quarto.org>.
+This was an example of support for figures, tables, equations, and code in Julia. For more information about support for figures, tables, equations, and code (@lst-1) in Julia, see <https://quarto.org>.
 
-```{#lst-2 .julia lst-cap="Exemplo de código em Julia"}
+```{#lst-2 .julia lst-cap="Example of Julia code"}
 x = 1 + 1
 ```
 
@@ -76,10 +76,11 @@ using Printf
 ```
 
 Este foi um exemplos do suporte a figuras, tabelas, equações e código em Julia (@lst-2).
+This was an example of support for figures, tables, equations, and code in Julia (@lst-2).
 
-## Citando referências
+## Citing references
 
-A seguir um exemplo de citação de referências:
+Here is an example of citing references:
 
 A citação de referências é feita como segue: @grote2009springer.
 
@@ -87,3 +88,6 @@ A citação de referências é feita como segue: @grote2009springer.
 
 Global freshwater resources include a diverse fish fauna comprising close to 16,000 species (i.e.~47% of all fishes and~25% of all vertebrates), with around 250 new species described each year [@pelayo_villamil2015global; @arthington2016fish; @eschmeyer2017catalog].
 
+=======
+
+Citing references is done as follows: @grote2009springer

@@ -28,4 +28,4 @@
 <!-- Trabalhos futuros -->
 <!-- {{< include textuais/cap6_trabalhos_futuros.qmd >}} -->
 
-\chapter*{REFERÊNCIAS}
+\chapter*{REFERENCES}
