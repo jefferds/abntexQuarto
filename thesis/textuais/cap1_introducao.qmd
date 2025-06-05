@@ -1,65 +1,10 @@
 \chapter{Introduction}
 
-Quarto allows you to weave content and executable code into a final document. To learn more about Quarto see <https://quarto.org>.
 
-# Using figures
+# Motivation
 
-An example of a figure is @fig-peixe below.
+A
 
-::: {#fig-peixe layout-ncol=1}
+# Objective
 
-![](figuras/images.jpg){width=300}
-
-Source: Google images
-
-Example of a figure: a fish.
-
-:::
-
-## Tables
-
-Tables are used to display tabular data. An example of a table is @tbl-1 below.
-
-| Name  | Age | Gender |
-|-------|-----|--------|
-| John  | 20  | M      |
-| Mary  | 25  | F      |
-
-: Example of a table: people data {#tbl-1}
-
-## Equations
-
-Black-Scholes (@eq-black-scholes) is a mathematical model that seeks to explain the behavior of financial derivatives, most commonly options:
-
-$$
-\frac{\partial \mathrm C}{ \partial \mathrm t } + \frac{1}{2}\sigma^{2} \mathrm S^{2}
-\frac{\partial^{2} \mathrm C}{\partial \mathrm C^2}
-  + \mathrm r \mathrm S \frac{\partial \mathrm C}{\partial \mathrm S}\ =
-  \mathrm r \mathrm C 
-$$ {#eq-black-scholes}
-
-## Code in Julia
-
-Below is some code in Julia:
-
-<!-- Here I had to do a workaround because I couldn't get the code to run correctly in quarto.org. I used \vspace{0cm} and it worked at the time. -->
-
-\vspace{0cm}
-
-```{#lst-1 .julia lst-cap="Customers Query"}
-x = 1 + 1
-```
-
-This was an example of support for figures, tables, equations, and code in Julia. For more information about support for figures, tables, equations, and code (@lst-1) in Julia, see <https://quarto.org>.
-
-```{#lst-2 .julia lst-cap="Example of Julia code"}
-x = 1 + 1
-```
-
-This was an example of support for figures, tables, equations, and code in Julia (@lst-2).
-
-## Citing references
-
-Here is an example of citing references:
-
-Citing references is done as follows: @grote2009springer
+T
