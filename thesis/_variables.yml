@@ -1,5 +1,5 @@
 tcc:
-  titulo: "Methodology for Developing a First-Principle Digital Twin with AI Integration for Gas Turbines"
+  titulo: "Methodology for Developing a Level 1 Digital Twin with AI Integration for Gas Turbines"
   subtitulo: "Final Paper"
 
   autor: "Brian Clark Zanfelice"
@@ -58,7 +58,7 @@ tcc:
 As turbinas a gás são cruciais na geração de energia e na aviação, tornando sua modelagem precisa essencial 
 para a otimização do desempenho e manutenção preditiva. Abordagens de modelagem tradicionais 
 podem ser computacionalmente intensivas ou, se puramente baseadas em dados, podem carecer de consistência física. 
-Esta tese apresenta o desenvolvimento de um gêmeo digital para uma turbina a gás em escala de laboratório utilizando 
+Esta tese apresenta o desenvolvimento de um gêmeo digital de primeiro nível para uma turbina a gás em escala de laboratório utilizando 
 Redes Neurais Informadas pela Física (PINNs). Este trabalho envolve o aproveitamento de dados experimentais 
 coletados da microturbina de laboratório do Instituto Tecnológico de Aeronáutica (ITA), incluindo parâmetros operacionais 
 chave como temperaturas e pressões em vários estágios, fluxo de combustível, velocidade do compressor e empuxo. 
@@ -84,7 +84,7 @@ controle e otimização para a turbina a gás."
   abstract: "Gas turbines are crucial in power generation and aviation, making their 
   accurate modeling essential for performance optimization and predictive maintenance. 
   Traditional modeling approaches can be computationally intensive or, if purely data-driven, 
-  may lack physical consistency. This thesis presents the development of a digital twin for a 
+  may lack physical consistency. This thesis presents the development of a Level 1 (L1) digital twin for a 
   laboratory-scale gas turbine using Physics-Informed Neural Networks (PINNs). 
   This work involves leveraging experimental data collected from the Aeronautical 
   Institute of Technology (ITA) laboratory microturbine, including key operational 
