@@ -1,3 +1,11 @@
-\chapter{Methodology}
+\chapter{Materials and Methods}
 
 \PROFESSOR{Description of what was done in the work.}
+
+# Theme
+
+
+# Subtheme
+
+
+## Important concepts

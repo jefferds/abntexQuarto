@@ -1,4 +1,4 @@
-\chapter{Theoretical Framework}
+\chapter{Literature Review}
 
 \PROFESSOR{Theoretical presentation, based on bibliographic references, on the theme of the work.}
 
