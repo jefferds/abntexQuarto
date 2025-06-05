@@ -54,19 +54,54 @@ tcc:
   texto_epigrafe: '\"No que diz respeito ao empenho, ao compromisso, ao esforço, à dedicação, não existe meio-termo. Ou você faz uma coisa bem-feita ou não faz.\"'
   autor_epigrafe: "AYRTON SENNA"
 
-  resumo: "[O resumo é escrito em um único parágrafo contendo visão rápida e clara \
-  do conteúdo e conclusões do trabalho, constituindo-se em uma sequência de frases concisas e \
-  objetivas, não ultrapassando 500 palavras.] Exemplo: O Ciclo Rankine Orgânico é um processo \
-  de geração de energia que utiliza um fluido térmico orgânico, como o metano, como meio de \
-  trabalho. Ele é composto por uma série de componentes que trabalham em conjunto para converter a \
-  energia térmica do fluido em energia mecânica, que é, por sua vez, convertida em energia elétrica \
-  por meio de um gerador."
+  resumo: "
+As turbinas a gás são cruciais na geração de energia e na aviação, tornando sua modelagem precisa essencial 
+para a otimização do desempenho e manutenção preditiva. Abordagens de modelagem tradicionais 
+podem ser computacionalmente intensivas ou, se puramente baseadas em dados, podem carecer de consistência física. 
+Esta tese apresenta o desenvolvimento de um gêmeo digital para uma turbina a gás em escala de laboratório utilizando 
+Redes Neurais Informadas pela Física (PINNs). Este trabalho envolve o aproveitamento de dados experimentais 
+coletados da microturbina de laboratório do Instituto Tecnológico de Aeronáutica (ITA), incluindo parâmetros operacionais 
+chave como temperaturas e pressões em vários estágios, fluxo de combustível, velocidade do compressor e empuxo. 
 
-  abstract: "[The abstract is written in a single paragraph containing a \
-  quick and clear overview of the work's content and conclusions, consisting of a \
-  sequence of concise and objective sentences, not exceeding 500 words.] Example: \
-  The Organic Rankine Cycle is an energy generation process that uses an organic thermal \
-  fluid, such as methane, as the working medium. It is composed of a series of components \
-  that work together to convert the fluid's thermal energy into mechanical energy, \
-  which is, in turn, converted into electrical energy by means of a generator."
+Estes dados empíricos são integrados com princípios termodinâmicos fundamentais e 
+as equações algébricas governantes que descrevem o comportamento dos principais 
+componentes da turbina a gás: o compressor, a câmara de combustão, a turbina e o bocal. Ao incorporar estas leis 
+físicas diretamente na função de perda da rede neural, 
+a PINN é treinada não apenas para se ajustar aos dados experimentais observados, mas também para aderir à física 
+inherente do sistema. O gêmeo digital desenvolvido visa prever com precisão as principais saídas de 
+desempenho, como a temperatura de saída da câmara de combustão, a 
+temperatura dos gases de escape e o empuxo, sob diversas condições operacionais 
+definidas pelo fluxo de combustível e pela velocidade do compressor. Além disso, o modelo é projetado para prever temperaturas e 
+pressões intermediárias ao longo da turbina, garantindo consistência 
+termodinâmica em todo o processo simulado. 
 
+Esta pesquisa contribui com uma metodologia para a criação de um gêmeo digital robusto, computacionalmente eficiente e fisicamente 
+fundamentado. Espera-se que o modelo resultante sirva como uma ferramenta 
+valiosa para análise de desempenho aprofundada, compreensão das sensibilidades 
+do sistema e, potencialmente, para o desenvolvimento futuro de estratégias de 
+controle e otimização para a turbina a gás."
+
+  abstract: "Gas turbines are crucial in power generation and aviation, making their 
+  accurate modeling essential for performance optimization and predictive maintenance. 
+  Traditional modeling approaches can be computationally intensive or, if purely data-driven, 
+  may lack physical consistency. This thesis presents the development of a digital twin for a 
+  laboratory-scale gas turbine using Physics-Informed Neural Networks (PINNs). 
+  This work involves leveraging experimental data collected from the Aeronautical 
+  Institute of Technology (ITA) laboratory microturbine, including key operational 
+  parameters such as temperatures and pressures at various stages, fuel flow, compressor speed, and thrust.
+
+These empirical data are integrated with fundamental thermodynamic principles and 
+the governing algebraic equations describing the behavior of the main gas turbine 
+components: the compressor, combustion chamber, turbine, and nozzle. By incorporating 
+these physical laws directly into the neural network's loss function, the PINN is 
+trained not only to fit the observed experimental data but also to adhere to the 
+inherent physics of the system. The developed digital twin aims to accurately predict 
+key performance outputs, such as combustor outlet temperature, exhaust gas temperature, 
+and thrust, under various operating conditions defined by fuel flow and compressor 
+speed. Furthermore, the model is designed to predict intermediate temperatures and 
+pressures throughout the turbine, ensuring thermodynamic consistency across the simulated process.
+
+This research contributes a methodology for creating a robust, computationally efficient,
+ and physically grounded digital twin. The resulting model is expected to serve as a 
+ valuable tool for in-depth performance analysis, understanding system sensitivities, 
+ and potentially for the future development of control and optimization strategies for the gas turbine."
