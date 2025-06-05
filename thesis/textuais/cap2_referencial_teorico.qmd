@@ -1,26 +1,31 @@
-\chapter{Literature Review}
+\chapter{\huge{\textbf{Literature Review}}}
 
 
-# Gas Turbines
 
-## Gas Turbine: Overview
+# \textbf{Gas Turbines}
+
+## \textbf{Gas Turbine: Overview}
+
+Gas turbines stand as fundamental components within a broad spectrum of critical applications, ranging from large-scale power generation to the propulsion of aircraft. Their widespread use underscores the imperative for precise modeling of their operational behavior @boyce2012gasturbine. Such accurate modeling is not merely a theoretical exercise but is essential for achieving optimal performance, ensuring operational safety protocols, and successfully implementing proactive predictive maintenance strategies @boyce2012gasturbine. These complex machines operate on fundamental thermodynamic principles, involving several main components that work in tandem to convert fuel energy into useful work @cengel2019thermodynamics. These core components typically include a compressor, which draws in and pressurizes air; a combustion chamber, where fuel is mixed with the compressed air and ignited; a turbine, which extracts energy from the hot, high-pressure combustion gases; and a nozzle, which accelerates the exhaust gases to produce thrust or direct them for other purposes @saravanamuttoo2017gasturbine. Understanding the intricate interplay between these components and their adherence to fundamental physical laws is crucial for their effective design, analysis, and operation @saravanamuttoo2017gasturbine. The fundamental principles governing the design and operation of gas turbine components, including detailed thermodynamic cycles and performance characteristics, are extensively documented in specialized literature @saravanamuttoo2017gasturbine.
 
 
-## Traditional Modeling Approaches and Their Limitations
+## \textbf{Traditional Modeling Approaches and Their Limitations}
 
-<!--  -->
-# Foundations for Advanced System Representation
-
-## Digital Twins Technology
-
-## Artificial Intelligence
+Traditional modeling approaches for gas turbines present a significant trade-off in terms of computational resources and physical consistency. High-fidelity simulations, often based on first principles such as computational fluid dynamics (CFD), are known to be computationally intensive and time-consuming @verstraete2010cfd. This characteristic makes them impractical for real-time analysis and control applications @verstraete2010cfd. Conversely, purely data-driven models offer computational efficiency but frequently lack physical consistency @gurney2010gasturbine. Such models may also yield unreliable predictions when extrapolated beyond the dataset they were trained on @gurney2010gasturbine. This inherent limitation in traditional methods highlights a crucial gap, emphasizing the need for a new generation of models capable of bridging the divide between physical fidelity and computational efficiency @kurz2009gasturbine.
 
 <!--  -->
-# Hybrid Modeling with Physics-Informed Machine Learning
+# \textbf{Foundations for Advanced System Representation}
 
-## The Role of First-Principle Models
+## \textbf{Digital Twins Technology}
 
-## Integrating Physics and Data with PINNs
+## \textbf{Artificial Intelligence}
+
+<!--  -->
+# \textbf{Hybrid Modeling with Physics-Informed Machine Learning}
+
+## \textbf{The Role of First-Principle Models}
+
+## \textbf{Integrating Physics and Data with PINNs}
 
 
 
