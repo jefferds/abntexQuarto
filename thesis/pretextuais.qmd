@@ -27,25 +27,25 @@
 <!-- abstract -->
 {{< include pretextuais/abstract.qmd >}}
 
-\pdfbookmark[0]{\listfigurename}{lof}
-\listoffigures*
+<!-- \pdfbookmark[0]{\listfigurename}{lof} -->
+<!-- \listoffigures* -->
 
-{{< pagebreak >}}
+<!-- {{< pagebreak >}} -->
 
-\pdfbookmark[0]{\listtablename}{lot}
-\listoftables*
+<!-- \pdfbookmark[0]{\listtablename}{lot}
+\listoftables* -->
 
-{{< pagebreak >}}
+<!-- {{< pagebreak >}} -->
 
-\listoflistings
+<!-- \listoflistings -->
 
-{{< pagebreak >}}
+<!-- {{< pagebreak >}} -->
 
 <!-- lista de abreviaturas e siglas -->
-{{< include pretextuais/lista_de_abreviaturas_siglas.qmd >}}
+<!-- {{< include pretextuais/lista_de_abreviaturas_siglas.qmd >}} -->
 
 <!-- lista de símbolos -->
-{{< include pretextuais/lista_de_simbolos.qmd >}}
+<!-- {{< include pretextuais/lista_de_simbolos.qmd >}} -->
 
 <!-- sumario -->
 \pdfbookmark[0]{\contentsname}{toc}
