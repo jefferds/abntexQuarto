@@ -3,10 +3,25 @@
 
 # Gas Turbines
 
+## Gas Turbine: Overview
 
-# Physics-Informed Neural Networks
+
+## Traditional Modeling Approaches and Their Limitations
+
+<!--  -->
+# Foundations for Advanced System Representation
+
+## Digital Twins Technology
+
+## Artificial Intelligence
+
+<!--  -->
+# Hybrid Modeling with Physics-Informed Machine Learning
+
+## The Role of First-Principle Models
+
+## Integrating Physics and Data with PINNs
 
 
-# Digital Twins
 
 
