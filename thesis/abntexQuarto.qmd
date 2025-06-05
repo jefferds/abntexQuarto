@@ -7,6 +7,7 @@
 {{< include pretextuais.qmd >}}
 
 <!-- TEXTUAIS -->
+\mainmatter
 
 <!-- Introdução -->
 {{< include textuais/cap1_introducao.qmd >}}
