@@ -18,12 +18,12 @@
 {{< include textuais/cap3_metodologia.qmd >}}
 
 <!-- Resultados e discussões -->
-{{< include textuais/cap4_resultado_discussao.qmd >}}
+<!-- {{< include textuais/cap4_resultado_discussao.qmd >}} -->
 
 <!-- Conclusões -->
-{{< include textuais/cap5_conclusao.qmd >}}
+<!-- {{< include textuais/cap5_conclusao.qmd >}} -->
 
 <!-- Trabalhos futuros -->
-{{< include textuais/cap6_trabalhos_futuros.qmd >}}
+<!-- {{< include textuais/cap6_trabalhos_futuros.qmd >}} -->
 
 \chapter*{REFERÊNCIAS}

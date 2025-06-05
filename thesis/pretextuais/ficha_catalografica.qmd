@@ -1,0 +1,77 @@
+
+**Cataloging-in Publication Data**  
+**Documentation and Information Division**
+
+\vspace{-3mm}
+
+\begin{framed}
+
+\begin{center}
+\begin{minipage}[c]{13.5cm}
+
+\footnotesize
+
+\vspace{-5mm}
+
+{{< var tcc.sobrenome >}}, {{< var tcc.prenome >}}
+
+\hspace{0.5cm} {{< var tcc.titulo >}} / {{< var tcc.sobrenome >}}, {{< var tcc.prenome >}} - {{< var tcc.cidade >}}, {{< var tcc.ano >}}.
+
+\hspace{0.5cm} \pageref{LastPage} f.
+
+\vspace{5mm}
+
+\hspace{0.5cm} {{< var tcc.tipo >}}  (Undergraduation study) - Course of {{< var tcc.curso >}} - {{< var tcc.universidade >}}, {{< var tcc.ano >}}.
+
+\vspace{5mm}
+
+\hspace{0.5cm} Advisor: Prof. Dr. {{< var tcc.orientador >}}.
+
+\hspace{0.5cm}
+    1. {{< var tcc.palavra_chave_1_ingles >}}.
+    2. {{< var tcc.palavra_chave_2_ingles >}}.
+    3. {{< var tcc.palavra_chave_3_ingles >}}.
+    4. {{< var tcc.palavra_chave_4_ingles >}}.
+    5. {{< var tcc.palavra_chave_5_ingles >}}.
+    I. {{< var tcc.orientador >}}.
+    II. {{< var tcc.universidade >}}.
+    III. {{< var tcc.titulo >}}\\ 			
+
+\hspace{9.75cm} CDU {{< var tcc.CDU >}}\\
+
+\vspace{-8mm}
+
+\normalsize
+
+\end{minipage}
+\end{center}
+
+\end{framed}
+
+\vfill
+
+**BIBLIOGRAPHIC REFERENCE**
+
+\uppercase{ {{< var tcc.sobrenome >}}}, {{< var tcc.prenome >}}. {{< var tcc.titulo >}}. {{< var tcc.ano >}}. \pageref{LastPage}f. {{< var tcc.tipo >}} (Undergraduation study) - Course of {{< var tcc.curso >}} - {{< var tcc.universidade >}}, {{< var tcc.cidade >}}, {{< var tcc.ano >}}.
+
+\vfill
+
+**CESSION OF RIGHTS**
+
+**AUTHOR’S NAME:** {{< var tcc.autor >}}  
+**PUBLICATION TITLE:** {{< var tcc.titulo >}}  
+**PUBLICATION KIND/YEAR:** {{< var tcc.tipo >}} (Undergraduation study) / {{< var tcc.ano >}}.
+
+It is granted to {{< var tcc.universidade >}} permission to reproduce copies of this \lowercase{ {{< var tcc.tipo >}} } to borrow or sell copies, exclusively for academic and scientific purposes. The author reserves all other publication rights, and no part of this dissertation or thesis may be reproduced without their permission.
+
+\vspace{1cm}
+
+---
+
+{{< var tcc.autor >}}
+
+Email: {{< var tcc.email >}}
+
+{{< var tcc.cidade >}} - {{< var tcc.uf >}}
+
+{{< pagebreak >}}

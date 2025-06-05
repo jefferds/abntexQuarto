@@ -7,11 +7,11 @@ Resumo
 
 \vspace{1cm}
 
-\textbf{Palavras Chaves: }
+\textbf{Palavras-chave: }
 {{< var tcc.palavra_chave_1 >}}.
 {{< var tcc.palavra_chave_2 >}}.
 {{< var tcc.palavra_chave_3 >}}.
 {{< var tcc.palavra_chave_4 >}}.
-{{< var tcc.palavra_chave_5 >}}.
+{{< var tcc.palavra_chave_5_ingles >}}.
 
 {{< pagebreak >}}

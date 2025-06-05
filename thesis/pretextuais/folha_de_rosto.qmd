@@ -32,7 +32,7 @@
 
 \uppercase{ {{< var tcc.cidade >}} }
 
-\uppercase{ {{< var tcc.faculdade >}} }
+\uppercase{ {{< var tcc.universidade >}} }
 
 {{< var tcc.ano >}}
 
