@@ -1,13 +1,12 @@
+\chapter{Theoretical Framework}
 
-\chapter{Referencial Teórico}
+\PROFESSOR{Theoretical presentation, based on bibliographic references, on the theme of the work.}
 
-\PROFESSOR{Apresentação teórica, baseada em referências bibliográficas, sobre o tema do trabalho.}
+# Theme
 
-# Tema
+# Subtheme
 
-# Subtema
-
-## Conceitos importantes
+## Important concepts
 
 ## Etc
 
