@@ -1,5 +1,4 @@
-\chapter{\huge{\textbf{Literature Review}}}
-
+\chapter{\textbf{Literature Review}}
 
 
 # \textbf{Gas Turbines}
