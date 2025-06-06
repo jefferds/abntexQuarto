@@ -1,4 +1,3 @@
+\chapter{Results and Discussion}
 
-\chapter{Resultados e discussões}
-
-\PROFESSOR{Resultados obtidos e o que eles significam.}
+\PROFESSOR{Obtained results and what they mean.}

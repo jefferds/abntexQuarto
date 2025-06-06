@@ -1,4 +1,3 @@
+\chapter{Conclusion}
 
-\chapter{Conclusão}
-
-\PROFESSOR{Conclusões encontradas no trabalho}
+\PROFESSOR{Conclusions found in the work}
