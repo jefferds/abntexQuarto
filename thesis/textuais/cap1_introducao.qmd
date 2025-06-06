@@ -1,4 +1,4 @@
-\chapter{\huge{\textbf{Introduction}}}
+\chapter{\textbf{Introduction}}
 
 Quarto allows you to weave content and executable code into a final document. To learn more about Quarto see <https://quarto.org>.
 
