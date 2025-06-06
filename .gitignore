@@ -10,7 +10,6 @@
 =======
 *.pdf
 *.lop
-*.tex
 *.aux
 *.idx
 digital_twin/convert_utils/__pycache__/
