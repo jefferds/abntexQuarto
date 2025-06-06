@@ -3,34 +3,34 @@
 
 # \textbf{Gas Turbines}
 
-## \textbf{Gas Turbine: Overview}
+## Gas Turbine: Overview
 
 Gas turbines stand as fundamental components within a broad spectrum of critical applications, ranging from large-scale power generation to the propulsion of aircraft. Their widespread use underscores the imperative for precise modeling of their operational behavior @boyce2012gasturbine. Such accurate modeling is not merely a theoretical exercise but is essential for achieving optimal performance, ensuring operational safety protocols, and successfully implementing proactive predictive maintenance strategies @boyce2012gasturbine. These complex machines operate on fundamental thermodynamic principles, involving several main components that work in tandem to convert fuel energy into useful work @cengel2019thermodynamics. 
     
 These core components typically include a compressor, which draws in and pressurizes air; a combustion chamber, where fuel is mixed with the compressed air and ignited; a turbine, which extracts energy from the hot, high-pressure combustion gases; and a nozzle, which accelerates the exhaust gases to produce thrust or direct them for other purposes @saravanamuttoo2017gasturbine. Understanding the intricate interplay between these components and their adherence to fundamental physical laws is crucial for their effective design, analysis, and operation @saravanamuttoo2017gasturbine. The fundamental principles governing the design and operation of gas turbine components, including detailed thermodynamic cycles and performance characteristics, are extensively documented in specialized literature @saravanamuttoo2017gasturbine.
 
 
-## \textbf{Traditional Modeling Approaches and Their Limitations}
+## Traditional Modeling Approaches and Their Limitations
 
 Traditional modeling approaches for gas turbines present a significant trade-off in terms of computational resources and physical consistency. High-fidelity simulations, often based on first principles such as computational fluid dynamics (CFD), are known to be computationally intensive and time-consuming @verstraete2010cfd. This characteristic makes them impractical for real-time analysis and control applications @verstraete2010cfd. Conversely, purely data-driven models offer computational efficiency but frequently lack physical consistency @gurney2010gasturbine. Such models may also yield unreliable predictions when extrapolated beyond the dataset they were trained on @gurney2010gasturbine. This inherent limitation in traditional methods highlights a crucial gap, emphasizing the need for a new generation of models capable of bridging the divide between physical fidelity and computational efficiency @kurz2009gasturbine.
 
 <!--  -->
 # \textbf{Foundations for Advanced System Representation}
 
-## \textbf{Digital Twins Technology}
+## Digital Twins Technology
 
 Digital Twin Technology represents a paradigm shift in system modeling and management, moving beyond traditional simulation to create a dynamic, virtual replica of a physical system or process @grieves2011digital. This virtual counterpart is continuously updated with real-time data from its physical twin, allowing for high-fidelity mirroring of the physical entity's state, behavior, and performance throughout its lifecycle @tao2019digital. The core concept involves the seamless integration of physical and virtual worlds, enabling predictive analytics, proactive maintenance, and optimization strategies that were previously unattainable. For complex systems like gas turbines, a digital twin provides an invaluable tool for monitoring operational parameters, diagnosing anomalies, and even predicting future performance degradation. This capability allows operators to make informed decisions, optimize efficiency, and extend the lifespan of costly assets, by running simulations and analyses on the virtual model that directly reflect the real-world conditions @schluse2018digital. The utility of digital twins extends across various stages, from design and manufacturing to operation and decommissioning, offering a comprehensive and integrated approach to system representation and control.
 
 
 
-## \textbf{Artificial Intelligence}
+## Artificial Intelligence
 
 <!--  -->
 # \textbf{Hybrid Modeling with Physics-Informed Machine Learning}
 
-## \textbf{The Role of First-Principle Models}
+## The Role of First-Principle Models
 
-## \textbf{Integrating Physics and Data with PINNs}
+## Integrating Physics and Data with PINNs
 
 
 
