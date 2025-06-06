@@ -241,10 +241,10 @@
 % ---
 % Fontes padroes de part, chapter, section, subsection e subsubsection
 \newcommand{\ABNTEXchapterfont}{\sffamily}
-\newcommand{\ABNTEXchapterfontsize}{\large}
+\newcommand{\ABNTEXchapterfontsize}{\huge}
 
 \newcommand{\ABNTEXpartfont}{\ABNTEXchapterfont}
-\newcommand{\ABNTEXpartfontsize}{\ABNTEXchapterfontsize}
+\newcommand{\ABNTEXpartfontsize}{\Large}
 
 \newcommand{\ABNTEXsectionfont}{\ABNTEXchapterfont}
 \newcommand{\ABNTEXsectionfontsize}{\Large}

@@ -1,6 +1,6 @@
 
 \begin{center}
-Resumo
+\huge{\textbf{Resumo}}
 \end{center}
 
 {{< var tcc.resumo >}}

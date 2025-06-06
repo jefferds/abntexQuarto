@@ -1,6 +1,6 @@
 
 \begin{center}
-Abstract
+\huge{\textbf{Abstract}}
 \end{center}
 
 {{< var tcc.abstract >}}

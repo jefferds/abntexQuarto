@@ -80,15 +80,11 @@
 
 \renewcommand{\printtoctitle}[1]{\normalsize\bfseries\centering TABLE OF CONTENTS}
 
-\renewcommand{\cftchapterfont}{\Large\bfseries\color{blue}}
-\renewcommand{\cftchapterpagefont}{\normalsize\bfseries}
 
-\renewcommand{\cftsectionfont}{\normalsize}
-\renewcommand{\cftsectionpagefont}{\normalsize}
-
-\renewcommand{\cftsubsectionfont}{\normalsize}
-\renewcommand{\cftsubsectionpagefont}{\normalsize}
-
+% Adiciona indentação para seções e subseções no sumário
+\cftsetindents{chapter}{0em}{0em}
+\cftsetindents{section}{1.5em}{2.5em}
+\cftsetindents{subsection}{3em}{3.5em}
 
 \AtBeginDocument{\captionsetup{labelfont=bf}}
 
