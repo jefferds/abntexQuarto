@@ -35,75 +35,126 @@ The experimental procedure involved operating the Mini-Lab gas turbine through i
 
 
 
-# First-Principle Thermodynamic Model
+<!-- # First-Principle Thermodynamic Model -->
 
-The development of the digital twin for the SR-30 gas turbine is anchored in a robust first-principle mathematical model. This model systematically describes the thermodynamic behavior of the working fluid (air/gas) as it traverses through the various components of the engine. A fundamental assumption underpinning this model is that the working fluid behaves as an ideal gas, which simplifies the complex interactions while retaining essential physical fidelity. The overall system is conceptualized as a series of interconnected control volumes, each corresponding to a major gas turbine component, allowing for the application of conservation laws and thermodynamic principles at discrete stages.
+# Thermodynamic Modeling of the Gas Turbine System
 
-## Governing Thermodynamic Equations
+## System Overview
 
-The foundational thermodynamic relationships that govern the behavior of the working fluid within the gas turbine are meticulously integrated into the model. These equations describe the interrelationship between pressure ($\mathrm{P}$), temperature ($\mathrm{T}$), volume ($\mathrm{V}$), density ($\rho$), and the ratio of specific heats ($\gamma$).
-
-The primary equations employed are:
-\begin{itemize}
-    \item \textbf{Ideal Gas Law}: This fundamental equation of state relates the pressure, volume, and temperature of an ideal gas. For a given mass of gas, it is expressed as:
-$$ 
-\mathrm{P} = \rho \mathrm{RT} 
-$$
-
-    where $\mathrm{R}$ represents the specific gas constant for air, a crucial parameter in gas turbine cycle analysis. This law is implicitly used to relate properties at various stations where density or specific volume may be inferred or required.
-
-    \item \textbf{Isentropic Relations}: These equations describe ideal (reversible and adiabatic) compression and expansion processes, which serve as benchmarks for component efficiency. For an isentropic process between two states (e.g., state 1 and state 2), the relations are:
-$$ 
-\mathrm{P}_{1}\mathrm{V}_{1}^\gamma = \mathrm{P}_{2}\mathrm{V}_{2}^\gamma 
-$$
-$$ \mathrm{T}_{1}\mathrm{P}_{1}^{\frac{1-\gamma}{\gamma}} = \mathrm{T}_{2}\mathrm{P}_{2}^{\frac{1-\gamma}{\gamma}} 
-$$
-
-Here, $\gamma$ (gamma) denotes the ratio of specific heats ($\mathrm{c}_{\mathrm{p}}/\mathrm{c}_{\mathrm{v}}$) for the working fluid, typically assumed constant (e.g., 1.4 for air) for simplified modeling, but can be made temperature-dependent for higher accuracy. These relations are vital for calculating ideal work and temperature changes across the compressor and turbine sections.
-\end{itemize}
-These foundational equations provide the mathematical framework for understanding and predicting the state changes of the gas as it flows through the various components of the gas turbine cycle.
-
-## Component-Specific Thermodynamic Constraints
-
-The operation of the SR-30 turbojet engine is divided into distinct thermodynamic components, each with specific physical behaviors and constraints. These constraints, based on steady-state thermodynamic principles, impose realistic physical limits on the temperature and pressure of the working fluid at the inlet and outlet of each component. These serve as essential physical "guardrails" for the PINN, ensuring that predicted values remain thermodynamically consistent.
+The system of interest is a small-scale gas turbine engine operating in steady-state. It consists of the following major components:
 
 \begin{itemize}
-    \item \textbf{Inlet (Station 1)}: This represents the ambient conditions at the compressor entry. The compressor inlet temperature ($\mathrm{T}_{1}$) and compressor inlet pressure ($\mathrm{P}_{1}$) are treated as measured boundary conditions for the entire engine cycle. These values dictate the starting state for the thermodynamic analysis.
-
-    \item \textbf{Compressor (Stations 1-2)}: In the compressor section, kinetic energy is converted into pressure energy, leading to a significant increase in both static pressure and temperature. Therefore, the thermodynamic constraints for the compressor are:
-$$ 
-    \mathrm{T}_{2} > \mathrm{T}_{1} 
-$$
-$$ 
-    \mathrm{P}_{2} > \mathrm{P}_{1} 
-$$
-    Here, $\mathrm{T}_{2}$ and $\mathrm{P}_{2}$ represent the temperature and pressure at the compressor exit, respectively.
-
-    \item \textbf{Combustor (Stations 2-3)}: Within the combustion chamber, fuel is introduced and burned, adding a substantial amount of heat to the working fluid. This process results in a dramatic increase in temperature. While designed for efficient combustion, some inherent pressure drop occurs due to friction and flow dynamics. The constraints for the combustor are:
-$$ 
-\mathrm{T}_{3} > \mathrm{T}_{2} 
-$$
-$$ 
-\mathrm{P}_{3} < \mathrm{P}_{2} 
-$$
-
-    Where $\mathrm{T}_{3}$ and $\mathrm{P}_{3}$ are the turbine inlet temperature and pressure, respectively. The pressure drop ($\mathrm{P}_{3}$) is typically a small fraction of $\mathrm{P}_{2}$, e.g., in the range of $0.95$ to $0.98$ of $\mathrm{P}_{2}$.
-
-    \item \textbf{Turbine (Stations 3-4)}: The hot, high-pressure gas from the combustor expands through the turbine, converting thermal energy into mechanical work to drive the compressor and accessories. This expansion leads to a decrease in both the static temperature and pressure of the gas. The constraints for the turbine are:
-$$ 
-\mathrm{T}_{4} < \mathrm{T}_{3} 
-$$
-$$ 
-\mathrm{P}_{4} < \mathrm{P}_{3} 
-$$
-    Here, $\mathrm{T}_{4}$ and $\mathrm{P}_{4}$ are the temperature and pressure at the turbine exit.
-
-    \item \textbf{Nozzle/Exhaust (Stations 4-5)}: The exhaust gas then flows through the nozzle, where its remaining thermal and pressure energy is converted into kinetic energy to produce thrust. This expansion further reduces the temperature and pressure, often to near-atmospheric levels. The constraints for the nozzle/exhaust section are:
-$$ \mathrm{T}_{5} < \mathrm{T}_{4} $$
-$$ \mathrm{P}_{5} < \mathrm{P}_{4} $$
-    Where $\mathrm{T}_{5}$ and $\mathrm{P}_{5}$ are the exhaust gas temperature and pressure, respectively. Typically, $\mathrm{P}_{5}$ is close to, or slightly higher than, the ambient pressure ($\mathrm{P}_{1}$).
+    \item \textbf{Compressor}: Increases the pressure and temperature of incoming ambient air.
+    \item \textbf{Combustor}: Mixes compressed air with fuel, where combustion raises the temperature significantly.
+    \item \textbf{Turbine}: Extracts energy from the hot combustion gases to drive the compressor and generate useful work.
+    \item \textbf{Nozzle (Exhaust Section)}: Accelerates the exhaust gases to produce thrust.
 \end{itemize}
-These component-specific constraints are fundamental in establishing the physical realism of the digital twin, ensuring that predicted values do not violate basic thermodynamic principles.
+
+Each component operates under the assumption of quasi-one-dimensional, steady, adiabatic flow, with negligible heat loss to the surroundings unless explicitly modeled.
+
+## Assumptions and Idealizations
+
+To derive tractable analytical expressions and guide neural network constraints, the following assumptions are adopted:
+
+\begin{itemize}
+    \item The working fluid (air and combustion gases) behaves as a \textbf{calorically perfect ideal gas}:
+$$
+    P = \rho R T, \quad c_p, c_v \text{ constant}, \quad \gamma = \frac{c_p}{c_v} \approx 1.4
+$$
+
+    \item \textbf{Isentropic relations} apply to ideal compression and expansion processes with specified efficiencies $\eta_c$ (compressor) and $\eta_t$ (turbine).
+    \item \textbf{Constant specific heats} $c_p$ and $c_v$ are used, consistent with the assumption of ideal gases.
+    \item \textbf{No heat transfer or pressure losses} in ducts, except where captured by model residuals.
+    \item \textbf{Steady-state} and \textbf{quasi-1D flow} are assumed throughout.
+\end{itemize}
+
+## Key Thermodynamic Equations
+
+### Compressor
+
+\begin{itemize}
+    \item Isentropic temperature relation:
+$$
+    \frac{T_{2s}}{T_1} = \left( \frac{P_2}{P_1} \right)^{\frac{\gamma - 1}{\gamma}}
+$$
+
+    \item Actual outlet temperature considering efficiency:
+$$
+    T_2 = T_1 + \frac{T_{2s} - T_1}{\eta_c}
+$$
+
+    \item Power required by the compressor:
+$$
+    W_{\text{comp}} = \dot{m}_a c_p (T_2 - T_1)
+$$
+
+\end{itemize}
+
+### Combustor
+
+\begin{itemize}
+    \item Energy balance (idealized with complete combustion and no heat losses):
+$$
+    \dot{m}_f Q_{\text{HV}} = \dot{m}_g c_p (T_3 - T_2)
+$$
+
+    where $Q_{\text{HV}}$ is the lower heating value of the fuel and $\dot{m}_g = \dot{m}_a + \dot{m}_f$ is the total mass flow after combustion.
+\end{itemize}
+
+### Turbine
+
+\begin{itemize}
+    \item Isentropic temperature relation:
+$$
+    \frac{T_{4s}}{T_3} = \left( \frac{P_4}{P_3} \right)^{\frac{\gamma - 1}{\gamma}}
+$$
+
+    \item Actual outlet temperature considering turbine efficiency:
+$$
+    T_4 = T_3 - \eta_t (T_3 - T_{4s})
+$$
+
+    \item Power generated by the turbine:
+$$
+    W_{\text{turb}} = \dot{m}_g c_p (T_3 - T_4)
+$$
+
+\end{itemize}
+
+### Nozzle (Exhaust)
+
+Assuming isentropic expansion and ambient back pressure $P_0$, the exhaust velocity is:
+$$
+V_{\text{exit}} = \sqrt{2 c_p T_5 \left( 1 - \left( \frac{P_0}{P_5} \right)^{\frac{\gamma - 1}{\gamma}} \right)}
+$$
+
+The thrust is then calculated via momentum balance:
+$$
+F = \dot{m}_g (V_{\text{exit}} - V_{\text{inlet}})
+$$
+
+If inlet velocity is negligible (static tests), this simplifies to:
+$$
+F \approx \dot{m}_g V_{\text{exit}}
+$$
+
+## Station Numbering Convention
+
+To standardize variables across the PINN and thermodynamic sections:
+
+\begin{center}
+\begin{tabular}{ll}
+$1$ & Ambient conditions (inlet to compressor) \\
+$2$ & Compressor exit / combustor inlet \\
+$3$ & Combustor exit / turbine inlet \\
+$4$ & Turbine exit / nozzle inlet \\
+$5$ & Nozzle exit (exhaust gas temperature station)
+\end{tabular}
+\end{center}
+
+This convention allows the PINN to learn both the observable outputs ($T_3$, $T_5$, $F$) and intermediate station states ($T_2$, $P_2$, $T_4$, $P_4$, etc.), constrained by physics-based residuals.
+
+
 
 
 
