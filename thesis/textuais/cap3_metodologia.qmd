@@ -183,6 +183,9 @@ Outputs: Predicted thermodynamic variables and performance indicators:
     \item Net thrust $F_{\text{pred}}$ (N)
 \end{itemize}
 
+<!--  -->
+<!--  -->
+<!--  -->
 ## Hybrid Loss Function
 
 The total loss used to train the PINN is a weighted sum of data-driven and physics-based components:
