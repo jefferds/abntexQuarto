@@ -1,11 +1,70 @@
 \chapter{Materials and Methods}
 
-\PROFESSOR{Description of what was done in the work.}
+This section details the experimental setup, data acquisition, and the theoretical framework for developing a Physics-Informed Neural Network (PINN) for gas turbine modeling. It outlines the foundational concepts and methodologies employed to achieve a Level 1 digital twin.
 
-# Theme
+\section{Theme}
+This study focuses on developing a digital twin for a gas turbine using Physics-Informed Neural Networks (PINNs). The primary objective is to create a methodology for a Level 1 (L1) first-principle digital twin for a laboratory-scale gas turbine, integrating artificial intelligence techniques.
 
+\section{Subtheme}
+The methodology involves several key steps:
+\begin{itemize}
+\item Developing a mathematical model based on fundamental thermodynamic principles governing the main components of a gas turbine (compressor, combustion chamber, turbine, and nozzle).
+\item Utilizing experimental data from a laboratory microturbine, including operational parameters such as temperatures, pressures, fuel flow, compressor speed, and thrust, to inform and validate the model.
+\item Implementing a hybrid model using PINNs, which integrate first-principle equations directly into the neural network's loss function to ensure accurate and physically consistent predictions.
+\item Rigorously assessing the digital twin's accuracy and robustness by comparing its predictions against experimental data not used during the training phase.
+\end{itemize}
 
-# Subtheme
+\subsection{Important concepts}
 
+The project leverages a Mini-Lab Gas Turbine Power System, which serves as the physical asset for which the digital twin is being developed. The system's sensors provide crucial data on parameters like compressor inlet pressure ($P_1$), compressor inlet temperature ($T_1$), compressor exit temperature ($T_2$), compressor exit pressure ($P_2$), turbine inlet pressure ($P_3$), turbine inlet temperature ($T_3$), turbine exit pressure ($P_4$), turbine exit temperature ($T_4$), exhaust gas pressure ($P_5$), exhaust gas temperature ($T_5$), RPM, and fuel pressure. This data is acquired and displayed using a dedicated data acquisition system connected via a USB port.
 
-## Important concepts
+The core of the digital twin relies on Physics-Informed Neural Networks (PINNs). PINNs are neural networks trained to not only fit data but also to adhere to the underlying physical laws governing the system. This is achieved by incorporating these physical laws, typically expressed as partial differential equations (PDEs) or algebraic equations, into the loss function during training.
+
+The modeling process involves defining the scope and objectives, identifying governing physical equations, preparing and preprocessing data, designing the PINN architecture, and training and evaluating the PINN.
+
+Key physical aspects of the turbine that can be modeled include:
+\begin{itemize}
+\item Temperature distribution across key stages ($T_1$ to $T_5$).
+\item Pressure changes through the turbine ($P_1$ to $P_5$).
+\item Thrust generation.
+\item The dynamic relationship between inputs (Fuel Flow, $N_1$) and outputs (Temperatures, Pressures, Thrust).
+\end{itemize}
+
+The digital twin aims to answer questions such as predicting turbine performance under varying operational conditions and understanding the sensitivity of outputs to changes in inputs. For an undergraduate thesis, a focused objective is recommended, such as "Predicting steady-state thrust, combustor outlet temperature ($T_3$), and exhaust gas temperature ($T_5$) based on fuel flow and compressor speed ($N_1$), while also predicting intermediate station temperatures and pressures ($T_2$, $P_2$, $T_4$, $P_4$, $P_3$, $P_5$) to ensure thermodynamic consistency through physics-informed loss terms."
+
+The physical equations relevant to the gas turbine modeling are broken down by component, assuming air/gas behaves as an ideal gas. These include:
+\begin{itemize}
+\item \textbf{General Thermodynamic Relations}: Ideal Gas Law ($P=\rho RT$) and Isentropic Process equations ($P_1V_1^\gamma = P_2V_2^\gamma$, $T_1 P_1^{\frac{1-\gamma}{\gamma}} = T_2 P_2^{\frac{1-\gamma}{\gamma}}$).
+\item \textbf{Component-Specific Equations (Steady-State)}:
+\begin{itemize}
+\item Inlet (Station 1): $T_1$ and $P_1$ as measured inputs.
+\item Compressor (Inlet: Station 1, Outlet: Station 2): Temperature Constraint ($T_2>T_1$) and Pressure Constraint ($P_2>P_1$).
+\item Combustor (Inlet: Station 2, Outlet: Station 3): Temperature Constraint ($T_3>T_2$) and Pressure Constraint ($P_3<P_2$).
+\item Turbine (Inlet: Station 3, Outlet: Station 4): Temperature Constraint ($T_4<T_3$) and Pressure Constraint ($P_4<P_3$).
+\item Nozzle/Exhaust (Inlet: Station 4, Outlet: Station 5): Temperature ($T_5$ often < $T_4$) and Pressure ($P_5<P_4$).
+\end{itemize}
+\item \textbf{Physics Loss Functions}: These combine ideal isentropic temperature rise with actual temperature rise considering efficiency for components like the compressor and turbine.
+\begin{itemize}
+\item Compressor Temperature Rise Loss: 
+
+$$
+L_{T2} = \left( \eta_c (T_{2,pred} - T_1) - T_1 \left( \left(\frac{P_{2,pred}}{P_1}\right)^{\frac{\gamma-1}{\gamma}} - 1 \right) \right)^2
+$$
+
+\item Turbine Temperature Drop Loss: 
+$$
+L_{T4} = \left( (T_{3,pred} - T_{4,pred}) - \eta_t T_{3,pred} \left(1 - \left(\frac{P_{4,pred}}{P_{3,pred}}\right)^{\frac{\gamma-1}{\gamma}}\right) \right)^2
+$$
+
+\end{itemize}
+\item \textbf{Power Balance (Compressor-Turbine Matching)}: This ensures the power produced by the turbine drives the compressor and accessories.
+\item \textbf{Combustor Energy Balance (Simplified)}: Relates heat added by fuel to enthalpy increase.
+\item \textbf{Thrust Equation (Simplified Conceptual Form)}: A simplified form based on enthalpy drop.
+\end{itemize}
+When choosing physical equations, the focus is on algebraic equations representing key thermodynamic principles, clearly stating assumptions like constant specific heats and ideal gas behavior. The mass flow rate of air ($m_a$) can be challenging to determine and might be treated as a learnable parameter or established through empirical relationships.
+
+Data preparation involves cleaning (handling missing values/outliers), unit conversion (e.g., temperatures to Kelvin, pressures to Pascals, fuel flow to kg/s), and normalization/scaling for optimal neural network training. The dataset is split into training, validation, and test sets.
+
+The PINN architecture typically consists of a Multi-Layer Perceptron (MLP) as the neural network component. Inputs include Fuel Flow, $N_1$, $T_1$, $P_1$, and potentially Time for dynamic modeling. Outputs are predicted values for $T_2$, $P_2$, $T_3$, $P_3$, $T_4$, $P_4$, $T_5$, $P_5$, and Thrust. The PINN's total loss function combines data loss (discrepancy between predictions and measured data), physics loss (penalties for deviations from governing physical equations), and boundary/initial condition loss (enforcing known conditions). Optimizers like Adam and L-BFGS are used for training, leveraging automatic differentiation to compute derivatives for physical laws.
+
+Evaluation and validation involve assessing predictive accuracy using test data, checking physical consistency, comparing against other models, and performing sensitivity analysis. The process is iterative, starting simple and gradually adding complexity, refining the NN architecture, loss function weights, and physical equations. For this project, the objective is to predict primary outputs ($T_3$, $T_5$, Thrust) and intermediate values ($T_2$, $P_2$, $P_3$, $T_4$, $P_4$, $T_5$, $P_5$) to ensure physical consistency. The NN inputs are Fuel Flow (converted to kg/s), $N_1$ (RPM), $T_1$ (K), and $P_1$ (Pa), with outputs being the predicted temperatures and pressures in Kelvin and Pascals, and Thrust in Newtons.
