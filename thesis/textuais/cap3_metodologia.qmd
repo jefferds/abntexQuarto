@@ -4,7 +4,24 @@ This chapter details the methodology for developing a Level 1 digital twin for a
 
 \section{Experimental Setup and Data Acquisition}
 
-The physical asset for this study is the Mini-Lab Gas Turbine Power System. This laboratory-scale system is equipped with sensors that provide crucial data for modeling. Key parameters measured include compressor inlet pressure ($P_1$), compressor inlet temperature ($T_1$), compressor exit temperature ($T_2$), compressor exit pressure ($P_2$), turbine inlet pressure ($P_3$), turbine inlet temperature ($T_3$), turbine exit pressure ($P_4$), turbine exit temperature ($T_4$), exhaust gas pressure ($P_5$), exhaust gas temperature ($T_5$), compressor rotational speed (RPM), and fuel pressure. The data from these sensors are collected and monitored through a dedicated data acquisition system connected via a USB interface, providing the empirical basis for training and validating the digital twin.
+The physical asset used in this study is the \textbf{Mini-Lab\texttrademark~Gas Turbine Power System}, based on the SR-30 turbojet engine. Developed for educational and experimental purposes, the Mini-Lab system simulates core gas turbine operations on a laboratory scale and is designed to demonstrate thermodynamic cycles and performance analysis.
+
+\subsection{System Overview and Instrumentation}
+
+The SR-30 engine is a single-shaft turbojet incorporating a centrifugal compressor, annular combustion chamber, axial turbine, and nozzle. The engine is instrumented to provide high-resolution data on:
+
+\begin{itemize}
+    \item Compressor Inlet Pressure ($P_1$), Temperature ($T_1$)
+    \item Compressor Exit Pressure ($P_2$), Temperature ($T_2$)
+    \item Turbine Inlet Pressure ($P_3$), Temperature ($T_3$)
+    \item Turbine Exit Pressure ($P_4$), Temperature ($T_4$)
+    \item Exhaust Gas Pressure ($P_5$), Temperature ($T_5$)
+    \item Compressor Rotational Speed (RPM)
+    \item Fuel Pressure and Flow
+    \item Thrust via a load cell
+\end{itemize}
+
+These values are logged in real time using MiniLab 1.1 software through a National Instruments DAQ system connected via USB.
 
 \section{First-Principle Thermodynamic Model}
 
