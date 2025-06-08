@@ -4,25 +4,36 @@ This chapter details the methodology for developing a Level 1 digital twin for a
 
 \section{Experimental Setup and Data Acquisition}
 
-The physical asset used in this study is the \textbf{Mini-Lab\texttrademark~Gas Turbine Power System}, based on the SR-30 turbojet engine. Developed for educational and experimental purposes, the Mini-Lab system simulates core gas turbine operations on a laboratory scale and is designed to demonstrate thermodynamic cycles and performance analysis.
+The physical asset central to this investigation is the Mini-Lab\texttrademark~Gas Turbine Power System, which is based on the SR-30 turbojet engine. This system is purpose-built for educational and experimental applications, allowing for the simulation and detailed analysis of core gas turbine operations and thermodynamic cycles on a laboratory scale.
 
 \subsection{System Overview and Instrumentation}
 
-The SR-30 engine is a single-shaft turbojet incorporating a centrifugal compressor, annular combustion chamber, axial turbine, and nozzle. The engine is instrumented to provide high-resolution data on:
+The SR-30 engine is configured as a single-shaft turbojet, comprising a centrifugal compressor, an annular combustion chamber, an axial turbine, and a nozzle. To facilitate comprehensive operational monitoring and data acquisition, the engine is extensively instrumented with a variety of sensors. These sensors provide high-resolution, real-time data on critical thermodynamic and performance parameters.
 
+The instrumentation setup includes:
 \begin{itemize}
-    \item Compressor Inlet Pressure ($P_1$), Temperature ($T_1$)
-    \item Compressor Exit Pressure ($P_2$), Temperature ($T_2$)
-    \item Turbine Inlet Pressure ($P_3$), Temperature ($T_3$)
-    \item Turbine Exit Pressure ($P_4$), Temperature ($T_4$)
-    \item Exhaust Gas Pressure ($P_5$), Temperature ($T_5$)
-    \item Compressor Rotational Speed (RPM)
-    \item Fuel Pressure and Flow
-    \item Thrust via a load cell
+    \item Compressor Inlet Pressure ($\mathrm{P}_{1}$) and Temperature ($\mathrm{T}_{1}$).
+    \item Compressor Exit Pressure ($\mathrm{P}_{2}$) and Temperature ($\mathrm{T}_{2}$).
+    \item Turbine Inlet Pressure ($\mathrm{P}_{3}$) and Temperature ($\mathrm{T}_{3}$).
+    \item Turbine Exit Pressure ($\mathrm{P}_{4}$) and Temperature ($\mathrm{T}_{4}$).
+    \item Exhaust Gas Pressure ($\mathrm{P}_{5}$) and Temperature ($\mathrm{T}_{5}$).
+    \item Compressor Rotational Speed (RPM), measured by a tachometer generator.
+    \item Fuel Pressure and Fuel Flow.
+    \item Engine Thrust, measured via a dedicated load cell.
 \end{itemize}
+These parameters are displayed on the system's control panel and, more extensively, on a connected Data Acquisition Screen. Specifically, $\mathrm{P}_{3}$ and $\mathrm{T}_{3}$ (Turbine Inlet Temperature, displayed as TIT) are available on both the panel and screen, while $\mathrm{T}_{5}$ (Exhaust Gas Temperature, displayed as EGT) is also accessible from both. Fuel Pressure is displayed on the panel. The precise location of these engine sensors is depicted in the SR-30 Gas Turbine Cutaway diagram within the Mini-Lab's operational manual.
 
-These values are logged in real time using MiniLab 1.1 software through a National Instruments DAQ system connected via USB.
+\subsection{Data Acquisition System and Control Interface}
 
+The data acquisition process is managed through a dedicated Data Acquisition Computer running the MiniLab 1.1 software. This computer connects to the Mini-Lab system via a USB port, leveraging a National Instruments DAQ (Data Acquisition) system (specifically the NI DAQ 6218 module) for real-time data capture and display. The MiniLab 1.1 software facilitates logging data to file, displaying plot features, and offers controls for unit toggling (e.g., Celsius to Fahrenheit for temperatures, Psig to kPa for pressures, Liters/hour or Gallons/hour for fuel flow, and Newtons to Pounds for thrust). The data sampling rate can be selected between 0.1 and 5 samples per second.
+
+\subsection{Experimental Procedure and Data Collection Protocol}
+
+The experimental procedure involved operating the Mini-Lab gas turbine through its pre-start, start-up, and operational phases, followed by a controlled shutdown. Prior to each run, essential checks were conducted, including verification of fuel properties and ambient barometric pressure. During operation, the MiniLab 1.1 software collected real-time data from various sensors, including temperatures, pressures, fuel flow, RPM, and thrust. This data was logged continuously to a file on the connected computer's hard drive via a USB connection to a National Instruments DAQ system. The software allowed for adjustable sampling rates, and the recorded data was stored in an ASCII format, enabling direct import into spreadsheet programs for subsequent detailed analysis.
+
+<!--  -->
+<!--  -->
+<!--  -->
 \section{First-Principle Thermodynamic Model}
 
 The mathematical model of the gas turbine is built upon fundamental thermodynamic principles, assuming the working fluid (air/gas) behaves as an ideal gas. The model is broken down by component to define the physical constraints of the system.
