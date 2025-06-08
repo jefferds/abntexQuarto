@@ -28,6 +28,7 @@ format:
       - oneside
       - a4paper
       - english
+      - brazil
     geometry:
       - top=30mm
       - left=30mm
