@@ -3,6 +3,7 @@ project:
 
 number-sections: true
 bibliography: "references.bib"
+csl: "abnt.csl"
 
 link-citations: true
 
@@ -21,6 +22,7 @@ crossref:
 
 format:
   pdf:
+    cite-method: "natbib"
     include-in-header: "./src/preamble.tex"
     documentclass: "abntex2"
     classoption: 
