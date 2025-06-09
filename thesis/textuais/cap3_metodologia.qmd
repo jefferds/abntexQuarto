@@ -287,7 +287,7 @@ The core of the digital twin is a Physics-Informed Neural Network (PINN) based o
 - **Inputs (4):** Fuel flow ($\dot{m}_f$), compressor speed ($N_1$), ambient temperature ($T_1$), and ambient pressure ($P_1$).
 - **Outputs (10):** Thrust ($F_{pred}$), air mass flow ($\dot{m}_{a,pred}$), and the eight station states ($T_{2,pred}, P_{2,pred}, T_{3,pred}, P_{3,pred}, T_{4,pred}, P_{4,pred}, T_{5,pred}, P_{5,pred}$).
 - **Activation Functions:** The ReLU (Rectified Linear Unit) activation function is used for hidden layers, while a Linear activation is used for the output layer to allow for unbounded physical values.
-- **Hyperparameter Tuning:** A hyperparameter search will be conducted using the validation set to optimize the network architecture (e.g., number of layers and neurons), learning rate, and loss function weights to achieve the best performance.
+- **Hyperparameter Tuning:** A hyperparameter search will be conducted using the validation set to optimize the network architecture (e.g., number of layers and neurons), learning rate, and loss function weights to achieve the best performance. The search will be using a random search with 10 iterations.
 
 ## Loss Function and Weighting Strategy
 
