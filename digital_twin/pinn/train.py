@@ -103,10 +103,12 @@ output_features = [
     "T5 (C)",
     "P5 (kPa)",
     "Thrust (N)",
+    "mdot_a (kg/s)",
 ]
 
 df_input = df[input_features]
-df_output = df[output_features]
+df_output = df[output_features[:-1]]  # mdot_a is not in the original data
+df_output["mdot_a (kg/s)"] = 0.5  # Dummy value for now
 
 num_train_samples = int(len(df) * 0.8)
 if num_train_samples == 0 and len(df) > 0:
@@ -167,10 +169,7 @@ if X_train.shape[0] > 0:
             batch_x, batch_y_true = X_train[indices], y_train[indices]
 
             # Normalize inputs for the model
-            T1_batch, P1_batch, FF_batch, N1_batch = torch.split(batch_x, 1, dim=1)
-            batch_x_norm = pinn_model.normalize_inputs(
-                T1_batch, P1_batch, FF_batch, N1_batch
-            )
+            batch_x_norm = pinn_model.normalize_inputs(batch_x)
 
             # Model prediction (normalized)
             batch_y_pred_norm = pinn_model(batch_x_norm)
@@ -180,13 +179,15 @@ if X_train.shape[0] > 0:
 
             # Data Loss (comparing denormalized prediction with denormalized true y)
             # Or, normalize true y and compare with normalized prediction
-            batch_y_true_norm = (batch_y_true - pinn_model.output_means.to(device)) / (
-                pinn_model.output_stds.to(device) + 1e-8
-            )
+            batch_y_true_norm = (
+                batch_y_true - pinn_model.output_means_tensor.to(device)
+            ) / (pinn_model.output_stds_tensor.to(device) + 1e-8)
             data_loss = criterion_data(batch_y_pred_norm, batch_y_true_norm)
 
             # Physics Loss
-            phys_loss = pinn_model.physics_loss(batch_x_norm, batch_y_pred_denorm)
+            phys_loss = pinn_model.physics_loss(
+                batch_x_norm, batch_y_pred_denorm, batch_x
+            )
 
             total_loss = (
                 pinn_model.lambda_data * data_loss
@@ -214,19 +215,18 @@ if X_train.shape[0] > 0:
         print("\nEvaluating on test data...")
         pinn_model.eval()  # Set model to evaluation mode
         with torch.no_grad():  # No need to track gradients for evaluation
-            T1_test, P1_test, FF_test, N1_test = torch.split(X_test, 1, dim=1)
-            X_test_norm = pinn_model.normalize_inputs(
-                T1_test, P1_test, FF_test, N1_test
-            )
+            X_test_norm = pinn_model.normalize_inputs(X_test)
 
             y_pred_norm_test = pinn_model(X_test_norm)
             y_pred_denorm_test = pinn_model.denormalize_outputs(y_pred_norm_test)
 
-            y_test_norm = (y_test - pinn_model.output_means.to(device)) / (
-                pinn_model.output_stds.to(device) + 1e-8
+            y_test_norm = (y_test - pinn_model.output_means_tensor.to(device)) / (
+                pinn_model.output_stds_tensor.to(device) + 1e-8
             )
             test_data_loss = criterion_data(y_pred_norm_test, y_test_norm)
-            test_phys_loss = pinn_model.physics_loss(X_test_norm, y_pred_denorm_test)
+            test_phys_loss = pinn_model.physics_loss(
+                X_test_norm, y_pred_denorm_test, X_test
+            )
             test_total_loss = (
                 pinn_model.lambda_data * test_data_loss
                 + pinn_model.lambda_physics * test_phys_loss
