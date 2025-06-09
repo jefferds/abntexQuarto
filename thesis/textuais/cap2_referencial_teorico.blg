@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: cap2_referencial_teorico.aux
+The style file: plainnat.bst
+Illegal, another \bibstyle command---line 56 of file cap2_referencial_teorico.aux
+ : \bibstyle
+ :          {abntex2-alf}
+I'm skipping whatever remains of this command
+Database file #1: abntex2-options.bib
+Warning--entry type for "abnt-url-package=url" isn't style-file defined
+--line 199 of file abntex2-options.bib
+Database file #2: ../references.bib
+Warning--empty year in abnt-url-package=url
+Warning--all relevant fields are empty in abnt-url-package=url
+You've used 18 entries,
+            2773 wiz_defined-function locations,
+            684 strings with 7455 characters,
+and the built_in function-call counts, 7436 in all, are:
+= -- 600
+> -- 468
+< -- 9
++ -- 159
+- -- 141
+* -- 571
+:= -- 1166
+add.period$ -- 53
+call.type$ -- 18
+change.case$ -- 90
+chr.to.int$ -- 18
+cite$ -- 38
+duplicate$ -- 375
+empty$ -- 627
+format.name$ -- 168
+if$ -- 1546
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 28
+newline$ -- 96
+num.names$ -- 68
+pop$ -- 240
+preamble$ -- 1
+purify$ -- 84
+quote$ -- 0
+skip$ -- 279
+stack$ -- 0
+substring$ -- 136
+swap$ -- 27
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 143
+warning$ -- 2
+while$ -- 59
+width$ -- 0
+write$ -- 223
+(There was 1 error message)

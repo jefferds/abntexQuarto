@@ -1,0 +1,113 @@
+\begin{thebibliography}{18}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[aaaa()]{abnt-url-package=url}
+aaaa.
+
+\bibitem[Boyce(2012)]{boyce2012gasturbine}
+Meherwan~P. Boyce.
+\newblock \emph{Gas Turbine Engineering Handbook}.
+\newblock Elsevier Science, 2012.
+
+\bibitem[Cengel and Boles(2019)]{cengel2019thermodynamics}
+Yunus~A. Cengel and Michael~A. Boles.
+\newblock \emph{Thermodynamics: An Engineering Approach}.
+\newblock McGraw-Hill Education, 2019.
+
+\bibitem[Goodfellow et~al.(2016)Goodfellow, Bengio, and
+  Courville]{goodfellow2016deep}
+Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
+\newblock \emph{Deep Learning}.
+\newblock MIT Press, 2016.
+
+\bibitem[Grieves(2011)]{grieves2011digital}
+Michael Grieves.
+\newblock Digital twin: Manufacturing excellence through virtual replica of
+  physical product for future factory.
+\newblock \emph{White Paper, Florida Institute of Technology}, 2011.
+
+\bibitem[Gurney(2010)]{gurney2010gasturbine}
+L.~S. Gurney.
+\newblock \emph{Gas Turbine Performance}.
+\newblock Butterworth-Heinemann, 2010.
+
+\bibitem[Incropera et~al.(2007)Incropera, DeWitt, Bergman, and
+  Lavine]{incropera2007fundamentals}
+Frank~P. Incropera, David~P. DeWitt, Theodore~L. Bergman, and Adrienne~S.
+  Lavine.
+\newblock \emph{Fundamentals of Heat and Mass Transfer}.
+\newblock John Wiley & Sons, 2007.
+
+\bibitem[Karniadakis et~al.(2021)Karniadakis, Kevrekidis, Lu, Perdikaris, Wang,
+  and Yang]{karniadakis2021physics}
+George~Em Karniadakis, Ioannis~G Kevrekidis, Lu~Lu, Paris Perdikaris, Sifan
+  Wang, and Liu Yang.
+\newblock Physics-informed machine learning.
+\newblock \emph{Nature Reviews Physics}, 3\penalty0 (6):\penalty0 422--441,
+  2021.
+
+\bibitem[Kreuzer et~al.(2024)Kreuzer, Papapetrou, and
+  Zdravkovic]{kreuzer2024artificial}
+Tim Kreuzer, Panagiotis Papapetrou, and Jelena Zdravkovic.
+\newblock Artificial intelligence in digital twins—a systematic literature
+  review.
+\newblock \emph{Data & Knowledge Engineering}, 2024.
+
+\bibitem[Kurz and Brun(2009)]{kurz2009gasturbine}
+R.~Kurz and K.~Brun.
+\newblock \emph{Gas Turbine System Design, Analysis, and Optimization}.
+\newblock ASME Press, 2009.
+
+\bibitem[Raissi et~al.(2019)Raissi, Perdikaris, and
+  Karniadakis]{raissi2019physics}
+Maziar Raissi, Paris Perdikaris, and George~E Karniadakis.
+\newblock Physics-informed neural networks: A deep learning framework for
+  solving forward and inverse problems involving nonlinear partial differential
+  equations.
+\newblock \emph{Journal of Computational Physics}, 378:\penalty0 686--707,
+  2019.
+
+\bibitem[Russell and Norvig(2010)]{russell2010artificial}
+Stuart Russell and Peter Norvig.
+\newblock \emph{Artificial Intelligence: A Modern Approach}.
+\newblock Prentice Hall, 2010.
+
+\bibitem[Saravanamuttoo et~al.(2017)Saravanamuttoo, Rogers, Cohen, and
+  Straznicky]{saravanamuttoo2017gasturbine}
+H.~I.~H. Saravanamuttoo, G.~F.~C. Rogers, H.~Cohen, and S.~Straznicky.
+\newblock \emph{Gas Turbine Theory}.
+\newblock Pearson, 2017.
+
+\bibitem[Schluse et~al.(2018)Schluse, Rossmann, Meißner, and
+  M{\"u}ller]{schluse2018digital}
+Martin Schluse, J{\"u}rgen Rossmann, Mario Meißner, and Maximilian M{\"u}ller.
+\newblock Digital twin: An overview of the current state.
+\newblock In \emph{Virtual and Augmented Reality in Industry}, pages 253--272.
+  Springer, Cham, 2018.
+
+\bibitem[Serway and Jewett(2018)]{serway2018physics}
+Raymond~A. Serway and John~W. Jewett.
+\newblock \emph{Physics for Scientists and Engineers with Modern Physics}.
+\newblock Cengage Learning, 2018.
+
+\bibitem[Tao et~al.(2019)Tao, Zhang, Liu, and Nee]{tao2019digital}
+Fei Tao, Hao Zhang, Anlong Liu, and Andrew~YC Nee.
+\newblock \emph{Digital Twin Driven Smart Manufacturing}.
+\newblock Elsevier, 2019.
+
+\bibitem[Verstraete and Van~den Braembussche(2010)]{verstraete2010cfd}
+D.~Verstraete and R.~A. Van~den Braembussche.
+\newblock \emph{CFD for Turbomachinery}.
+\newblock VKI Lecture Series, 2010.
+
+\bibitem[Wang et~al.(2023)Wang, Lu, and Zhang]{wang2023physics}
+Yibin Wang, Beijia Lu, and Jian Zhang.
+\newblock A physics-informed neural network for modeling and prognosis of steam
+  turbine performance.
+\newblock \emph{Applied Thermal Engineering}, 223:\penalty0 119934, 2023.
+
+\end{thebibliography}

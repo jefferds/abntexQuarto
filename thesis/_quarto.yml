@@ -22,6 +22,7 @@ crossref:
 
 format:
   pdf:
+    cite-method: "natbib"
     include-in-header: "./src/preamble.tex"
     documentclass: "abntex2"
     classoption: 
