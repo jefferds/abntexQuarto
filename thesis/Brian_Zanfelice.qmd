@@ -32,5 +32,6 @@
 
 \backmatter
 
-# References {.unnumbered}
+\newpage
+\chapter*{\textbf{References}}
 
