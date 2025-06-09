@@ -256,45 +256,55 @@ While air mass flow rate $\dot{m}_a$ could be derived from a physics-based model
 
 
 
-# Digital Twin Development and Evaluation
+# Model Implementation and Evaluation
+
+This section outlines the strategy for the development, training, and rigorous evaluation of the gas turbine digital twin.
 
 ## Problem Definition
 
-The primary goal of this thesis is to build a digital twin capable of predicting steady-state thrust, combustor outlet temperature ($T_{3,\text{pred}}$), and exhaust gas temperature ($T_{5,\text{pred}}$) based on operational inputs: fuel flow rate and compressor speed ($N_1$). Intermediate variables—such as $T_{2,\text{pred}}$, $P_{2,\text{pred}}$, $T_{4,\text{pred}}$, $P_{4,\text{pred}}$, $P_{3,\text{pred}}$, and $P_{5,\text{pred}}$, $\dot{m}_a$ air mass flow rate—are also predicted to ensure thermodynamic consistency via physics-informed residual losses.
+The primary objective is to develop a digital twin capable of predicting key performance indicators—steady-state thrust ($F_{pred}$), combustor outlet temperature ($T_{3,pred}$), and exhaust gas temperature ($T_{5,pred}$)—based on operational inputs (fuel flow $\dot{m}_f$, compressor speed $N_1$) and ambient conditions ($T_1, P_1$).
+
+To enforce physical realism, the model simultaneously predicts a set of intermediate thermodynamic variables:
+- Air mass flow: $\dot{m}_{a,pred}$
+- Station temperatures: $T_{2,pred}, T_{4,pred}$
+- Station pressures: $P_{2,pred}, P_{3,pred}, P_{4,pred}, P_{5,pred}$
+
+These intermediate predictions are constrained during training by the physics-informed loss functions derived in the previous chapter.
 
 ## Data Preparation and Preprocessing
 
-The experimental dataset is preprocessed as follows:
-\begin{itemize}
-    \item Cleaning: No values are missing, so we don't need to clean the data.
-    \item Unit Conversion: All quantities are converted to SI units (e.g., temperatures in Kelvin, pressures in Pascals, fuel flow in $\mathrm{kg/s}$).
-    \item Normalization: Input and output features are scaled (e.g., to $[0, 1]$) to improve training stability and help the model converge faster.
-    \item Data Splitting: The dataset is split into training, validation, and test sets for unbiased evaluation. We are using a 80-10-10 split, where 80% of the data is used for training, 10% for validation, and 10% for testing. 
-\end{itemize}
+The experimental dataset undergoes a standard preprocessing pipeline before being used for model training:
 
-## Model Architecture
+- **Unit Conversion:** All variables are converted to base SI units (e.g., temperatures to Kelvin, pressures to Pascals, fuel flow to kg/s) to ensure consistency in the physics-based calculations.
+- **Normalization:** Input and output features are scaled to a common range (e.g., [0, 1]) using min-max scaling. This improves numerical stability during training and helps the optimization algorithm converge more efficiently.
+- **Data Splitting:** The complete dataset is randomly partitioned into three subsets: 80% for training, 10% for validation (hyperparameter tuning), and 10% for final, unbiased testing of the trained model.
 
-The model architecture is a fully connected MLP with 2 hidden layers of 32 neurons each. The input layer has 4 neurons, corresponding to the fuel flow rate, compressor speed, ambient temperature, and ambient pressure. The output layer has 8 neurons, corresponding to the compressor outlet temperature, compressor outlet pressure, combustor outlet temperature, combustor outlet pressure, turbine outlet temperature, turbine outlet pressure, exhaust gas temperature, and exhaust gas pressure. The activation function is ReLU for the hidden layers and Linear for the output layer. The model is trained using AdamW optimizer with a learning rate of 0.001. The loss function is a weighted sum of the data loss and the physics loss. The data loss is a Mean Squared Error (MSE) for the important variables and the physics loss is a sum of the residuals derived from physical principles, each enforcing thermodynamic consistency.
+## Model Architecture and Hyperparameters
 
-We will be conducting a hyperparameter search to find the best model architecture and training parameters. We will be using the validation set to tune the hyperparameters.
+The core of the digital twin is a Physics-Informed Neural Network (PINN) based on a Multi-Layer Perceptron (MLP).
 
-## Loss Function
+- **Baseline Architecture:** The initial architecture for exploration is a fully connected MLP with 4 input neurons, 2 hidden layers containing 32 neurons each, and 10 output neurons.
+- **Inputs (4):** Fuel flow ($\dot{m}_f$), compressor speed ($N_1$), ambient temperature ($T_1$), and ambient pressure ($P_1$).
+- **Outputs (10):** Thrust ($F_{pred}$), air mass flow ($\dot{m}_{a,pred}$), and the eight station states ($T_{2,pred}, P_{2,pred}, T_{3,pred}, P_{3,pred}, T_{4,pred}, P_{4,pred}, T_{5,pred}, P_{5,pred}$).
+- **Activation Functions:** The ReLU (Rectified Linear Unit) activation function is used for hidden layers, while a Linear activation is used for the output layer to allow for unbounded physical values.
+- **Hyperparameter Tuning:** A hyperparameter search will be conducted using the validation set to optimize the network architecture (e.g., number of layers and neurons), learning rate, and loss function weights to achieve the best performance.
 
-The loss function is a weighted sum of the data loss and the physics loss. The data loss is a Mean Squared Error (MSE) for the important variables and the physics loss is a sum of the residuals derived from physical principles, each enforcing thermodynamic consistency.
-We will be conducting a analysis of how the loss function and the model performance changes with the weights of the data loss and the physics loss. We aim to find the best weights for the data loss and the physics loss that maximizes the model performance.
+## Loss Function and Weighting Strategy
 
+The custom loss function guides the PINN to be both data-accurate and physically-consistent. The total loss is a weighted sum of two components:
+$$
+L_{total} = w_{data} L_{data} + w_{physics} L_{physics}
+$$
 
+- **Data Loss ($L_{data}$):** This is the Mean Squared Error (MSE) between the model's predictions and the measured experimental data for the observable outputs ($T_3, T_5, F$, etc.).
+- **Physics Loss ($L_{physics}$):** This is the sum of the mean squared residuals from the governing thermodynamic equations (e.g., $L_{power}, L_{comb}, L_{T2}, L_{T4}$). This term penalizes solutions that violate physical laws.
+- **Weighting Strategy:** The weights ($w_{data}, w_{physics}$) are critical hyperparameters that balance the influence of the experimental data and the physical laws. A sensitivity analysis will be performed to find a set of weights that minimizes prediction error on the validation set without compromising physical consistency.
 
+## Training and Evaluation Metrics
 
+The model will be implemented and trained using the PyTorch framework with the AdamW optimizer. To ensure a thorough and unbiased assessment of the final digital twin, its performance will be evaluated on the unseen test set using three key criteria:
 
-## Training and Validation
-
-The PINN is trained using gradient-based optimizers, mainly AdamW, enabled by automatic differentiation frameworks, Pytorch. Evaluation of model performance involves:
-
-\begin{itemize}
-    \item Predictive Accuracy in the important variables: Assessed via Mean Squared Error (MSE) for $T_{3,\text{pred}}$, $T_{5,\text{pred}}$, and $F_{\text{pred}}$.
-    \item Predictive Accuracy in the intermediate variables: While they are not the main outputs, they are important to ensure the model is physically consistent. We should check the MSE for those variables as well.
-\end{itemize}
-
-This iterative cycle of training, validation, and physics-based refinement continues until the model achieves both data accuracy and alignment with physical laws.
+1.  **Predictive Accuracy:** The model's ability to predict the primary performance indicators will be quantified using Mean Squared Error (MSE) for $F_{pred}$, $T_{3,pred}$, and $T_{5,pred}$.
+2.  **Physical Consistency:** The magnitude of the physics loss residuals ($L_{physics}$) will be calculated on the test set. A low residual value indicates that the model's predictions adhere well to the governing laws of thermodynamics, even for data it has never seen.
+3.  **Overall Fidelity:** The accuracy of the intermediate variable predictions (e.g., $P_2, T_2, \dot{m}_a$) will also be assessed to ensure the overall health and internal consistency of the model.
 
