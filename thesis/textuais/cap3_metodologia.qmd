@@ -25,7 +25,7 @@ These parameters are displayed on the system's control panel and, more extensive
 
 ::: {#fig-turbine-schema layout-ncol=1 layout-align="center"}
 
-![](../figuras/turbine_schema.png){width=100%}
+![](figuras/turbine_schema.png){width=75%}
 
 Source: Mini-Lab Gas Turbine Power System Manual @TurbineTechnologies2011MiniLab
 
