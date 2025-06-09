@@ -30,5 +30,6 @@
 \backmatter
 
 \newpage
-\chapter*{\textbf{References}}
+\chapter*{\textbf{Bibliography}}
+\markboth{BIBLIOGRAPHY}{BIBLIOGRAPHY}
 
