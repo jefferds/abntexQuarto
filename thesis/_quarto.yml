@@ -26,6 +26,8 @@ format:
     include-in-header: "./src/preamble.tex"
     documentclass: "abntex2"
     classoption: 
+      - round
+      - alf
       - 12pt
       - oneside
       - a4paper
