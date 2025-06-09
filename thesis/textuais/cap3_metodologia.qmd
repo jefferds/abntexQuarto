@@ -274,7 +274,15 @@ The experimental dataset is preprocessed as follows:
 
 ## Model Architecture
 
-The model architecture is a fully connected MLP with 2 hidden layers of 100 neurons each. The input layer has 4 neurons, corresponding to the fuel flow rate, compressor speed, ambient temperature, and ambient pressure. The output layer has 8 neurons, corresponding to the compressor outlet temperature, compressor outlet pressure, combustor outlet temperature, combustor outlet pressure, turbine outlet temperature, turbine outlet pressure, exhaust gas temperature, and exhaust gas pressure. The activation function is ReLU for the hidden layers and Linear for the output layer. The model is trained using AdamW optimizer with a learning rate of 0.001. The loss function is a weighted sum of the data loss and the physics loss. The data loss is a Mean Squared Error (MSE) for the important variables and the physics loss is a sum of the residuals derived from physical principles, each enforcing thermodynamic consistency.
+The model architecture is a fully connected MLP with 2 hidden layers of 32 neurons each. The input layer has 4 neurons, corresponding to the fuel flow rate, compressor speed, ambient temperature, and ambient pressure. The output layer has 8 neurons, corresponding to the compressor outlet temperature, compressor outlet pressure, combustor outlet temperature, combustor outlet pressure, turbine outlet temperature, turbine outlet pressure, exhaust gas temperature, and exhaust gas pressure. The activation function is ReLU for the hidden layers and Linear for the output layer. The model is trained using AdamW optimizer with a learning rate of 0.001. The loss function is a weighted sum of the data loss and the physics loss. The data loss is a Mean Squared Error (MSE) for the important variables and the physics loss is a sum of the residuals derived from physical principles, each enforcing thermodynamic consistency.
+
+We will be conducting a hyperparameter search to find the best model architecture and training parameters. We will be using the validation set to tune the hyperparameters.
+
+## Loss Function
+
+The loss function is a weighted sum of the data loss and the physics loss. The data loss is a Mean Squared Error (MSE) for the important variables and the physics loss is a sum of the residuals derived from physical principles, each enforcing thermodynamic consistency.
+We will be conducting a analysis of how the loss function and the model performance changes with the weights of the data loss and the physics loss. We aim to find the best weights for the data loss and the physics loss that maximizes the model performance.
+
 
 
 
