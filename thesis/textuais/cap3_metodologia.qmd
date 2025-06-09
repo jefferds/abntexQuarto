@@ -259,26 +259,32 @@ Where the air mass flow $\dot{m}_a$ can either be estimated from $N_1$ and ambie
 
 ## Problem Definition
 
-The primary goal of this thesis is to build a digital twin capable of predicting steady-state thrust, combustor outlet temperature ($T_{3,\text{pred}}$), and exhaust gas temperature ($T_{5,\text{pred}}$) based on operational inputs: fuel flow rate and compressor speed ($N_1$). Intermediate variables—such as $T_{2,\text{pred}}$, $P_{2,\text{pred}}$, $T_{4,\text{pred}}$, $P_{4,\text{pred}}$, $P_{3,\text{pred}}$, and $P_{5,\text{pred}}$—are also predicted to ensure thermodynamic consistency via physics-informed residual losses.
+The primary goal of this thesis is to build a digital twin capable of predicting steady-state thrust, combustor outlet temperature ($T_{3,\text{pred}}$), and exhaust gas temperature ($T_{5,\text{pred}}$) based on operational inputs: fuel flow rate and compressor speed ($N_1$). Intermediate variables—such as $T_{2,\text{pred}}$, $P_{2,\text{pred}}$, $T_{4,\text{pred}}$, $P_{4,\text{pred}}$, $P_{3,\text{pred}}$, and $P_{5,\text{pred}}$, $\dot{m}_a$ air mass flow rate—are also predicted to ensure thermodynamic consistency via physics-informed residual losses.
 
 ## Data Preparation and Preprocessing
 
 The experimental dataset is preprocessed as follows:
 \begin{itemize}
-    \item Cleaning: Missing values are handled, and outliers are identified and removed.
+    \item Cleaning: No values are missing, so we don't need to clean the data.
     \item Unit Conversion: All quantities are converted to SI units (e.g., temperatures in Kelvin, pressures in Pascals, fuel flow in $\mathrm{kg/s}$).
-    \item Normalization: Input and output features are scaled (e.g., to $[0, 1]$) to improve training stability.
-    \item Data Splitting: The dataset is split into training, validation, and test sets for unbiased evaluation.
+    \item Normalization: Input and output features are scaled (e.g., to $[0, 1]$) to improve training stability and help the model converge faster.
+    \item Data Splitting: The dataset is split into training, validation, and test sets for unbiased evaluation. We are using a 80-10-10 split, where 80% of the data is used for training, 10% for validation, and 10% for testing. 
 \end{itemize}
+
+## Model Architecture
+
+The model architecture is a fully connected MLP with 2 hidden layers of 100 neurons each. The input layer has 4 neurons, corresponding to the fuel flow rate, compressor speed, ambient temperature, and ambient pressure. The output layer has 8 neurons, corresponding to the compressor outlet temperature, compressor outlet pressure, combustor outlet temperature, combustor outlet pressure, turbine outlet temperature, turbine outlet pressure, exhaust gas temperature, and exhaust gas pressure. The activation function is ReLU for the hidden layers and Linear for the output layer. The model is trained using AdamW optimizer with a learning rate of 0.001. The loss function is a weighted sum of the data loss and the physics loss. The data loss is a Mean Squared Error (MSE) for the important variables and the physics loss is a sum of the residuals derived from physical principles, each enforcing thermodynamic consistency.
+
+
+
 
 ## Training and Validation
 
-The PINN is trained using gradient-based optimizers (e.g., Adam and L-BFGS), enabled by automatic differentiation frameworks (e.g., PyTorch, TensorFlow). Evaluation of model performance involves three key dimensions:
+The PINN is trained using gradient-based optimizers, mainly AdamW, enabled by automatic differentiation frameworks, Pytorch. Evaluation of model performance involves:
 
 \begin{itemize}
-    \item Predictive Accuracy: Assessed via Mean Squared Error (MSE) and $R^2$ score on test data.
-    \item Physical Consistency: Measured by evaluating the magnitude of physics loss terms across the test set.
-    \item Sensitivity Analysis: Conducted to examine how predictions respond to variations in fuel flow and compressor speed, and to identify dominant factors influencing performance.
+    \item Predictive Accuracy in the important variables: Assessed via Mean Squared Error (MSE) for $T_{3,\text{pred}}$, $T_{5,\text{pred}}$, and $F_{\text{pred}}$.
+    \item Predictive Accuracy in the intermediate variables: While they are not the main outputs, they are important to ensure the model is physically consistent. We should check the MSE for those variables as well.
 \end{itemize}
 
 This iterative cycle of training, validation, and physics-based refinement continues until the model achieves both data accuracy and alignment with physical laws.
