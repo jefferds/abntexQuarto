@@ -116,7 +116,9 @@ class PINN_GasTurbine(nn.Module):
         stds = self.output_stds_tensor.to(outputs_norm_concat.device)
         return outputs_norm_concat * (stds + 1e-8) + means
 
-    def physics_loss(self, inputs_norm_concat, outputs_denorm_concat):
+    def physics_loss(
+        self, inputs_norm_concat, outputs_denorm_concat, inputs_denorm_concat
+    ):
         # Denormalize T1 and P1 from inputs_norm_concat for physics calculations
         # Assumes T1 is input feature 0, P1 is input feature 1
         t1_norm = inputs_norm_concat[:, 0:1]
@@ -130,8 +132,13 @@ class PINN_GasTurbine(nn.Module):
         t1_input_denorm = t1_norm * (input_stds_dev[0] + 1e-8) + input_means_dev[0]
         p1_input_denorm = p1_norm * (input_stds_dev[1] + 1e-8) + input_means_dev[1]
 
+        # Get mdot_f from denormalized inputs (Fuel Flow is 3rd column, index 2)
+        mdot_f_lph = inputs_denorm_concat[:, 2:3]
+        # Convert L/hr to kg/s, assuming jet fuel density of ~0.8 kg/L
+        mdot_f_kgs = mdot_f_lph * 0.8 / 3600
+
         # Split denormalized outputs
-        # Order: T2, P2, T3, P3, T4, P4, T5, P5, Thrust
+        # Order: T2, P2, T3, P3, T4, P4, T5, P5, Thrust, mdot_a
         (
             t2_pred,
             p2_pred,
@@ -142,6 +149,7 @@ class PINN_GasTurbine(nn.Module):
             t5_pred,
             p5_pred,
             thrust_pred,
+            mdot_a_pred,
         ) = torch.split(outputs_denorm_concat, 1, dim=1)
 
         # Convert to Kelvin and Pascals for thermodynamic equations
@@ -163,6 +171,9 @@ class PINN_GasTurbine(nn.Module):
         eta_t = 0.90  # Turbine efficiency
         gamma_g = 1.33  # Specific heat ratio for gas
         k_loss_comb = 0.97  # Pressure loss factor in combustor
+        cp_a = 1005  # J/kgK
+        cp_g = 1148  # J/kgK for gas
+        q_hv = 43.1e6  # J/kg
 
         # Residual for Compressor Temperature-Pressure relationship
         pressure_ratio_comp = p2_pa_pred / (p1_pa_input + 1e-8)
@@ -182,10 +193,22 @@ class PINN_GasTurbine(nn.Module):
         # Residual for Nozzle/Exhaust Temperature (assuming T5 approx T4)
         res_T5 = t5_k_pred - t4_k_pred
 
+        # Power balance loss
+        w_comp = mdot_a_pred * cp_a * (t2_k_pred - t1_k)
+        w_turb = (mdot_a_pred + mdot_f_kgs) * cp_g * (t3_k_pred - t4_k_pred)
+        res_power = w_comp - w_turb
+
+        # Combustor energy balance loss
+        q_fuel = mdot_f_kgs * q_hv
+        q_added = (mdot_a_pred + mdot_f_kgs) * cp_g * (t3_k_pred - t2_k_pred)
+        res_comb = q_fuel - q_added
+
         loss_T2_P2 = torch.mean(torch.square(res_T2_P2))
         loss_P3 = torch.mean(torch.square(res_P3))
         loss_T4_P4 = torch.mean(torch.square(res_T4_P4))
         loss_T5 = torch.mean(torch.square(res_T5))
+        loss_power = torch.mean(torch.square(res_power))
+        loss_comb = torch.mean(torch.square(res_comb))
 
         # Soft Constraint losses (penalize violations)
         # Note: T2 > T1 is now a hard constraint in forward(), so this soft constraint can be removed or kept as a small regularizer
@@ -214,6 +237,8 @@ class PINN_GasTurbine(nn.Module):
             + loss_P3
             + loss_T4_P4
             + loss_T5
+            + loss_power
+            + loss_comb
             + loss_P2_gt_P1
             + loss_T3_gt_T2
             + loss_P3_lt_P2

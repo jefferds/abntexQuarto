@@ -191,6 +191,7 @@ Outputs: Predicted thermodynamic variables and performance indicators:
 \begin{itemize}
     \item Station states: $T_{2,\text{pred}}, P_{2,\text{pred}}, T_{3,\text{pred}}, P_{3,\text{pred}}, T_{4,\text{pred}}, P_{4,\text{pred}}, T_{5,\text{pred}}, P_{5,\text{pred}}$
     \item Net thrust $F_{\text{pred}}$ (N)
+    \item Air mass flow rate $\dot{m}_{a, \text{pred}}$ (kg/s)
 \end{itemize}
 
 <!--  -->
@@ -247,7 +248,7 @@ $$
 L_{\text{thrust}} = \left( F_{\text{pred}} - (\dot{m}_a + \dot{m}_f) (V_{\text{exit}}) \right)^2
 $$
 
-Where the air mass flow $\dot{m}_a$ can either be estimated from $N_1$ and ambient conditions or treated as a learnable parameter.
+While air mass flow rate $\dot{m}_a$ could be derived from a physics-based model based on $N_1$ and ambient conditions, in this PINN-based approach, it is treated as a learnable parameter. This allows the model to infer the air mass flow rate directly from the operational data, providing a more flexible and potentially more accurate estimation by capturing complex relationships that a simplified physics model might overlook.
 
 
 
