@@ -23,6 +23,16 @@ The instrumentation setup includes:
 \end{itemize}
 These parameters are displayed on the system's control panel and, more extensively, on a connected Data Acquisition Screen. Specifically, $\mathrm{P}_{3}$ and $\mathrm{T}_{3}$ (Turbine Inlet Temperature, displayed as TIT) are available on both the panel and screen, while $\mathrm{T}_{5}$ (Exhaust Gas Temperature, displayed as EGT) is also accessible from both. Fuel Pressure is displayed on the panel. The precise location of these engine sensors is depicted in the SR-30 Gas Turbine Cutaway diagram within the Mini-Lab's operational manual.
 
+::: {#fig-turbine-schema layout-ncol=1 layout-align="center"}
+
+![](../figuras/turbine_schema.png){width=100%}
+
+Source: Mini-Lab Gas Turbine Power System Manual @TurbineTechnologies2011MiniLab
+
+Schematic of Brayton Cycle for Gas Turbine and Cut Away of SR-30 Engine.
+
+:::
+
 ## Data Acquisition System and Control Interface
 
 The data acquisition process is managed through a dedicated Data Acquisition Computer running the MiniLab 1.1 software. This computer connects to the Mini-Lab system via a USB port, leveraging a National Instruments DAQ (Data Acquisition) system (specifically the NI DAQ 6218 module) for real-time data capture and display. The MiniLab 1.1 software facilitates logging data to file, displaying plot features, and offers controls for unit toggling (e.g., Celsius to Fahrenheit for temperatures, Psig to kPa for pressures, Liters/hour or Gallons/hour for fuel flow, and Newtons to Pounds for thrust). The data sampling rate can be selected between 0.1 and 5 samples per second.

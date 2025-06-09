@@ -11,3 +11,4 @@
 *.idx
 digital_twin/convert_utils/__pycache__/
 *.parquet
+.DS_Store
