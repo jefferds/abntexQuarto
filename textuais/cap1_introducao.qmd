@@ -56,10 +56,34 @@ Este foi um exemplos do suporte a figuras, tabelas, equações e código em Juli
 x = 1 + 1
 ```
 
+É possível executar código em Julia/Python/R diretamente no Quarto.org. O código é executado e o resultado é incluído no documento final.
+
+```{julia}
+#| echo: true
+
+m = 100 # kg
+c = 3e8 # m/s
+E = m * c^2 # J
+
+println("A energia é: ", E, " Joules")
+```
+
+```{julia}
+#| echo: false
+using Printf
+
+@printf("A energia é: %.2e Joules.", E)
+```
+
 Este foi um exemplos do suporte a figuras, tabelas, equações e código em Julia (@lst-2).
 
 ## Citando referências
 
 A seguir um exemplo de citação de referências:
 
-A citação de referências é feita como segue: @grote2009springer
+A citação de referências é feita como segue: @grote2009springer.
+
+### Fisheries and Biodiversity
+
+Global freshwater resources include a diverse fish fauna comprising close to 16,000 species (i.e.~47% of all fishes and~25% of all vertebrates), with around 250 new species described each year [@pelayo_villamil2015global; @arthington2016fish; @eschmeyer2017catalog].
+
