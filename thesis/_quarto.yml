@@ -1,0 +1,45 @@
+project:
+  title: "Brian_TG_Thesis"
+
+number-sections: true
+bibliography: "references.bib"
+csl: "abnt.csl"
+
+link-citations: true
+
+fig-cap-location: top
+
+crossref:
+  lof-title: "List of Figures"
+  lot-title: "List of Tables"
+  lol-title: "List of Code"
+  fig-title: "Figure"
+  tbl-title: "Table"
+  lst-title: "Code"
+  fig-prefix: "Fig."
+  tbl-prefix: "Tab."
+  lst-prefix: "Code"
+
+format:
+  pdf:
+    include-in-header: "./src/preamble.tex"
+    documentclass: "abntex2"
+    classoption:
+      - 12pt
+      - oneside
+      - a4paper
+      - english
+      - brazil
+    geometry:
+      - top=30mm
+      - left=30mm
+      - right=20mm
+      - bottom=20mm
+    colorlinks: true
+    code-block-bg: true
+    code-block-border-left: true
+    highlight-style: github
+    keep-tex: true
+
+# html:
+  #   page-layout: full

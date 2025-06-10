@@ -1,0 +1,35 @@
+<!-- CONFIGURAÇÕES -->
+
+\setlength{\parindent}{0mm}
+\ABNTEXchapterfont\normalsize
+
+<!-- PRETEXTUAIS -->
+{{< include pretextuais.qmd >}}
+
+<!-- TEXTUAIS -->
+\mainmatter
+
+<!-- Introdução -->
+{{< include textuais/cap1_introducao.qmd >}}
+
+<!-- Literature Review -->
+{{< include textuais/cap2_referencial_teorico.qmd >}}
+
+<!-- Materials and Methods -->
+{{< include textuais/cap3_metodologia.qmd >}}
+
+<!-- Resultados e discussões -->
+<!-- {{< include textuais/cap4_resultado_discussao.qmd >}} -->
+
+<!-- Conclusões -->
+<!-- {{< include textuais/cap5_conclusao.qmd >}} -->
+
+<!-- Trabalhos futuros -->
+<!-- {{< include textuais/cap6_trabalhos_futuros.qmd >}} -->
+
+\backmatter
+
+\newpage
+\chapter*{\textbf{Bibliography}}
+\markboth{BIBLIOGRAPHY}{BIBLIOGRAPHY}
+

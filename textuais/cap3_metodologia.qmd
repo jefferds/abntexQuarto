@@ -1,3 +1,0 @@
-\chapter{Metodologia}
-
-\PROFESSOR{Descrição do que foi feito no trabalho.}

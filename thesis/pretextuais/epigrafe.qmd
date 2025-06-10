@@ -1,0 +1,13 @@
+\vspace*{\fill}
+
+\hfill
+\begin{minipage}{0.90\textwidth}
+    \begin{flushright}
+        \textit{ {{< var tcc.texto_epigrafe >}} } \\
+        \textit{ {{< var tcc.autor_epigrafe >}} }
+    \end{flushright}
+\end{minipage}
+
+\vspace{2cm}
+
+{{< pagebreak >}}

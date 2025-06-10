@@ -1,0 +1,107 @@
+tcc:
+  titulo: "Methodology for Developing a Level 1 Digital Twin with AI Integration for Gas Turbines"
+  subtitulo: "Final Paper"
+
+  autor: "Brian Clark Zanfelice"
+  sobrenome: "Zanfelic"
+  prenome: "Brian Clark"
+  email: "brian.zanfelic@ga.ita.br"
+
+  tipo: "Final Paper"
+  curso: "Mechanical Aeronautics Engineering"
+  universidade: "Instituto Tecnológico de Aeronáutica"
+  instituto: "Divisão de Engenharia Mecânica"
+  area: "Engenharias III"
+  ano: "2025"
+
+  cidade: "São José dos Campos"
+  cep: "12228-460"
+  uf: "SP"
+
+
+  palavra_chave_1_ingles: "Gas Turbine"
+  palavra_chave_2_ingles: "Digital Twin"
+  palavra_chave_3_ingles: "Artificial Intelligence"
+  palavra_chave_4_ingles: "Physics-Informed Machine Learning"
+  palavra_chave_5_ingles: "First-Principle Modeling"
+
+  palavra_chave_1: "Turbina a Gás"
+  palavra_chave_2: "Gêmeo Digital"
+  palavra_chave_3: "Inteligência Artificial"
+  palavra_chave_4: "Aprendizado de Máquina Informado pela Física"
+  palavra_chave_5: "Modelagem de Primeiros Princípios"
+
+  orientador: "Prof\\. Dr\\. Franco Jefferds dos Santos Silva"
+  coorientador: "Prof\\. Dr\\. Cleverson Bringhenti"
+  CDU: "621.438"
+  dia_defesa: "11"
+  mes_defesa: "junho"
+  banca_presidente: "Prof\\. Dr\\. "
+  banca_orientador: "Prof\\. Dr\\. Franco Jefferds dos Santos Silva"
+  banca_coorientador: "Profa\\. Dra. Cleverson Bringhenti"
+  banca_interno: "Prof\\. Dr\\. São Francisco de Assis"
+  banca_externo_1: "Prof\\. Dr\\. São Tomás de Aquino"
+  banca_externo_2: "Dr\\. Shirdi Sai Baba"
+  instituicao_presidente: "ITA"
+  instituicao_orientador: "ITA"
+  instituicao_coorientador: "ITA"
+  instituicao_interno: "USP"
+  instituicao_externo_1: "Unicamp"
+  instituicao_externo_2: "Unesp"
+
+  dedicatoria: "Este trabalho é dedicado às crianças adultas que, quando pequenas, sonharam em se tornar cientistas."
+
+  texto_epigrafe: '\"No que diz respeito ao empenho, ao compromisso, ao esforço, à dedicação, não existe meio-termo. Ou você faz uma coisa bem-feita ou não faz.\"'
+  autor_epigrafe: "AYRTON SENNA"
+
+  resumo: "
+As turbinas a gás são cruciais na geração de energia e na aviação, tornando sua modelagem precisa essencial 
+para a otimização do desempenho e manutenção preditiva. Abordagens de modelagem tradicionais 
+podem ser computacionalmente intensivas ou, se puramente baseadas em dados, podem carecer de consistência física. 
+Esta tese apresenta o desenvolvimento de um gêmeo digital de primeiro nível para uma turbina a gás em escala de laboratório utilizando 
+Redes Neurais Informadas pela Física (PINNs). Este trabalho envolve o aproveitamento de dados experimentais 
+coletados da microturbina de laboratório do Instituto Tecnológico de Aeronáutica (ITA), incluindo parâmetros operacionais 
+chave como temperaturas e pressões em vários estágios, fluxo de combustível, velocidade do compressor e empuxo. 
+
+Estes dados empíricos são integrados com princípios termodinâmicos fundamentais e 
+as equações algébricas governantes que descrevem o comportamento dos principais 
+componentes da turbina a gás: o compressor, a câmara de combustão, a turbina e o bocal. Ao incorporar estas leis 
+físicas diretamente na função de perda da rede neural, 
+a PINN é treinada não apenas para se ajustar aos dados experimentais observados, mas também para aderir à física 
+inherente do sistema. O gêmeo digital desenvolvido visa prever com precisão as principais saídas de 
+desempenho, como a temperatura de saída da câmara de combustão, a 
+temperatura dos gases de escape e o empuxo, sob diversas condições operacionais 
+definidas pelo fluxo de combustível e pela velocidade do compressor. Além disso, o modelo é projetado para prever temperaturas e 
+pressões intermediárias ao longo da turbina, garantindo consistência 
+termodinâmica em todo o processo simulado. 
+
+Esta pesquisa contribui com uma metodologia para a criação de um gêmeo digital robusto, computacionalmente eficiente e fisicamente 
+fundamentado. Espera-se que o modelo resultante sirva como uma ferramenta 
+valiosa para análise de desempenho aprofundada, compreensão das sensibilidades 
+do sistema e, potencialmente, para o desenvolvimento futuro de estratégias de 
+controle e otimização para a turbina a gás."
+
+  abstract: "Gas turbines are crucial in power generation and aviation, making their 
+  accurate modeling essential for performance optimization and predictive maintenance. 
+  Traditional modeling approaches can be computationally intensive or, if purely data-driven, 
+  may lack physical consistency. This thesis presents the development of a Level 1 (L1) digital twin for a 
+  laboratory-scale gas turbine using Physics-Informed Neural Networks (PINNs). 
+  This work involves leveraging experimental data collected from the Aeronautical 
+  Institute of Technology (ITA) laboratory microturbine, including key operational 
+  parameters such as temperatures and pressures at various stages, fuel flow, compressor speed, and thrust.
+
+These empirical data are integrated with fundamental thermodynamic principles and 
+the governing algebraic equations describing the behavior of the main gas turbine 
+components: the compressor, combustion chamber, turbine, and nozzle. By incorporating 
+these physical laws directly into the neural network's loss function, the PINN is 
+trained not only to fit the observed experimental data but also to adhere to the 
+inherent physics of the system. The developed digital twin aims to accurately predict 
+key performance outputs, such as combustor outlet temperature, exhaust gas temperature, 
+and thrust, under various operating conditions defined by fuel flow and compressor 
+speed. Furthermore, the model is designed to predict intermediate temperatures and 
+pressures throughout the turbine, ensuring thermodynamic consistency across the simulated process.
+
+This research contributes a methodology for creating a robust, computationally efficient,
+ and physically grounded digital twin. The resulting model is expected to serve as a 
+ valuable tool for in-depth performance analysis, understanding system sensitivities, 
+ and potentially for the future development of control and optimization strategies for the gas turbine."

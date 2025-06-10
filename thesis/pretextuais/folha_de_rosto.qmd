@@ -1,0 +1,41 @@
+\begin{center}
+{\Large\textbf{\uppercase{ {{< var tcc.autor >}} }}}
+
+\vspace{6cm}
+
+{\LARGE\textbf{\uppercase{ {{< var tcc.titulo >}} }}}
+
+\vspace{1cm}
+
+{\Large {{< var tcc.curso >}}}
+
+\vspace{3cm}
+
+
+{\Large Advisor:} 
+
+\vspace{0.25cm}
+
+{\Large {{< var tcc.orientador >}}}
+
+\vspace{0.5cm}
+
+
+{\Large Co-advisor:} 
+
+\vspace{0.25cm}
+
+{\Large {{< var tcc.coorientador >}}}
+
+
+\vfill
+
+\uppercase{ {{< var tcc.cidade >}} }
+
+\uppercase{ {{< var tcc.universidade >}} }
+
+{{< var tcc.ano >}}
+
+\end{center}
+
+{{< pagebreak >}}
