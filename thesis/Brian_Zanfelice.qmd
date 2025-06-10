@@ -10,9 +10,6 @@
 \mainmatter
 
 <!-- Introdução -->
-=======
-<!-- Introduction -->
-
 {{< include textuais/cap1_introducao.qmd >}}
 
 <!-- Literature Review -->

@@ -1,105 +1,10 @@
 \chapter{\textbf{Introduction}}
 
-Quarto allows you to weave content and executable code into a final document. To learn more about Quarto see <https://quarto.org>.
 
-# Using figures
+# \textbf{Motivation}
 
-<<<<<<< HEAD
-An example of a figure is @fig-peixe below.
-
-::: {#fig-peixe layout-ncol=1}
-
-![](figuras/images.jpg){width=300}
-
-Source: Google images
-
-Example of a figure: a fish.
-
-:::
-
-## Tables
-
-Tables are used to display tabular data. An example of a table is @tbl-1 below.
-
-| Name  | Age | Gender |
-|-------|-----|--------|
-| John  | 20  | M      |
-| Mary  | 25  | F      |
-
-: Example of a table: people data {#tbl-1}
-
-## Equations
-
-Black-Scholes (@eq-black-scholes) is a mathematical model that seeks to explain the behavior of financial derivatives, most commonly options:
-
-$$
-\frac{\partial \mathrm C}{ \partial \mathrm t } + \frac{1}{2}\sigma^{2} \mathrm S^{2}
-\frac{\partial^{2} \mathrm C}{\partial \mathrm C^2}
-  + \mathrm r \mathrm S \frac{\partial \mathrm C}{\partial \mathrm S}\ =
-  \mathrm r \mathrm C 
-$$ {#eq-black-scholes}
-
-## Code in Julia
-
-Below is some code in Julia:
-
-<!-- Here I had to do a workaround because I couldn't get the code to run correctly in quarto.org. I used \vspace{0cm} and it worked at the time. -->
-
-\vspace{0cm}
-
-```{#lst-1 .julia lst-cap="Customers Query"}
-x = 1 + 1
-```
-
-This was an example of support for figures, tables, equations, and code in Julia. For more information about support for figures, tables, equations, and code (@lst-1) in Julia, see <https://quarto.org>.
-
-```{#lst-2 .julia lst-cap="Example of Julia code"}
-x = 1 + 1
-```
-
-É possível executar código em Julia/Python/R diretamente no Quarto.org. O código é executado e o resultado é incluído no documento final.
-
-```{julia}
-#| echo: true
-
-m = 100 # kg
-c = 3e8 # m/s
-E = m * c^2 # J
-
-println("A energia é: ", E, " Joules")
-```
-
-```{julia}
-#| echo: false
-using Printf
-
-@printf("A energia é: %.2e Joules.", E)
-```
-
-Este foi um exemplos do suporte a figuras, tabelas, equações e código em Julia (@lst-2).
-This was an example of support for figures, tables, equations, and code in Julia (@lst-2).
-
-## Citing references
-
-Here is an example of citing references:
-
-A citação de referências é feita como segue: @grote2009springer.
-
-### Fisheries and Biodiversity
-
-Global freshwater resources include a diverse fish fauna comprising close to 16,000 species (i.e.~47% of all fishes and~25% of all vertebrates), with around 250 new species described each year [@pelayo_villamil2015global; @arthington2016fish; @eschmeyer2017catalog].
-
-=======
-
-Citing references is done as follows: @grote2009springer
-=======
 Gas turbines are fundamental components in a wide range of critical applications, from power generation to aircraft propulsion. The ability to accurately model their behavior is essential for optimizing performance, ensuring operational safety, and implementing effective predictive maintenance strategies. However, traditional modeling techniques present a significant trade-off. High-fidelity simulations based on first principles (e.g., computational fluid dynamics) are computationally expensive and time-consuming, making them impractical for real-time analysis and control. On the other hand, purely data-driven models, while computationally efficient, often lack physical consistency and may produce unreliable predictions when extrapolating beyond the training data. This gap highlights the need for a new generation of models that can bridge the gap between physical fidelity and computational efficiency.
 
 # \textbf{Objectives}
 
-<<<<<<< HEAD
-The main objective of this work is to develop and validate a methodology for creating a first-principle digital twin of a laboratory-scale gas turbine, integrating artificial intelligence techniques. This involves several specific aims. First, a mathematical model will be created based on the fundamental thermodynamic principles governing the main components: the compressor, combustion chamber, turbine, and nozzle. Concurrently, experimental data from a laboratory microturbine—including key parameters like temperatures, pressures, fuel flow, compressor speed, and thrust—will be utilized to inform and validate this model. A hybrid model will then be implemented using a Physics-Informed Neural Network (PINN), which integrates the first-principle equations directly into the network's loss function to ensure predictions are both accurate and physically consistent. The resulting trained PINN will serve as the digital twin, capable of predicting key performance outputs and intermediate thermodynamic states. Finally, the digital twin's accuracy and robustness will be rigorously assessed by comparing its predictions against experimental data not used during the training phase.
->>>>>>> 01f103c (finish introduction)
-=======
 The main objective of this work is to develop and validate a methodology for creating a Level 1 (L1) first-principle digital twin of a laboratory-scale gas turbine, integrating artificial intelligence techniques. This involves several specific aims. First, a mathematical model will be created based on the fundamental thermodynamic principles governing the main components: the compressor, combustion chamber, turbine, and nozzle. Concurrently, experimental data from a laboratory microturbine—including key parameters like temperatures, pressures, fuel flow, compressor speed, and thrust—will be utilized to inform and validate this model. A hybrid model will then be implemented using a Physics-Informed Neural Network (PINN), which integrates the first-principle equations directly into the network's loss function to ensure predictions are both accurate and physically consistent. The resulting trained PINN will serve as the digital twin, capable of predicting key performance outputs and intermediate thermodynamic states. Finally, the digital twin's accuracy and robustness will be rigorously assessed by comparing its predictions against experimental data not used during the training phase.
->>>>>>> d621d0b (level 1 dt)
