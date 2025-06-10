@@ -39,7 +39,7 @@ format:
     code-block-bg: true
     code-block-border-left: true
     highlight-style: github
-    keep-tex: true
+    keep-tex: false
 
 # html:
   #   page-layout: full
