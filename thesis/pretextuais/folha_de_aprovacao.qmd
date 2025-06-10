@@ -1,0 +1,42 @@
+\begin{center}
+
+\uppercase{ {{< var tcc.autor >}} }
+
+\vfill
+
+\begin{center}
+  \uppercase{ {{< var tcc.titulo >}} }
+  {{< var tcc.subtitulo >}}
+\end{center}
+
+\end{center}
+
+\vfill
+
+Composição de Banca Examinadora:
+
+\begin{center}
+
+% Tabela sem linhas visíveis
+\begin{tabular}{>{\raggedright\arraybackslash}p{6cm} >{\raggedright\arraybackslash}p{4cm} >{\raggedright\arraybackslash}p{3cm} >{\raggedright\arraybackslash}p{1cm} >{\raggedright\arraybackslash}p{3cm}}
+ {{< var tcc.banca_presidente >}}    & Presidente     & - & {{< var tcc.instituicao_presidente >}} \\
+ {{< var tcc.banca_orientador >}}    & Advisor     & - & {{< var tcc.instituicao_orientador >}} \\
+ {{< var tcc.banca_coorientador >}}  & Co-advisor   & - & {{< var tcc.instituicao_coorientador >}} \\
+% {{< var tcc.banca_interno >}}       & Membro Interno & - & {{< var tcc.instituicao_interno >}} \\
+% {{< var tcc.banca_externo_1 >}}     & Membro Externo & - & {{< var tcc.instituicao_externo_1 >}} \\
+% {{< var tcc.banca_externo_2 >}}     & Membro Externo & - & {{< var tcc.instituicao_externo_2 >}} \\
+\end{tabular}
+
+\end{center}
+
+\begin{center}
+
+\vspace*{2.5cm}
+
+{\large {{< var tcc.cidade >}}}
+\par
+{\large {{< var tcc.ano >}}}
+
+\end{center}
+
+{{< pagebreak >}}

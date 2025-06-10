@@ -1,4 +1,0 @@
-
-\chapter{Resultados e discussões}
-
-\PROFESSOR{Resultados obtidos e o que eles significam.}

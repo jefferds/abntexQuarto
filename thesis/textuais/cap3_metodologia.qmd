@@ -1,0 +1,307 @@
+\chapter{\textbf{Materials and Methods}}
+
+This chapter details the methodology for developing a Level 1 digital twin for a laboratory-scale gas turbine. The approach integrates first-principle thermodynamic models with a data-driven framework using Physics-Informed Neural Networks (PINNs). The primary objective is to create a robust and physically consistent model capable of predicting the turbine's performance under various operating conditions. The methodology encompasses several key stages: establishing the mathematical model from fundamental thermodynamic laws, leveraging experimental data for training and validation, implementing the hybrid PINN architecture, and rigorously evaluating the final digital twin's predictive accuracy and physical fidelity. This structured approach ensures that the resulting digital twin is not only accurate but also grounded in the underlying physics of the gas turbine system.
+
+# **Experimental Setup and Data Acquisition**
+
+The physical asset central to this investigation is the Mini-Lab Gas Turbine Power System, which is based on the SR-30 turbojet engine. This system is purpose-built for educational and experimental applications, allowing for the simulation and detailed analysis of core gas turbine operations and thermodynamic cycles on a laboratory scale.
+
+## System Overview and Instrumentation
+
+The SR-30 engine is configured as a single-shaft turbojet, comprising a centrifugal compressor, an annular combustion chamber, an axial turbine, and a nozzle. To facilitate comprehensive operational monitoring and data acquisition, the engine is extensively instrumented with a variety of sensors. These sensors provide high-resolution, real-time data on critical thermodynamic and performance parameters.
+
+The instrumentation setup includes:
+\begin{itemize}
+    \item Compressor Inlet Pressure ($\mathrm{P}_{1}$) and Temperature ($\mathrm{T}_{1}$).
+    \item Compressor Exit Pressure ($\mathrm{P}_{2}$) and Temperature ($\mathrm{T}_{2}$).
+    \item Turbine Inlet Pressure ($\mathrm{P}_{3}$) and Temperature ($\mathrm{T}_{3}$).
+    \item Turbine Exit Pressure ($\mathrm{P}_{4}$) and Temperature ($\mathrm{T}_{4}$).
+    \item Exhaust Gas Pressure ($\mathrm{P}_{5}$) and Temperature ($\mathrm{T}_{5}$).
+    \item Compressor Rotational Speed (RPM), measured by a tachometer generator.
+    \item Fuel Pressure and Fuel Flow.
+    \item Engine Thrust, measured via a dedicated load cell.
+\end{itemize}
+These parameters are displayed on the system's control panel and, more extensively, on a connected Data Acquisition Screen. Specifically, $\mathrm{P}_{3}$ and $\mathrm{T}_{3}$ (Turbine Inlet Temperature, displayed as TIT) are available on both the panel and screen, while $\mathrm{T}_{5}$ (Exhaust Gas Temperature, displayed as EGT) is also accessible from both. Fuel Pressure is displayed on the panel. The precise location of these engine sensors is depicted in the SR-30 Gas Turbine Cutaway diagram within the Mini-Lab's operational manual.
+
+::: {#fig-turbine-schema layout-ncol=1 layout-align="center"}
+
+![](figuras/turbine_schema.png){width=75%}
+
+Source: Mini-Lab Gas Turbine Power System Manual @TurbineTechnologies2011MiniLab
+
+Schematic of Brayton Cycle for Gas Turbine and Cut Away of SR-30 Engine.
+
+:::
+
+## Data Acquisition System and Control Interface
+
+The data acquisition process is managed through a dedicated Data Acquisition Computer running the MiniLab 1.1 software. This computer connects to the Mini-Lab system via a USB port, leveraging a National Instruments DAQ (Data Acquisition) system (specifically the NI DAQ 6218 module) for real-time data capture and display. The MiniLab 1.1 software facilitates logging data to file, displaying plot features, and offers controls for unit toggling (e.g., Celsius to Fahrenheit for temperatures, Psig to kPa for pressures, Liters/hour or Gallons/hour for fuel flow, and Newtons to Pounds for thrust). The data sampling rate can be selected between 0.1 and 5 samples per second.
+
+## Experimental Procedure and Data Collection Protocol
+
+The experimental procedure involved operating the Mini-Lab gas turbine through its pre-start, start-up, and operational phases, followed by a controlled shutdown. Prior to each run, essential checks were conducted, including verification of fuel properties and ambient barometric pressure $P_{amb}=946.7 mbar$. During operation, the MiniLab 1.1 software collected real-time data from various sensors, including temperatures, pressures, fuel flow, RPM, and thrust. This data was logged continuously to a file on the connected computer's hard drive via a USB connection to a National Instruments DAQ system. The software allowed for adjustable sampling rates, and the recorded data was stored in an ASCII format, enabling direct import into spreadsheet programs for subsequent detailed analysis.
+
+
+
+
+# **Thermodynamic Modeling of the Gas Turbine System**
+
+## System Overview
+
+The system of interest is a small-scale gas turbine engine operating in steady-state. It consists of the following major components:
+
+\begin{itemize}
+    \item Compressor: Increases the pressure and temperature of incoming ambient air.
+    \item Combustor: Mixes compressed air with fuel, where combustion raises the temperature significantly.
+    \item Turbine: Extracts energy from the hot combustion gases to drive the compressor and generate useful work.
+    \item Nozzle (Exhaust Section): Accelerates the exhaust gases to produce thrust.
+\end{itemize}
+
+Each component operates under the assumption of quasi-one-dimensional, steady, adiabatic flow, with negligible heat loss to the surroundings unless explicitly modeled.
+
+## Assumptions and Idealizations
+
+To derive tractable analytical expressions and guide neural network constraints, the following assumptions are adopted:
+
+\begin{itemize}
+    \item The working fluid (air and combustion gases) behaves as a calorically perfect ideal gas:
+$$
+    P = \rho R T, \quad c_p, c_v \text{ constant}, \quad \gamma = \frac{c_p}{c_v} \approx 1.4
+$$
+
+    \item Isentropic relations apply to ideal compression and expansion processes with specified efficiencies $\eta_c$ (compressor) and $\eta_t$ (turbine).
+    \item Constant specific heats $c_p$ and $c_v$ are used, consistent with the assumption of ideal gases.
+    \item No heat transfer or pressure losses in ducts, except where captured by model residuals.
+    \item Steady-state and quasi-1D flow are assumed throughout.
+\end{itemize}
+
+## Key Thermodynamic Equations
+
+### Compressor
+
+\begin{itemize}
+    \item Isentropic temperature relation:
+$$
+    \frac{T_{2s}}{T_1} = \left( \frac{P_2}{P_1} \right)^{\frac{\gamma - 1}{\gamma}}
+$$
+
+    \item Actual outlet temperature considering efficiency:
+$$
+    T_2 = T_1 + \frac{T_{2s} - T_1}{\eta_c}
+$$
+
+    \item Power required by the compressor:
+$$
+    W_{\text{comp}} = \dot{m}_a c_p (T_2 - T_1)
+$$
+
+\end{itemize}
+
+### Combustor
+
+\begin{itemize}
+    \item Energy balance (idealized with complete combustion and no heat losses):
+$$
+    \dot{m}_f Q_{\text{HV}} = (\dot{m}_a + \dot{m}_f) c_p (T_3 - T_2)
+$$
+
+    where $Q_{\text{HV}}$ is the lower heating value of the fuel and the gas mass flow is $\dot{m}_g = \dot{m}_a + \dot{m}_f$.
+\end{itemize}
+
+### Turbine
+
+\begin{itemize}
+    \item Isentropic temperature relation:
+$$
+    \frac{T_{4s}}{T_3} = \left( \frac{P_4}{P_3} \right)^{\frac{\gamma - 1}{\gamma}}
+$$
+
+    \item Actual outlet temperature considering turbine efficiency:
+$$
+    T_4 = T_3 - \eta_t (T_3 - T_{4s})
+$$
+
+    \item Power generated by the turbine:
+$$
+    W_{\text{turb}} = (\dot{m}_a + \dot{m}_f) c_p (T_3 - T_4)
+$$
+
+\end{itemize}
+
+### Nozzle (Exhaust)
+
+Assuming isentropic expansion and ambient back pressure $P_0$, the exhaust velocity is:
+$$
+V_{\text{exit}} = \sqrt{2 c_p T_5 \left( 1 - \left( \frac{P_0}{P_5} \right)^{\frac{\gamma - 1}{\gamma}} \right)}
+$$
+
+The thrust is then calculated via momentum balance:
+$$
+F = (\dot{m}_a + \dot{m}_f) (V_{\text{exit}} - V_{\text{inlet}})
+$$
+
+If inlet velocity is negligible (static tests), this simplifies to:
+$$
+F \approx (\dot{m}_a + \dot{m}_f) V_{\text{exit}}
+$$
+
+## Station Numbering Convention
+
+To standardize variables across the PINN and thermodynamic sections:
+
+\begin{center}
+\begin{tabular}{ll}
+$1$ & Ambient conditions (inlet to compressor) \\
+$2$ & Compressor exit / combustor inlet \\
+$3$ & Combustor exit / turbine inlet \\
+$4$ & Turbine exit / nozzle inlet \\
+$5$ & Nozzle exit (exhaust gas temperature station)
+\end{tabular}
+\end{center}
+
+This convention allows the PINN to learn both the observable outputs ($T_3$, $T_5$, $F$) and intermediate station states ($T_2$, $P_2$, $T_4$, $P_4$, etc.), constrained by physics-based residuals.
+
+# **Physics-Informed Neural Network (PINN) Framework**
+
+To bridge the gap between purely data-driven models and first-principle simulations, this work employs a Physics-Informed Neural Network (PINN) to model the gas turbine system.
+
+## Core Concept
+
+PINNs are neural networks that embed physical laws directly into their training process. Rather than minimizing only the error between model predictions and experimental data, the PINN loss function also includes terms that penalize violations of governing physical equations. This approach ensures that predictions are both data-accurate and physically consistent, even in regions where data is sparse.
+
+## PINN Architecture
+
+The core model is a fully connected Multi-Layer Perceptron (MLP) trained to learn mappings from inputs to thermodynamic states and performance metrics. The architecture is guided by simplifying assumptions from thermodynamics:
+
+\begin{itemize}
+    \item Air is modeled as a calorically perfect ideal gas with constant specific heats ($c_p$, $c_v$) and a constant heat capacity ratio $\gamma = c_p / c_v \approx 1.4$.
+    \item Isentropic efficiencies for the compressor ($\eta_c$) and turbine ($\eta_t$) are assumed constant.
+    \item Heat losses, frictional effects, and pressure drops outside of defined station points are neglected.
+\end{itemize}
+
+Inputs: Key operational parameters that determine the thermodynamic state of the system:
+\begin{itemize}
+    \item Fuel flow rate $\dot{m}_f$ ($\mathrm{kg/s}$)
+    \item Compressor rotational speed $N_1$ (RPM)
+    \item Ambient temperature $T_1$ (K)
+    \item Ambient pressure $P_1$ (Pa)
+\end{itemize}
+
+Outputs: Predicted thermodynamic variables and performance indicators:
+\begin{itemize}
+    \item Station states: $T_{2,\text{pred}}, P_{2,\text{pred}}, T_{3,\text{pred}}, P_{3,\text{pred}}, T_{4,\text{pred}}, P_{4,\text{pred}}, T_{5,\text{pred}}, P_{5,\text{pred}}$
+    \item Net thrust $F_{\text{pred}}$ (N)
+    \item Air mass flow rate $\dot{m}_{a, \text{pred}}$ (kg/s)
+\end{itemize}
+
+## Hybrid Loss Function
+
+The total loss used to train the PINN is a weighted sum of data-driven and physics-based components:
+$$
+L_{\text{total}} = w_{\text{data}} L_{\text{data}} + w_{\text{physics}} L_{\text{physics}}
+$$
+
+\begin{itemize}
+    \item Data Loss ($L_{\text{data}}$): A supervised learning loss (Mean Squared Error) that penalizes deviation from available experimental measurements:
+$$
+    L_{\text{data}} = \frac{1}{N} \sum_{i=1}^{N} \left( y_i - y_{i,\text{pred}} \right)^2
+$$
+    
+    \item Physics Loss ($L_{\text{physics}}$): A sum of residuals derived from physical principles, each enforcing thermodynamic consistency.
+\end{itemize}
+
+### Compressor Temperature Rise Loss ($L_{T2}$)
+
+Derived from the isentropic temperature relation:
+$$
+L_{T2} = \left( \eta_c (T_{2,\text{pred}} - T_1) - T_1 \left( \left(\frac{P_{2,\text{pred}}}{P_1}\right)^{\frac{\gamma-1}{\gamma}} - 1 \right) \right)^2
+$$
+
+### Turbine Temperature Drop Loss ($L_{T4}$)
+
+Enforcing the relationship between pressure drop and temperature drop across the turbine:
+$$
+L_{T4} = \left( (T_{3,\text{pred}} - T_{4,\text{pred}}) - \eta_t T_{3,\text{pred}} \left(1 - \left(\frac{P_{4,\text{pred}}}{P_{3,\text{pred}}}\right)^{\frac{\gamma-1}{\gamma}}\right) \right)^2
+$$
+
+### Shaft Power Balance Loss ($L_{\text{power}}$)
+
+For a single-shaft turbojet, the power generated by the turbine ($W_{\text{turb}}$) is consumed entirely by the compressor ($W_{\text{comp}}$). This constraint, $W_{\text{turb}} = W_{\text{comp}}$, provides a fundamental physical link between the component states. The loss residual enforces this balance.
+$$
+L_{\text{power}} = \left( (\dot{m}_a + \dot{m}_f) c_p (T_{3,\text{pred}} - T_{4,\text{pred}}) - \dot{m}_a c_p (T_{2,\text{pred}} - T_1) \right)^2
+$$
+
+### Combustor Energy Balance Loss ($L_{\text{comb}}$)
+
+Assuming ideal heat release with no losses:
+$$
+L_{\text{comb}} = \left( \dot{m}_f Q_{\text{HV}} - (\dot{m}_a + \dot{m}_f) c_p (T_{3,\text{pred}} - T_{2,\text{pred}}) \right)^2
+$$
+
+### Thrust Loss
+
+A simplified thrust estimation (using momentum conservation) could also be encoded if exit velocity and intake velocity are known or modeled:
+$$
+L_{\text{thrust}} = \left( F_{\text{pred}} - (\dot{m}_a + \dot{m}_f) (V_{\text{exit}}) \right)^2
+$$
+
+While air mass flow rate $\dot{m}_a$ could be derived from a physics-based model based on $N_1$ and ambient conditions, in this PINN-based approach, it is treated as a learnable parameter. This allows the model to infer the air mass flow rate directly from the operational data, providing a more flexible and potentially more accurate estimation by capturing complex relationships that a simplified physics model might overlook.
+
+
+
+
+
+
+
+# **Model Implementation and Evaluation**
+
+This section outlines the strategy for the development, training, and rigorous evaluation of the gas turbine digital twin.
+
+## Problem Definition
+
+The primary objective is to develop a digital twin capable of predicting key performance indicators—steady-state thrust ($F_{pred}$), combustor outlet temperature ($T_{3,pred}$), and exhaust gas temperature ($T_{5,pred}$)—based on operational inputs (fuel flow $\dot{m}_f$, compressor speed $N_1$) and ambient conditions ($T_1, P_1$).
+
+To enforce physical realism, the model simultaneously predicts a set of intermediate thermodynamic variables:
+- Air mass flow: $\dot{m}_{a,pred}$
+- Station temperatures: $T_{2,pred}, T_{4,pred}$
+- Station pressures: $P_{2,pred}, P_{3,pred}, P_{4,pred}, P_{5,pred}$
+
+These intermediate predictions are constrained during training by the physics-informed loss functions derived in the previous chapter.
+
+## Data Preparation and Preprocessing
+
+The experimental dataset undergoes a standard preprocessing pipeline before being used for model training:
+
+- Unit Conversion: All variables are converted to base SI units (e.g., temperatures to Kelvin, pressures to Pascals, fuel flow to kg/s) to ensure consistency in the physics-based calculations.
+- Normalization: Input and output features are scaled to a common range (e.g., [0, 1]) using min-max scaling. This improves numerical stability during training and helps the optimization algorithm converge more efficiently.
+- Data Splitting: The complete dataset is randomly partitioned into three subsets: 80% for training, 10% for validation (hyperparameter tuning), and 10% for final, unbiased testing of the trained model.
+
+## Model Architecture and Hyperparameters
+
+The core of the digital twin is a Physics-Informed Neural Network (PINN) based on a Multi-Layer Perceptron (MLP).
+
+- Baseline Architecture: The initial architecture for exploration is a fully connected MLP with 4 input neurons, 2 hidden layers containing 32 neurons each, and 10 output neurons.
+- Inputs (4): Fuel flow ($\dot{m}_f$), compressor speed ($N_1$), ambient temperature ($T_1$), and ambient pressure ($P_1$).
+- Outputs (10): Thrust ($F_{pred}$), air mass flow ($\dot{m}_{a,pred}$), and the eight station states ($T_{2,pred}, P_{2,pred}, T_{3,pred}, P_{3,pred}, T_{4,pred}, P_{4,pred}, T_{5,pred}, P_{5,pred}$).
+- Activation Functions: The ReLU (Rectified Linear Unit) activation function is used for hidden layers, while a Linear activation is used for the output layer to allow for unbounded physical values.
+- Hyperparameter Tuning: A hyperparameter search will be conducted using the validation set to optimize the network architecture (e.g., number of layers and neurons), learning rate, and loss function weights to achieve the best performance. The search will be using a random search with 10 iterations.
+
+## Loss Function and Weighting Strategy
+
+The custom loss function guides the PINN to be both data-accurate and physically-consistent. The total loss is a weighted sum of two components:
+$$
+L_{total} = w_{data} L_{data} + w_{physics} L_{physics}
+$$
+
+- Data Loss ($L_{data}$): This is the Mean Squared Error (MSE) between the model's predictions and the measured experimental data for the observable outputs ($T_3, T_5, F$, etc.).
+- Physics Loss ($L_{physics}$): This is the sum of the mean squared residuals from the governing thermodynamic equations (e.g., $L_{power}, L_{comb}, L_{T2}, L_{T4}$). This term penalizes solutions that violate physical laws.
+- Weighting Strategy: The weights ($w_{data}, w_{physics}$) are critical hyperparameters that balance the influence of the experimental data and the physical laws. A sensitivity analysis will be performed to find a set of weights that minimizes prediction error on the validation set without compromising physical consistency.
+
+## Training and Evaluation Metrics
+
+The model will be implemented and trained using the PyTorch framework with the AdamW optimizer. To ensure a thorough and unbiased assessment of the final digital twin, its performance will be evaluated on the unseen test set using three key criteria:
+
+1.  **Predictive Accuracy:** The model's ability to predict the primary performance indicators will be quantified using Mean Squared Error (MSE) for $F_{pred}$, $T_{3,pred}$, and $T_{5,pred}$.
+2.  **Physical Consistency:** The magnitude of the physics loss residuals ($L_{physics}$) will be calculated on the test set. A low residual value indicates that the model's predictions adhere well to the governing laws of thermodynamics, even for data it has never seen.
+3.  **Overall Fidelity:** The accuracy of the intermediate variable predictions (e.g., $P_2, T_2, \dot{m}_a$) will also be assessed to ensure the overall health and internal consistency of the model.
+

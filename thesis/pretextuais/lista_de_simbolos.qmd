@@ -1,0 +1,8 @@
+\begin{simbolos}
+  \item[ $\Gamma$ ] Letra grega Gama
+  \item[ $\gamma$ ] Letra grega Gama minúscula
+  \item[ $\rho$ ] Letra grega Rho
+  \item[ $\Lambda$ ] Lambda
+  \item[ $\zeta$ ] Letra grega minúscula zeta
+  \item[ $\in$ ] Pertence
+\end{simbolos}

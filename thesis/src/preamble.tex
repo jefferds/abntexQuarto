@@ -1,0 +1,95 @@
+% ---
+% Pacotes básicos 
+% ---
+\usepackage{lmodern}			% Usa a fonte Latin Modern			
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{lastpage}			% Usado pela Ficha catalográfica
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 			% para melhorias de justificação
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{upgreek}
+\usepackage{listings}			% Inclusão de código fonte 			
+
+
+% Pacotes de citações
+% ---
+% \usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+
+% --- 
+% CONFIGURAÇÕES DE PACOTES
+% --- 
+
+% ---
+% Configurações de aparência do PDF final
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		% pdftitle={\@title}, 
+		% pdfauthor={\@author},
+    	% pdfsubject={\imprimirpreambulo},
+	    % pdfcreator={LaTeX with abnTeX2},
+		% pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico}, 
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+
+% Comandos de uso do orientador para sugestão de alterações:
+\usepackage{xcolor}
+\usepackage{cancel}
+
+\colorlet{oliveGreen}{blue!20!black!50!green}
+
+\usepackage{soul}
+\usepackage{soulutf8}
+\setstcolor{red}
+
+\newcommand{\cito}[1]{\textsuperscript{\cite{#1}}} % numeração da citação sobreescrita
+\newcommand{\PROFESSOR}[1]{\textcolor{red}{\MakeUppercase{#1}}} % Acrescenta um nota pelo professor
+\newcommand{\PROFESSORDEL}[1]{\textcolor{red}{\st{#1}}} % removido pelo professor
+\newcommand{\PROFESSORADD}[1]{\textcolor{oliveGreen}{#1}} % adicionado pelo professor
+\newcommand{\PROFESSORREP}[2]{\PROFESSORDEL{#1}\PROFESSORADD{#2}} % substituir
+
+
+\renewcommand{\printtoctitle}[1]{\normalsize\bfseries\centering TABLE OF CONTENTS}
+
+
+% Adiciona indentação para seções e subseções no sumário
+\cftsetindents{chapter}{0em}{0em}
+\cftsetindents{section}{1.5em}{2.5em}
+\cftsetindents{subsection}{3em}{3.5em}
+\cftsetindents{subsubsection}{4.5em}{5em}
+
+\AtBeginDocument{\captionsetup{labelfont=bf}}
+
+
+\makeatother
+% --- 
+
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---

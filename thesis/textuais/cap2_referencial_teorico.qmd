@@ -1,0 +1,49 @@
+\chapter{\textbf{Literature Review}}
+
+
+# \textbf{Gas Turbines}
+
+## Gas Turbine: Overview
+
+Gas turbines stand as fundamental components within a broad spectrum of critical applications, ranging from large-scale power generation to the propulsion of aircraft. Their widespread use underscores the imperative for precise modeling of their operational behavior [@boyce2012gasturbine]. Such accurate modeling is not merely a theoretical exercise but is essential for achieving optimal performance, ensuring operational safety protocols, and successfully implementing proactive predictive maintenance strategies [@boyce2012gasturbine]. These complex machines operate on fundamental thermodynamic principles, involving several main components that work in tandem to convert fuel energy into useful work [@cengel2019thermodynamics]. 
+    
+These core components typically include a compressor, which draws in and pressurizes air; a combustion chamber, where fuel is mixed with the compressed air and ignited; a turbine, which extracts energy from the hot, high-pressure combustion gases; and a nozzle, which accelerates the exhaust gases to produce thrust or direct them for other purposes [@saravanamuttoo2017gasturbine]. Understanding the intricate interplay between these components and their adherence to fundamental physical laws is crucial for their effective design, analysis, and operation [@saravanamuttoo2017gasturbine]. The fundamental principles governing the design and operation of gas turbine components, including detailed thermodynamic cycles and performance characteristics, are extensively documented in specialized literature [@saravanamuttoo2017gasturbine].
+
+
+## Traditional Modeling Approaches and Their Limitations
+
+Traditional modeling approaches for gas turbines present a significant trade-off in terms of computational resources and physical consistency. High-fidelity simulations, often based on first principles such as computational fluid dynamics (CFD), are known to be computationally intensive and time-consuming [@verstraete2010cfd]. This characteristic makes them impractical for real-time analysis and control applications [@verstraete2010cfd]. Conversely, purely data-driven models offer computational efficiency but frequently lack physical consistency [@gurney2010gasturbine]. Such models may also yield unreliable predictions when extrapolated beyond the dataset they were trained on [@gurney2010gasturbine]. This inherent limitation in traditional methods highlights a crucial gap, emphasizing the need for a new generation of models capable of bridging the divide between physical fidelity and computational efficiency [@kurz2009gasturbine].
+
+<!--  -->
+# \textbf{Foundations for Advanced System Representation}
+
+## Digital Twins Technology
+
+Digital Twin Technology represents a paradigm shift in system modeling and management, moving beyond traditional simulation to create a dynamic, virtual replica of a physical system or process [@grieves2011digital]. This virtual counterpart is continuously updated with real-time data from its physical twin, allowing for high-fidelity mirroring of the physical entity's state, behavior, and performance throughout its lifecycle [@tao2019digital]. The core concept involves the seamless integration of physical and virtual worlds, enabling predictive analytics, proactive maintenance, and optimization strategies that were previously unattainable. For complex systems like gas turbines, a digital twin provides an invaluable tool for monitoring operational parameters, diagnosing anomalies, and even predicting future performance degradation. This capability allows operators to make informed decisions, optimize efficiency, and extend the lifespan of costly assets, by running simulations and analyses on the virtual model that directly reflect the real-world conditions [@schluse2018digital]. The utility of digital twins extends across various stages, from design and manufacturing to operation and decommissioning, offering a comprehensive and integrated approach to system representation and control.
+
+
+
+## Artificial Intelligence
+
+Artificial Intelligence (AI) represents a broad field of computer science dedicated to creating intelligent agents capable of performing tasks that typically require human intelligence. These tasks include learning, problem-solving, perception, and decision-making [@russell2010artificial]. In the context of advanced system representation, AI plays an important role, particularly through its subfields such as machine learning and neural networks. Machine learning algorithms enable systems to learn patterns and make predictions from data without being explicitly programmed, which is crucial for handling complex, non-linear relationships often found in engineering systems. The integration of AI capabilities allows for enhanced predictive power, adaptive behavior, and the ability to extract insights from vast amounts of data, significantly contributing to the development of sophisticated models like digital twins [@kreuzer2024artificial].
+
+Among the various machine learning techniques, Neural Networks (NNs) are particularly prominent due to their ability to model complex, non-linear relationships and learn from large datasets. Inspired by the structure and function of the human brain, NNs consist of interconnected layers of nodes (neurons) that process information through weighted connections [@goodfellow2016deep]. Their capacity for pattern recognition and function approximation makes them highly effective for tasks such as prediction, classification, and control in engineering applications. The adaptability of NNs allows them to capture intricate dynamics within the system, making them a powerful tool for building data-driven components of hybrid models and digital twins.
+
+
+<!--  -->
+# \textbf{Hybrid Modeling with Physics-Informed Machine Learning}
+
+## The Role of First-Principle Models
+
+First-principle models, grounded in fundamental physical laws such as thermodynamics, fluid dynamics, and mechanics, serve as the bedrock for understanding and predicting the behavior of complex engineering systems like gas turbines [@incropera2007fundamentals]. These models provide inherent physical consistency and interpretability, as their predictions are directly derived from established scientific principles rather than solely from observed data. They offer a strong foundation for analysis, enabling accurate predictions even outside the range of typical operating conditions, which is a significant advantage over purely empirical approaches. Furthermore, first-principle models can capture the underlying mechanisms driving system behavior, offering deep insights into component interactions and overall performance [@serway2018physics]. However, their development often involves intricate mathematical formulations and can be computationally expensive, particularly for high-fidelity simulations of complex geometries or transient phenomena. This computational burden can limit their utility for real-time applications or scenarios requiring rapid iteration.
+
+## Integrating Physics and Data with PINNs
+
+Physics-Informed Neural Networks (PINNs) emerge as a powerful solution to overcome the limitations of both purely data-driven and purely physics-based models by integrating physical laws directly into the machine learning framework [@raissi2019physics]. This hybrid approach leverages the universal approximation capabilities of neural networks to learn from experimental data, while simultaneously enforcing adherence to the governing physical equations of the system. In PINNs, the neural network is trained not only to minimize the error between its predictions and observed data points but also to satisfy the underlying partial differential equations (PDEs), ordinary differential equations (ODEs), or algebraic equations that describe the system's physics. This is achieved by incorporating the residuals of these physics equations into the network's loss function. The result is a model that is both data-driven and physically consistent, leading to enhanced predictive accuracy, improved generalization to unseen conditions, and the ability to handle sparse or noisy data more effectively [@karniadakis2021physics]. 
+
+For gas turbines, PINNs offer a promising avenue for creating robust digital twins that can accurately predict performance, diagnose faults, and optimize operations while respecting fundamental thermodynamic and fluid dynamic principles. A study by @wang2023physics demonstrates how PINNs can be effectively employed to model steam turbine performance, enabling more accurate predictions and condition monitoring essential for digital twin functionalities. This approach addresses the computational intensity of traditional physics-based models while ensuring the physical consistency often lacking in purely data-driven methods, leading to reliable insights for predictive maintenance and operational optimization.
+
+
+
+
+
