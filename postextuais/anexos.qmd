@@ -1,0 +1,12 @@
+<!-- ANEXOS -->
+\anexos
+
+\part*{Anexos}
+
+\chapter{Primeiro Anexo}
+
+Este capítulo é opcional e deve conter documentos não elaborados pelo autor, como manuais, normas técnicas, legislações ou catálogos, que servem de fundamentação, comprovação ou ilustração.
+
+# Conteúdo do Anexo
+
+[Insira aqui material de terceiros utilizado como referência direta na pesquisa.]

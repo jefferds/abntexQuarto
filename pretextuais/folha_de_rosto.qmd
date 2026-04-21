@@ -1,41 +1,41 @@
-\begin{center}
-{\Large\textbf{\uppercase{ {{< var tcc.autor >}} }}}
-
-\vspace{6cm}
-
-{\LARGE\textbf{\uppercase{ {{< var tcc.titulo >}} }}}
+\begin{flushright}
+\footnotesize CDU: {{< var tcc.cdu >}}
+\end{flushright}
 
 \vspace{1cm}
 
-{\Large {{< var tcc.curso >}}}
+\begin{center}
+\Large{\textbf{ {{< var tcc.autor >}} }}
 
 \vspace{3cm}
 
+\huge{\textbf{\uppercase{ {{< var tcc.titulo >}} }}}
 
-{\Large Advisor:} 
+\vspace{2cm}
 
-\vspace{0.25cm}
-
-{\Large {{< var tcc.orientador >}}}
-
-\vspace{0.5cm}
-
-
-{\Large Co-advisor:} 
-
-\vspace{0.25cm}
-
-{\Large {{< var tcc.coorientador >}}}
-
+\begin{flushright}
+  \begin{minipage}{0.55\textwidth}
+    \normalsize
+    Orientador:\\ 
+    {{< var tcc.orientador >}} ({{< var tcc.instituicao_orientador >}})
+    
+    \vspace{0.5cm}
+    
+    Co-orientador:\\
+    {{< var tcc.coorientador >}} ({{< var tcc.instituicao_coorientador >}})
+  \end{minipage}
+\end{flushright}
 
 \vfill
 
-\uppercase{ {{< var tcc.cidade >}} }
+\Large{\textbf{\uppercase{ {{< var tcc.curso >}} }}}
 
-\uppercase{ {{< var tcc.universidade >}} }
+\vspace{1cm}
 
+\normalsize
+{{< var tcc.cidade >}} \\
+{{< var tcc.universidade >}} \\
 {{< var tcc.ano >}}
-
 \end{center}
 
 {{< pagebreak >}}

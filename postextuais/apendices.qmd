@@ -1,0 +1,16 @@
+<!-- APÊNDICES -->
+\apendices
+
+\part*{Apêndices}
+
+\chapter{Primeiro Apêndice}
+
+Este capítulo é opcional e deve conter documentos e outros materiais elaborados pelo próprio autor, que servem para complementar sua argumentação, sem prejuízo da unidade nuclear do trabalho.
+
+# Conteúdo do Apêndice
+
+[Insira aqui tabelas brutas, códigos-fonte, fotos autorais adicionais ou outros materiais próprios que não caberiam no corpo principal do texto.]
+
+\chapter{Segundo Apêndice}
+
+[Caso necessário, adicione outros apêndices utilizando o comando \chapter.]

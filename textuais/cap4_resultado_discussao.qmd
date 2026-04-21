@@ -1,3 +1,11 @@
-\chapter{Results and Discussion}
+\chapter{Resultados e Discussão}
 
-\PROFESSOR{Obtained results and what they mean.}
+Neste capítulo são apresentados os dados obtidos e a análise crítica dos resultados, confrontando-os com a fundamentação teórica.
+
+# Apresentação dos Dados
+
+[Insira aqui seus gráficos, tabelas e resultados primários.]
+
+# Análise e Discussão
+
+[Realize a análise qualitativa e quantitativa. O que os dados revelam? Como eles se comparam com os resultados da literatura revisada no Capítulo 2?]

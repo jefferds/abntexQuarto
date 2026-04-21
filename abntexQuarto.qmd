@@ -3,33 +3,42 @@
 \setlength{\parindent}{0mm}
 \ABNTEXchapterfont\normalsize
 
-<!-- PRETEXTUAIS -->
-{{< include pretextuais.qmd >}}
+<!-- ELEMENTOS PRÉ-TEXTUAIS -->
+{{< include pretextuais/00_master.qmd >}}
 
-<!-- TEXTUAIS -->
+<!-- CORPO DO TRABALHO (TEXTUAIS) -->
 \mainmatter
 
 <!-- Introdução -->
 {{< include textuais/cap1_introducao.qmd >}}
 
-<!-- Literature Review -->
+<!-- Revisão de Literatura -->
 {{< include textuais/cap2_referencial_teorico.qmd >}}
 
-<!-- Materials and Methods -->
+<!-- Materiais e Métodos -->
 {{< include textuais/cap3_metodologia.qmd >}}
 
-<!-- Resultados e discussões -->
-<!-- {{< include textuais/cap4_resultado_discussao.qmd >}} -->
+<!-- Resultados e Discussão -->
+{{< include textuais/cap4_resultado_discussao.qmd >}}
 
-<!-- Conclusões -->
-<!-- {{< include textuais/cap5_conclusao.qmd >}} -->
+<!-- Conclusão -->
+{{< include textuais/cap5_conclusao.qmd >}}
 
-<!-- Trabalhos futuros -->
-<!-- {{< include textuais/cap6_trabalhos_futuros.qmd >}} -->
+<!-- Trabalhos Futuros -->
+{{< include textuais/cap6_trabalhos_futuros.qmd >}}
 
+<!-- ELEMENTOS PÓS-TEXTUAIS -->
 \backmatter
 
 \newpage
-\chapter*{\textbf{Bibliography}}
-\markboth{BIBLIOGRAPHY}{BIBLIOGRAPHY}
+\chapter*{\textbf{Bibliografia}}
+\markboth{BIBLIOGRAFIA}{BIBLIOGRAFIA}
 
+<!-- Apêndices -->
+{{< include postextuais/apendices.qmd >}}
+
+<!-- Anexos -->
+{{< include postextuais/anexos.qmd >}}
+
+<!-- FOLHA DE REGISTRO DO DOCUMENTO (FRD) - OBRIGATÓRIO ITA -->
+{{< include pretextuais/folha_de_registro.qmd >}}

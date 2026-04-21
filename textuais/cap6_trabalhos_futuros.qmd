@@ -1,1 +1,7 @@
-\chapter{Future Works}
+\chapter{Trabalhos Futuros}
+
+Aponte aqui sugestões de melhorias ou expansões para pesquisas futuras fundamentadas nas limitações encontradas neste trabalho.
+
+- [Sugestão 1]
+- [Sugestão 2]
+- [Sugestão 3]

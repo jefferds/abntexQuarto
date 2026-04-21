@@ -1,3 +1,44 @@
+# Quarto artifacts
 /.quarto/
-abntexQuarto.tex
-abntexQuarto.pdf
+/_site/
+/_freeze/
+/_*.local
+*.quarto_ipynb
+
+# LaTeX artifacts (rendered output and intermediate files)
+*.pdf
+*.tex
+*.aux
+*.log
+*.toc
+*.out
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.bbl
+*.blg
+*.pdfpc
+*.snm
+*.nav
+*.vrb
+*.upa
+*.upb
+*.lof
+*.lot
+*.lol
+
+# Environment & IDE
+/.venv/
+/.agents/
+/.specs/
+.env
+.DS_Store
+Thumbs.db
+.Rproj.user/
+.Rhistory
+.RData
+.vscode/
+
+# Python execution artifacts
+__pycache__/
+*.pyc

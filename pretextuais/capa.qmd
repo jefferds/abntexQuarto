@@ -1,33 +1,22 @@
 \begin{center}
-\Large{\textbf{\uppercase{ {{< var tcc.universidade >}} }}}
-
-\vspace{1cm}
-
-\begin{figure}[H]
-\centering
-
-\includegraphics[width=0.6\textwidth]{figuras/ITA_logo.png}
-
-\end{figure}
+\huge{\textbf{\uppercase{ {{< var tcc.universidade >}} }}}
 
 \vspace{2cm}
 
-\large{\textbf{ {{< var tcc.autor >}} }}
-
-\vspace{1cm}
-
-\Large{\textbf{\uppercase{ {{< var tcc.titulo >}} }}}
+\Large{\textbf{ {{< var tcc.autor >}} }}
 
 \vspace{3cm}
 
-{{< var tcc.subtitulo >}}
-
-{{< var tcc.ano >}}
+\huge{\textbf{\uppercase{ {{< var tcc.titulo >}} }}}
 
 \vfill
 
-\huge{\textbf{ Course of {{< var tcc.curso >}} }}
+{\huge {{< var tcc.tipo >}}} \\
+{\huge {{< var tcc.ano >}}}
 
+\vspace{4cm}
+
+\Huge{\textbf{ Curso de {{< var tcc.curso >}} }}
 
 \end{center}
 

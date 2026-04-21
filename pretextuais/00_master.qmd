@@ -1,0 +1,61 @@
+\ABNTEXchapterfont\normalsize
+
+<!--
+    ========================================================================
+    ELEMENTOS PRÉ-TEXTUAIS (Opt-In Manual)
+    ========================================================================
+    Nesta folha master, os documentos exigidos pela ABNT estão formatados. 
+    A exclusão ou inclusão de uma parte (ex: Agradecimentos) é feita 
+    removendo a tag de comentário HTML "<!--" correspondente. 
+-->
+
+{{< include /pretextuais/capa.qmd >}}
+
+{{< include /pretextuais/folha_de_rosto.qmd >}}
+{{< include /pretextuais/verso_folha_rosto.qmd >}}
+{{< include /pretextuais/folha_de_aprovacao.qmd >}}
+<!-- {{< include /pretextuais/dedicatoria.qmd >}} -->
+
+{{< include /pretextuais/epigrafe.qmd >}}
+
+<!-- {{< include /pretextuais/agradecimentos.qmd >}} -->
+
+{{< include /pretextuais/resumo.qmd >}}
+
+{{< include /pretextuais/abstract.qmd >}}
+
+<!--
+    ========================================================================
+    LISTAS NATIVAS LaTeX & ABNT
+    ========================================================================
+    Remova os comentários se houver tabelas, figuras ou códigos no documento.
+-->
+
+<!-- \pdfbookmark[0]{\listfigurename}{lof} -->
+<!-- \listoffigures* -->
+<!-- {{< pagebreak >}} -->
+
+<!-- \pdfbookmark[0]{\listtablename}{lot} -->
+<!-- \listoftables* -->
+<!-- {{< pagebreak >}} -->
+
+<!-- \pdfbookmark[0]{\lstlistlistingname}{lol} -->
+<!-- \listoflistings -->
+<!-- {{< pagebreak >}} -->
+
+<!-- \pdfbookmark[0]{\nomname}{lsb} -->
+<!-- {{< include lista_de_abreviaturas_siglas.qmd >}} -->
+
+<!-- {{< include lista_de_simbolos.qmd >}} -->
+
+
+<!-- 
+    ========================================================================
+    SUMÁRIO PRINCIPAL 
+    ========================================================================
+-->
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+
+{{< pagebreak >}}

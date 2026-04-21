@@ -1,0 +1,37 @@
+\newpage
+\thispagestyle{empty}
+\begin{center}
+\textbf{\Large FOLHA DE REGISTRO DO DOCUMENTO}
+\end{center}
+
+\vspace{1cm}
+
+\noindent\begin{tabular}{|p{0.95\textwidth}|}
+\hline
+\textbf{1. Tipo do Documento:} {{< var tcc.tipo >}} \\
+\hline
+\textbf{2. Título:} {{< var tcc.titulo >}} \\
+\hline
+\textbf{3. Autor:} {{< var tcc.autor >}} \\
+\hline
+\textbf{4. Orientador:} {{< var tcc.orientador >}} \\
+\hline
+\textbf{5. Coordenador:} {{< var tcc.coordenador_curso >}} \\
+\hline
+\textbf{6. Data e Local:} {{< var tcc.cidade >}}, {{< var tcc.ano >}} \\
+\hline
+\textbf{7. Resumo:} \\
+{{< var tcc.resumo >}} \\
+\vspace{0.5cm} \\
+\hline
+\textbf{8. Palavras-chave:} \\
+{{< var tcc.palavras_chave_cip >}} \\
+\hline
+\end{tabular}
+
+\vspace{2cm}
+
+\begin{center}
+\line(1,0){250} \\
+\textbf{Assinatura do Autor}
+\end{center}

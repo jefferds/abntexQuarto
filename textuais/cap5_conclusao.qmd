@@ -1,3 +1,11 @@
-\chapter{Conclusion}
+\chapter{Conclusão}
 
-\PROFESSOR{Conclusions found in the work}
+As conclusões devem sintetizar os achados do trabalho e responder aos objetivos propostos na introdução.
+
+# Considerações Finais
+
+[Resuma as principais contribuições da sua pesquisa.]
+
+# Resposta aos Objetivos
+
+[Explique como cada objetivo específico foi atingido.]

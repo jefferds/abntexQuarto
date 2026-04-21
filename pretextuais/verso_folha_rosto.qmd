@@ -1,0 +1,46 @@
+\vspace*{\fill}
+
+\begin{center}
+\textbf{\footnotesize Dados Internacionais de Catalogação-na-Publicação (CIP)} \\
+\textbf{\footnotesize Divisão de Informação e Documentação}
+\end{center}
+
+\begin{center}
+\fbox{
+  \begin{minipage}{13cm}
+    \vspace{1em}
+    {{< var tcc.autor_sobrenome_prenome >}} \\
+    {{< var tcc.titulo >}} / {{< var tcc.autor >}} \\
+    {{< var tcc.cidade >}}, {{< var tcc.ano >}}. \\
+    \pageref{LastPage} folhas \\
+    \\
+    {{< var tcc.tipo >}} - {{< var tcc.curso >}} - {{< var tcc.universidade >}}, {{< var tcc.ano >}}. 
+    Orientador: {{< var tcc.orientador >}}. Co-orientador: {{< var tcc.coorientador >}}. \\
+    \\
+    {{< var tcc.palavras_chave_cip >}} I. {{< var tcc.universidade >}}. II. Título.
+    \vspace{1em}
+  \end{minipage}
+}
+\end{center}
+
+\vspace{1cm}
+\noindent\textbf{\large REFERÊNCIA BIBLIOGRÁFICA} \\
+\normalsize {{< var tcc.autor_sobrenome_prenome >}}. \textbf{ {{< var tcc.titulo >}} }. {{< var tcc.ano >}}. \pageref{LastPage} f. {{< var tcc.tipo >}}. ({{< var tcc.curso >}}) - {{< var tcc.universidade >}}, {{< var tcc.cidade >}}, {{< var tcc.ano >}}.
+
+\vspace{1cm}
+\noindent\textbf{\large CESSÃO DE DIREITOS} \\
+\textbf{\small NOME DO AUTOR:} {{< var tcc.autor >}} \\
+\textbf{\small TÍTULO DO TRABALHO:} {{< var tcc.titulo >}} \\
+\textbf{\small TIPO DE TRABALHO/ANO:} {{< var tcc.tipo >}} / {{< var tcc.ano >}} \\
+
+É concedida ao {{< var tcc.universidade >}} permissão para reproduzir cópias deste documento e para emprestar ou vender cópias somente para propósitos acadêmicos e científicos. O autor reserva outros direitos de publicação e nenhuma parte deste trabalho pode ser reproduzida sem a autorização do autor.
+
+\vspace{2cm}
+
+\begin{center}
+\line(1,0){250} \\
+{{< var tcc.autor >}} \\
+Endereço do Autor: {{< var tcc.endereco_autor >}}
+\end{center}
+
+{{< pagebreak >}}

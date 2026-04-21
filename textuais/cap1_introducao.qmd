@@ -1,10 +1,69 @@
-\chapter{\textbf{Introduction}}
+\chapter{Introdução}
 
+Quarto permite entrelaçar conteúdo e código executável em um documento final. Para saber mais sobre Quarto, consulte <https://quarto.org>.
 
-# \textbf{Motivation}
+Neste capítulo, deve-se apresentar a contextualização do tema, o problema de pesquisa, os objetivos e a estrutura do trabalho.
 
-Gas turbines are fundamental components in a wide range of critical applications, from power generation to aircraft propulsion. The ability to accurately model their behavior is essential for optimizing performance, ensuring operational safety, and implementing effective predictive maintenance strategies. However, traditional modeling techniques present a significant trade-off. High-fidelity simulations based on first principles (e.g., computational fluid dynamics) are computationally expensive and time-consuming, making them impractical for real-time analysis and control. On the other hand, purely data-driven models, while computationally efficient, often lack physical consistency and may produce unreliable predictions when extrapolating beyond the training data. This gap highlights the need for a new generation of models that can bridge the gap between physical fidelity and computational efficiency.
+# Contextualização e Motivação
 
-# \textbf{Objectives}
+[Descreva aqui o contexto amplo do seu trabalho. Use figuras para auxiliar na explicação, como mostra o exemplo da @fig-exemplo abaixo.]
 
-The main objective of this work is to develop and validate a methodology for creating a Level 1 (L1) first-principle digital twin of a laboratory-scale gas turbine, integrating artificial intelligence techniques. This involves several specific aims. First, a mathematical model will be created based on the fundamental thermodynamic principles governing the main components: the compressor, combustion chamber, turbine, and nozzle. Concurrently, experimental data from a laboratory microturbine—including key parameters like temperatures, pressures, fuel flow, compressor speed, and thrust—will be utilized to inform and validate this model. A hybrid model will then be implemented using a Physics-Informed Neural Network (PINN), which integrates the first-principle equations directly into the network's loss function to ensure predictions are both accurate and physically consistent. The resulting trained PINN will serve as the digital twin, capable of predicting key performance outputs and intermediate thermodynamic states. Finally, the digital twin's accuracy and robustness will be rigorously assessed by comparing its predictions against experimental data not used during the training phase.
+::: {#fig-exemplo layout-ncol=1}
+
+![](img/images.jpg){width=300}
+
+Fonte: [Insira a fonte aqui]
+
+Descrição de exemplo: Espaçamento para imagem de ilustração.
+
+:::
+
+# Problema de Pesquisa
+
+[Explique o problema central que esta pesquisa busca endereçar e por que ele é relevante para a área.]
+
+# Objetivos
+
+## Objetivo Geral
+
+[O que o trabalho pretende realizar de forma ampla?]
+
+## Objetivos Específicos
+
+- [Objetivo específico 1]
+- [Objetivo específico 2]
+- [Objetivo específico 3]
+
+# Estrutura do Trabalho
+
+Este trabalho está organizado em X capítulos:
+- **Capítulo 2**: Referencial Teórico;
+- **Capítulo 3**: Metodologia;
+- **Capítulo 4**: Resultados e Discussões;
+- **Capítulo 5**: Conclusão;
+- **Capítulo 6**: Trabalhos Futuros.
+
+# Exemplo de Elementos Adicionais
+
+Este template suporta Tabelas (@tbl-exemplo) e Equações (@eq-brayton).
+
+## Tabelas
+
+| Item  | Valor | Unidade |
+|-------|-------|---------|
+| X     | 10    | m       |
+| Y     | 25    | s       |
+
+: Exemplo de tabela {#tbl-exemplo}
+
+## Equações
+
+Exemplo de equação fundamental:
+
+$$
+\Delta h = c_p \Delta T
+$$ {#eq-brayton}
+
+# Citações
+
+As citações são feitas da seguinte forma: @russell2010artificial. Verifique o arquivo `references.bib` para cadastrar suas fontes.
